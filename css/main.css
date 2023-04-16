@@ -268,3 +268,13 @@ h2 > .available {
 .job-b:hover {
     top: 123px;
 }
+
+@media screen and (max-width: 480px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
