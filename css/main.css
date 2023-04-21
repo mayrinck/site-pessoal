@@ -155,7 +155,7 @@ aside > .social > a svg {
     margin-left: 12px;
 }
 
-.main {
+.main, .skills {
     position: relative;
     overflow-x: hidden;
     float: right;
@@ -269,7 +269,45 @@ h2 > .available {
     top: 123px;
 }
 
+.skills > .go-back {
+    float: left;
+    width: 60px;
+    height: 30px;
+    background: #FFFFFF1A;
+    border: none;
+    border-radius: 10px;
+}
 
+h3 {
+    float: left;
+    width: 100%;
+    font-size: 48px;
+    color: #FFF;
+}
+
+.skills > .container {
+    float: left;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contact-modal {
+    display: none;
+    position: absolute;
+    top: 22vh;
+    left: calc(50% - 240px);
+    width: 480px;
+    height: auto;
+    padding: 24px 0px;
+    background-color: #3943B766;
+    border-radius: 24px;
+    border: 0.5px solid #3943B7;
+    backdrop-filter: blur(14px);
+    filter: drop-shadow(8px 4px 20px rgba(0, 0, 0, 0.4));
+}
 
 
 .mobile {
