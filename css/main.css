@@ -4,344 +4,162 @@
     font-family: 'Coolvetica', 'Open Sans', sans-serif;
 }
 
+@font-face {
+  font-family: myFirstFont;
+  src: url(../media/fonts/coolvetica.woff);
+}
+
 body {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 32px 5%;
     overflow-x: hidden;
-    background-color: #111;
-    background-image: url(../media/images/bg2.png);
-    background-size: cover;
+    background-color: #090909;
 }
 
-button {
-    background: none;
-    color: #FFFFFF;
-    border: 0.5px solid #FFFFFF;
-    border-radius: 50px;
-    padding: 18px 24px;
-    opacity: 0.65;
-    transition: all 0.15s ease-in-out;
-    cursor: pointer;
+dialog {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 20vh;
+    max-width: 600px;
+    max-height: 700px;
+    border-radius: 20px;
+    background-color: #FFF;
+    padding: 32px;
 }
 
-button:hover {
-    background: #FFFFFF25;
-    opacity: 1;
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 header {
-    position: fixed;
-    float: right;
-    width: calc(100% - 72px);
-    padding: 18px 36px;
+    position: sticky;
+    width: 110%;
+    margin-left: -5%;
+
 }
 
-header > nav {
-    float: right;
-    margin-top: 21px;
-}
-
-header > nav > ul {
-    float: left;
-    color: #FFFFFF66;
-    list-style-type: none;
-}
-
-header > nav > ul > li {
-    float: left;
-    margin-top: 24px;
-    margin-right: 44px;
-}
-
-#last-child {
-    margin-top: 6px;
-    margin-right: 0px;
-}
-
-nav > ul > li > a {
-    transition: all 0.15s ease-in-out;
-    text-decoration: none;
-    color: #FFFFFF;
-    opacity: 0.65;
-}
-
-nav > ul > li > a:hover {
-    opacity: 1;
-}
-
-.contact {
-    float: right;
-}
-
-.greeting {
-    float: left;
-}
-
-.profile {
-    float: left;
-    width: 58px;
-    height: 58px;
-    margin-top: 10px;
-    margin-right: 20px;
-    box-shadow: 6px 11px 12px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    pointer-events: none;
-}
-
-h1 {
-    float: left;
+button {
+    border-radius: 10px;
+    padding: 12px 24px;
     color: #FFF;
-    font-size: 36px;
-    line-height: 28px;
-    letter-spacing: 2px;
+    font-size: 16px;
+    border: 2px solid #FFF;
+    background: transparent;
+    cursor: pointer;
 }
 
-h1 > span {
-    margin-left: 2px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #FFFFFF66;
-    letter-spacing: 0px;
-}
-
-aside {
-    position: fixed;
-    width: 96px;
-    height: 90vh;
-    left: 0px;
-    bottom: 0px;
-}
-
-aside > .divider {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 15%, rgba(255, 255, 255, 0.25) 100%);
-}
-
-aside > .social {
-    position: absolute;
-    top: auto;
-    bottom: 0px;
-    left: 0px;
-    width: 96px;
-    height: auto;
-}
-
-.social-icon {
-    width: 48px;
-    height: 48px;
-    margin-left: 25px;
-    margin-bottom: 24px;
-    float: left;
+.button-primary {
+    transition: all 0.22s linear;
+    background: #3943B7;
     border: none;
-    background: #FFFFFF00;
-    border-radius: 100%;
-    transition: all 0.15s ease-in-out;
 }
 
-.social-icon:hover {
-    background: #FFFFFF44;
-}
-
-aside > .social > a svg {
-    width: 24px;
-    height: 24px;
-    margin-top: 11px;
-    margin-left: 12px;
-}
-
-.main, .skills {
-    position: relative;
-    overflow-x: hidden;
-    float: right;
-    width: calc(93% - 168px);
-    height: calc(100vh - 117px);
-    margin-top: 117px;
-    padding: 0px 36px;
-}
-
-.content-1 {
-    float: left;
-    width: 100%;
-    height: auto;
-    margin-top: 10%;
-}
-
-.copy {
-    float: left;
-}
-
-h2 {
-    float: left;
-    font-size: 48px;
-    color: #FFF;
-    margin-top: 4px;
-    letter-spacing: 2px;
-}
-
-h2 > .available {
-    display: none;
-    float: right;
-    padding: 5px;
-    margin-top: 19px;
-    margin-left: 14px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    background: linear-gradient(242.72deg, #3EC300 6.76%, #7AE3D7 72.79%);
-    color: #000;
-}
-
-.h2-description {
-    float: left;
-    margin-top: 8px;
-    color: rgba(255, 255, 255, 0.7);
-    width: calc(100% - 171px);
-}
-
-.contact, .portfolio:hover {
-    background:#3943B7;
-    border: none;
-    opacity: 1;
-}
-
-.portfolio:hover, .contact:hover {
-    background:#3943B7;
+.button-primary:hover {
     box-shadow: 0px 4px 24px rgba(95, 104, 213, 0.47);
 }
 
-.about-me {
-    color: #5F68D4;
-    opacity: 1;
-    border: none;
-}
 
-.about-me:hover {
-    color: #5F68D4;
-}
-
-.content-2 {
+.hero {
+    position: relative;
     float: left;
-    position: absolute;
-    width: calc(100% - 36px);
-    height: 267px;
-    left: 36px;
-    bottom: 18px;
-}
-
-.job-a {
-    position: absolute;
-    width: auto;
-    height: 85%;
-    left: 3%;
-    top: 44px;
-    filter: drop-shadow(16px 8px 12px rgba(0, 0, 0, 0.4));
+    width: 90%;
+    height: calc(100vh - 145px);
+    margin-top: 80px;
+    background: #000;
     border-radius: 15px;
-    transform: rotate(-2.55deg);
-    transition: all 0.15s ease-in-out;
-    z-index: 2;
+    box-shadow: 0px 24px 12px 6px rgba(23, 26, 63, 0.25);
 }
 
-.job-a:hover {
-    top: 40px;
-}
-
-.job-b {
+.more {
+    width: 210px;
     position: absolute;
-    width: auto;
-    height: 73%;
-    left: 40%;
-    top: 127px;
-    filter: drop-shadow(8px 4px 20px rgba(0, 0, 0, 0.4));
-    border-radius: 15px;
-    transform: rotate(4.03deg);
-    transition: all 0.15s ease-in-out;
-    z-index: 1;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 48px;
 }
 
-.job-b:hover {
-    top: 123px;
+h1 {
+    color: #FFF;
+    font-size: 96px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-top: 30vh;
 }
 
-.skills > .go-back {
-    float: left;
-    width: 60px;
-    height: 30px;
-    background: #FFFFFF1A;
-    border: none;
-    border-radius: 10px;
+@keyframes raise {
+    0% {margin-top: 0px;}
+    15% {margin-top: 0px;}
+    20% {margin-top: -40px;}
+    35% {margin-top: -40px;}
+    40% {margin-top: -80px;}
+    55% {margin-top: -80px;}
+    60% {margin-top: -120px;}
+    75% {margin-top: -120px;}
+    80% {margin-top: -160px;}
+    100% {margin-top: -160px;}
 }
 
-h3 {
+.anim-text {
     float: left;
     width: 100%;
-    font-size: 48px;
+    height: 38px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.anim-text p {
+    font-size: 32px;
+    text-align: center;
+    color: #FFF;
+    letter-spacing: 1px;
+    animation-name: raise;
+    animation-delay: 3s;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.about-me {
+    position: relative;
+    float: left;
+    width: 90%;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 64px;
+}
+
+.about-me > .left, .about-me > .right {
+    width: 50%;
+    float: left;
+    height: auto;
+}
+
+h2 {
+    font-size: 64px;
+    letter-spacing: 2px;
     color: #FFF;
 }
 
-.skills > .container {
-    float: left;
-    width: 80%;
+.about-me > .left p {
+    font-size: 16px;
+    line-height: 26px;
+    width: 65%;
     height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    color: #CCCCCC;
+    margin: 32px 0px;
 }
 
-.contact-modal {
-    display: none;
-    position: absolute;
-    top: 22vh;
-    left: calc(50% - 240px);
-    width: 480px;
-    height: auto;
-    padding: 24px 0px;
-    background-color: #3943B766;
-    border-radius: 24px;
-    border: 0.5px solid #3943B7;
-    backdrop-filter: blur(14px);
-    filter: drop-shadow(8px 4px 20px rgba(0, 0, 0, 0.4));
-}
-
-
-.mobile {
-    display: none;
-}
-
-.menu-trigger {
-    width: 100%;
-    height: auto;
-    border: none;
-    border-radius: 0px;
-    display: none;
-}
-
-@media screen and (max-width: 480px) {
-    .desktop {
-        display: none;
-    }
-
-    .mobile {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    aside {
-        right: 0px;
-        left: auto;
-        width: 48px;
-        height: 100%;
-    }
-
-    aside > .divider {
-        left: 0px;
-        right: auto;
-    }
+.about-me > .right {
+    float: right;
+    min-height: 615px;
+    border-radius: 25px;
+    background-color: #151515;
+    background-image: url(../media/images/pp3.jpg);
+    background-size: cover;
+    background-position: top center;
 }

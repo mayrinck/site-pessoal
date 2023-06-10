@@ -5,6 +5,7 @@
         * {
             margin: 0;
             padding: 0;
+            letter-spacing: 0.06em;
         }
 
         body {
@@ -18,13 +19,12 @@
             align-items: left;
             justify-content: center;
             flex-wrap: wrap;
-            background-color: #111;
-            background-image: url(media/images/bg2.png);
-            background-size: cover;
-            font-family: 'Open Sans', sans-serif;
+            background-color: #000;
+            font-family: 'Coolvetica', 'Open Sans', sans-serif;
         }
 
         h1 {
+            text-align: center;
             color: #FFF;
             font-size: 3em;
         }
@@ -32,25 +32,33 @@
         p {
             margin-top: 24px;
             font-size: 1em;
+            text-align: center;
             color: #FFFFFF99;
         }
 
         .cta {
             width: 240px;
             margin-top: 24px;
+            margin-left: calc(50% - 120px);
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
         }
 
         a {
+            padding: 20px;
             float: left;
-            color: #5F68D4;
+            background: #151515;
+            color: #FFFFFFaa;
             text-decoration: none;
+            border-radius: 15px;
+            margin-top: 16px;
+            transition: all 0.25s ease-in-out;
         }
 
-        .cta > span {
-            float: left;
+        a:focus, a:hover {
             color: #FFFFFF;
+            background: #5F68D4;
         }
 
         @media screen and (max-width: 480px) {
@@ -72,11 +80,9 @@
     <p>Talvez você tenha chegado um pouco cedo, mas aqui será o meu site. <wbr>Ainda estou construindo, mas você pode ver algumas das minhas coisas nos links abaixo:</p>
 
     <div class="cta">
-        <a href="https://www.youtube.com/RenanMayrinckDesign?sub_confirmation=1" target="_blank">Conteúdos</a>
-        <span>•</span>
-        <a href="https://www.superprof.com.br/aprenda-fundamentos-design-torne-vetor-melhorias-experiencia-produtos-servicos.html" target="_blank">Aulas</a>
-        <span>•</span>
-        <a href="https://www.behance.net/RenanMayrinck" target="_blank">Portfolio</a>
+        <a href="https://www.youtube.com/RenanMayrinckDesign?sub_confirmation=1" target="_blank">Conteúdos GRATUITOS</a>
+        <a href="https://www.superprof.com.br/aprenda-fundamentos-design-torne-vetor-melhorias-experiencia-produtos-servicos.html" target="_blank">Mentoria de UX</a>
+        <a href="https://www.behance.net/RenanMayrinck" target="_blank">Meu Portfolio</a>
     </div>
 </body>
 </html>
