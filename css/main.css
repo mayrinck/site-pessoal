@@ -10,9 +10,12 @@
 }
 
 body {
-    width: 100%;
+    float: left;
+    width: 90%;
     height: auto;
+    font-size: 14px;
     padding: 32px 5%;
+    padding-top: 0px;
     overflow-x: hidden;
     background-color: #090909;
 }
@@ -34,13 +37,6 @@ dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-header {
-    position: sticky;
-    width: 110%;
-    margin-left: -5%;
-
-}
-
 button {
     border-radius: 10px;
     padding: 12px 24px;
@@ -49,11 +45,18 @@ button {
     border: 2px solid #FFF;
     background: transparent;
     cursor: pointer;
+    transition: background 0.22s linear;
+}
+
+button:hover {
+    background: #FFF;
+    color: #151515;
 }
 
 .button-primary {
     transition: all 0.22s linear;
-    background: #3943B7;
+    background: #3943B7 !important;
+    color: #FFF !important;
     border: none;
 }
 
@@ -61,13 +64,71 @@ button {
     box-shadow: 0px 4px 24px rgba(95, 104, 213, 0.47);
 }
 
+header {
+    float: left;
+    width: 110%;
+    height: auto;
+    margin-left: -5%;
+    background: transparent;
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+
+.me {
+    float: left;
+    width: 280px;
+    height: auto;
+    margin-left: 5%;
+}
+
+.me > img {
+    float: left;
+    width: 58px;
+    height: 58px;
+    border-radius: 10px;
+}
+
+.me > .greeting, 
+.me > .name {
+    float: left;
+    margin-left: 16px;
+    margin-top: 5px;
+    font-size: 1em;
+    color: #FFFFFF99;
+}
+
+.me > .name {
+    margin-top: 0px;
+    font-size: 2em;
+    color: #FFFFFF;
+}
+
+header > nav {
+    float: right;
+    margin-right: 5%;
+    margin-top: 8px;
+}
+
+header > nav > a {
+    float: left;
+    width: 78px;
+    font-size: 1.1em;
+    margin-right: 55px;
+    color: #FFFFFF88;
+    text-decoration: none;
+    transition: all 0.22s linear;
+}
+
+header > nav > a:hover {
+    color: #8A92EE;
+}
 
 .hero {
     position: relative;
     float: left;
-    width: 90%;
+    width: 100%;
     height: calc(100vh - 145px);
-    margin-top: 80px;
+    margin-top: 20px;
     background: #000;
     border-radius: 15px;
     box-shadow: 0px 24px 12px 6px rgba(23, 26, 63, 0.25);
@@ -124,13 +185,100 @@ h1 {
     animation-timing-function: ease-out;
 }
 
+.my-cases {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 48px;
+}
+
+.my-cases > .flex-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 14px;
+    margin: 32px 0px;
+}
+
+.my-cases > .flex-section .case {
+    position: relative;
+    width: 524px;
+    height: 524px;
+    padding: 8px;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background-color: #555;
+    overflow: hidden;
+}
+
+.my-cases > .flex-section .case > div {
+    position: absolute;
+    bottom: -20%;
+    left: 2%;
+    right: 2%;
+    margin: auto;
+    padding: 24px;
+    background: #000;
+    border-radius: 10px;
+    transition: all 0.15s ease-out;
+}
+
+.my-cases > .flex-section .case:hover > div {
+    bottom: 2%;
+}
+
+.vero {
+    background-image: url(../media/images/projects/vero.png);
+    background-size: cover;
+}
+
+.globo {
+    background-image: url(../media/images/projects/globo.png);
+    background-size: cover;
+}
+
+.inkscape {
+    background-image: url(../media/images/projects/inkscape.png);
+    background-size: cover;
+}
+
+.my-cases > .flex-section .case > div > span {
+    float: left;
+    margin-top: 8px;
+    font-size: 1.5em;
+    color: #FFF;
+}
+
+.my-cases > .flex-section .case > div > svg {
+    fill: #FFF;
+    width: 44px;
+    height: 44px;
+    float: right;
+}
+
+.all-cases {
+    float: left;
+    width: 160px;
+    height: auto;
+    margin-left: calc(50% - 80px);
+}
+
+
+
+
+
+
 .about-me {
     position: relative;
     float: left;
-    width: 90%;
+    width: 70%;
     height: auto;
-    min-height: 100vh;
-    margin-top: 64px;
+    margin-left: 15%;
+    padding: 64px 0px;
 }
 
 .about-me > .left, .about-me > .right {
@@ -139,27 +287,74 @@ h1 {
     height: auto;
 }
 
-h2 {
-    font-size: 64px;
-    letter-spacing: 2px;
+h2, h3, h4, h5, h6 {
+    font-size: 3.25em;
+    letter-spacing: 3px;
     color: #FFF;
+    margin-top: 64px;
+    font-weight: 600;
 }
 
 .about-me > .left p {
     font-size: 16px;
     line-height: 26px;
-    width: 65%;
+    width: 90%;
     height: auto;
     color: #CCCCCC;
     margin: 32px 0px;
+    margin-top: 20px;
 }
 
 .about-me > .right {
     float: right;
-    min-height: 615px;
+    width: 550px;
+    height: 550px;
     border-radius: 25px;
     background-color: #151515;
-    background-image: url(../media/images/pp3.jpg);
-    background-size: cover;
+    background-image: url(../media/images/pp2.jpg);
+    background-size: contain;
     background-position: top center;
+}
+
+.go-to-linkedin > svg {
+    float: left;
+    width: 24px;
+    height: 24px;
+    fill: #FFF;
+    transition: fill 0.22s linear;
+}
+
+.go-to-linkedin:hover > svg {
+    fill: #0a66c2;
+}
+
+.go-to-linkedin > span {
+    float: left;
+    margin-left: 12px;
+    margin-top: 2px;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    height: auto;
+    padding: 32px 0px;
+}
+
+footer > p {
+    float: left;
+    width: 100%;
+    height: auto;
+    color: #FFF;
+    text-align: center;
+}
+
+footer > p > a {
+    transition: all 0.22s linear;
+    text-decoration: none;
+    color: #FFF;
+}
+
+footer > p > a:hover {
+    color: #8A92EE;
 }
