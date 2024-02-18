@@ -228,7 +228,8 @@ main {
   }
 
   .links-instagram > span,
-  .links-linked-in > span {
+  .links-linked-in > span,
+  .links-email > span {
     margin-top: 1px;
   }
 
@@ -244,7 +245,7 @@ main {
     }
   }
 
-  @media(max-width: 400px) {
+  @media(max-width: 576px) {
     .links-my-name {
       font-size: 56px;
     }
@@ -276,18 +277,14 @@ main {
       gap: 12px;
     }
 
-    .links-linked-in {
-      width: -webkit-fill-available;
-      font-size: 13px;
-    }
-
-    .links-instagram {
+    .links-linked-in, .links-email, .links-instagram {
       width: -webkit-fill-available;
       font-size: 13px;
     }
 
     .links-instagram > span,
-    .links-linked-in > span {
+    .links-linked-in > span,
+    .links-email > span {
       margin-top: 3px;
     }
   }
