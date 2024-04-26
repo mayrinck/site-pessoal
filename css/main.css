@@ -12,18 +12,20 @@
 }
 
 :root {
-    --hover: #32A94C;
+    --default: #7cb518;
+    --hover: #A6E538;
+    --bg: #0c0c0c;
+    --bgl: #FDFDFD;
 }
 
 body {
     float: left;
-    width: 90%;
+    width: 100%;
     height: auto;
     font-size: 14px;
-    padding: 32px 5%;
-    padding-top: 0px;
+    padding-top: 70px;
     overflow-x: hidden;
-    background-color: #090909;
+    background-color: var(--bgl);
 }
 
 dialog {
@@ -51,40 +53,44 @@ button {
     border: 2px solid #FFF;
     background: transparent;
     cursor: pointer;
-    transition: background 0.22s linear;
+    transition: all 0.22s linear;
 }
 
 button:hover {
+    color: var(--bg);
     background: #FFF;
-    color: #151515;
 }
 
 .button-primary {
     transition: all 0.22s linear;
-    background: var(--hover) !important;
-    color: #FFF !important;
+    background: var(--default);
+    color: var(--bg);
     border: none;
 }
 
 .button-primary:hover {
-    box-shadow: 0px 4px 24px var(--hover);
+    background: var(--hover);
+    color: var(--bg);
 }
 
 header {
-    float: left;
-    width: 110%;
-    height: auto;
-    margin-left: -5%;
-    background: transparent;
-    padding-top: 21px;
-    padding-bottom: 21px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 55px;
+    background: var(--bg);
+    padding: 20px 0px;
+    z-index: 100;
+    border-radius: 0px 0px 24px 24px;
 }
 
 .me {
     float: left;
-    width: 280px;
+    width: 300px;
     height: auto;
-    margin-left: 5%;
+    margin-left: 10%;
 }
 
 .me > img {
@@ -106,38 +112,39 @@ header {
 .me > .name {
     margin-top: 0px;
     font-size: 2em;
+    font-weight: 700;
     color: #FFFFFF;
 }
 
 header > nav {
+    display: flex;
     float: right;
-    margin-right: 5%;
+    margin-right: 10%;
     margin-top: 8px;
+    justify-content: right;
+    align-items: center;
+    gap: 44px;
 }
 
 header > nav > a {
     float: left;
-    width: 78px;
     font-size: 1.1em;
-    margin-right: 55px;
     color: #FFFFFF88;
     text-decoration: none;
     transition: all 0.22s linear;
 }
 
 header > nav > a:hover {
-    color: #8A92EE;
+    color: var(--hover);
 }
 
 .hero {
     position: relative;
     float: left;
     width: 100%;
-    height: calc(100vh - 145px);
-    margin-top: 20px;
-    background: #000;
-    border-radius: 15px;
-    box-shadow: 0px 24px 12px 6px rgba(23, 26, 63, 0.25);
+    height: 720px;
+    background: var(--bg);
+    border-radius: 0px 0px 24px 24px;
 }
 
 .more {
@@ -171,6 +178,19 @@ h1 {
     100% {margin-top: -160px;}
 }
 
+@keyframes change-background {
+    0% {background: #000;}
+    15% {background: #000;}
+    20% {background: #000;}
+    35% {background: #000;}
+    40% {background: #000;}
+    55% {background: #000;}
+    60% {background: #000;}
+    75% {background: #000;}
+    80% {background: #000;}
+    100% {background: #000;}
+}
+
 .anim-text {
     float: left;
     width: 100%;
@@ -191,29 +211,107 @@ h1 {
     animation-timing-function: ease-out;
 }
 
+h2, h3, h4, h5, h6 {
+    font-size: 3.25em;
+    letter-spacing: 0.025em;
+    color: var(--bg);
+    font-weight: 600;
+}
+
+.about-me {
+    position: relative;
+    float: left;
+    width: 80%;
+    height: auto;
+    padding: 64px 10%;
+    gap: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.about-me > .left, .about-me > .right {
+    width: 50%;
+    float: left;
+    height: auto;
+}
+
+.about-me > .left p {
+    font-size: 16px;
+    line-height: 26px;
+    width: 90%;
+    height: auto;
+    color: var(--bg);
+    margin: 32px 0px;
+    margin-top: 20px;
+}
+
+.about-me > .right {
+    float: right;
+    width: 45%;
+    height: 550px;
+    border-radius: 25px;
+    background-color: var(--bg);
+    background-image: url(../media/images/pp2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.go-to-linkedin {
+    color: var(--bg);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.22s linear;
+}
+
+.go-to-linkedin:hover {
+    border-color: var(--bgl);
+    box-shadow: 0px 8px 16px #0a66c244;
+}
+
+.go-to-linkedin > svg {
+    float: left;
+    width: 24px;
+    height: 24px;
+    fill: var(--bg);
+    transition: fill 0.22s linear;
+}
+
+.go-to-linkedin:hover > svg {
+    fill: #0a66c2;
+}
+
+.go-to-linkedin > span {
+    float: left;
+    margin-left: 12px;
+    margin-top: 2px;
+}
+
 .my-cases {
-    width: 100%;
+    width: 80%;
     height: auto;
     float: left;
+    margin: 0px 10%;
     margin-top: 48px;
 }
 
 .my-cases > .flex-section {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: flex-start;
     padding: 0px;
-    gap: 14px;
+    gap: 24px;
     margin: 32px 0px;
 }
 
 .my-cases > .flex-section .case {
     position: relative;
-    width: 524px;
-    height: 524px;
+    width: 50vh;
+    height: auto;
     padding: 8px;
     border-radius: 10px;
+    padding-bottom: 100%;
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -223,7 +321,7 @@ h1 {
 
 .my-cases > .flex-section .case > div {
     position: absolute;
-    bottom: -20%;
+    bottom: -40%;
     left: 2%;
     right: 2%;
     margin: auto;
@@ -254,6 +352,8 @@ h1 {
 
 .my-cases > .flex-section .case > div > span {
     float: left;
+    width: auto;
+    max-width: 70%;
     margin-top: 8px;
     font-size: 1.5em;
     color: #FFF;
@@ -271,73 +371,13 @@ h1 {
     width: 160px;
     height: auto;
     margin-left: calc(50% - 80px);
+    color: var(--bg);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.22s linear;
 }
 
-
-
-
-
-
-.about-me {
-    position: relative;
-    float: left;
-    width: 70%;
-    height: auto;
-    margin-left: 15%;
-    padding: 64px 0px;
-}
-
-.about-me > .left, .about-me > .right {
-    width: 50%;
-    float: left;
-    height: auto;
-}
-
-h2, h3, h4, h5, h6 {
-    font-size: 3.25em;
-    letter-spacing: 3px;
-    color: #FFF;
-    margin-top: 64px;
-    font-weight: 600;
-}
-
-.about-me > .left p {
-    font-size: 16px;
-    line-height: 26px;
-    width: 90%;
-    height: auto;
-    color: #CCCCCC;
-    margin: 32px 0px;
-    margin-top: 20px;
-}
-
-.about-me > .right {
-    float: right;
-    width: 550px;
-    height: 550px;
-    border-radius: 25px;
-    background-color: #151515;
-    background-image: url(../media/images/pp2.jpg);
-    background-size: contain;
-    background-position: top center;
-}
-
-.go-to-linkedin > svg {
-    float: left;
-    width: 24px;
-    height: 24px;
-    fill: #FFF;
-    transition: fill 0.22s linear;
-}
-
-.go-to-linkedin:hover > svg {
-    fill: #0a66c2;
-}
-
-.go-to-linkedin > span {
-    float: left;
-    margin-left: 12px;
-    margin-top: 2px;
+.all-cases:hover {
+    box-shadow: 0px 8px 16px rgba(172, 60, 246, 0.3);
 }
 
 footer {
@@ -351,16 +391,16 @@ footer > p {
     float: left;
     width: 100%;
     height: auto;
-    color: #FFF;
+    color: var(--bg);
     text-align: center;
 }
 
 footer > p > a {
     transition: all 0.22s linear;
     text-decoration: none;
-    color: #FFF;
+    color: var(--bg);
 }
 
 footer > p > a:hover {
-    color: #8A92EE;
+    color: var(--hover);
 }

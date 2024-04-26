@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Olá! Meu nome é Renan Mayrinck. Tenho experiência com Design a mais de sete anos e tenho atuado no mercado como designer de experiência do usuário.">
+    <meta name="keywords" content="UX, UI, designer de experiência do usuário, especialista em design de interfaces, ux designer no rio de janeiro, designer experiênte, aprender design online, mentor de design online, curso de ux design online">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="media/images/favicon.png" type="image/x-icon">
+    <title>Designer de experiências (UI & UX Designer) - Renan Mayrinck</title>
+</head>
+<body>
+    <header>
+        <a tabindex="5" href="https://www.renanmayrinck.com">
+            <div class="me">
+                <img src="media\images\pp2.jpg">
+                <p class="greeting">Oi, eu sou o</p>
+                <p class="name">Renan Mayrinck</p>
+            </div>
+        </a>
+
+        <nav>
+            <a tabindex="2" href="cases.html">Portfolio de projetos</a>
+            <a tabindex="3" href="index.html#about">Me conheça</a>
+            <a tabindex="4" href="#">Cursos e Mentoria</a>
+            <button tabindex="1" class="button-primary" id="contact">Entre em contato</button>
+        </nav>
+    </header>
+
+    <aside>
+        <ul>
+            <li><a href="#">Oveview</a></li>
+            <li><a href="#">O problema</a></li>
+            <li><a href="#">Personas</a></li>
+            <li><a href="#">Posições</a></li>
+            <li><a href="#">Processo</a></li>
+            <li><a href="#">Resultados</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p class="credits">
+            <a href="/links.html">@RenanMayrinckDesign</a> • ®2023
+        </p>
+    </footer>
+
+    <dialog id="contact-form">
+        <p class="title">Maravilha!</p>
+
+        <p class="title">
+            Fico muito feliz que você deseja conversar comigo. 
+            É só preencher os campos abaixo e eu vou receber 
+            a sua mensagem 😊.
+        </p>
+        <form>
+            <input type="text" name="name" id="">
+
+            <input type="text" name="email" id="email">
+
+            <select name="subject" id="subject">
+                <option value="contract">Quero te contratar para um projeto</option>
+                <option value="learn">Quero aprender com você</option>
+                <option value="other">Outro</option>
+            </select>
+
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+            <button id="clear">fechar</button>
+
+            <button type="submit" class="button-primary send">enviar mensagem</button>
+        </form>
+    </dialog>
+
+    <script src="js\interactions.js"></script>
+</body>
+</html>
