@@ -381,16 +381,18 @@ h2, h3, h4, h5, h6 {
 }
 
 footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     float: left;
-    width: 100%;
+    width: 80%;
     height: auto;
-    padding: 32px 0px;
+    padding: 32px 10%;
 }
 
 footer > p {
     float: left;
-    width: 100%;
-    height: auto;
     color: var(--bg);
     text-align: center;
 }
@@ -403,4 +405,19 @@ footer > p > a {
 
 footer > p > a:hover {
     color: var(--hover);
+}
+
+footer > .socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    align-items: flex-start;
+    gap: 12px;
+}
+
+footer > .socials svg {
+    fill: var(--bg);
+    width: 24px;
+    height: 24px;
 }
