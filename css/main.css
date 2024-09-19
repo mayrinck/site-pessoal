@@ -46,6 +46,15 @@ dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+a {
+    color: #0086df;
+    transition: all 0.22s linear;
+}
+
+a:hover {
+    color: #004e83;
+}
+
 button {
     border-radius: 10px;
     padding: 12px 24px;
@@ -54,7 +63,7 @@ button {
     border: 2px solid #FFF;
     background: transparent;
     cursor: pointer;
-    transition: all 0.22s linear;
+    transition: all 0.22s ease;
 }
 
 button:hover {
@@ -142,9 +151,11 @@ header > nav > a:hover {
 .hero {
     position: relative;
     float: left;
-    width: 100%;
-    height: 720px;
+    width: 80%;
+    height: 100vh;
+    max-height: 700px;
     background: var(--bg);
+    padding: 0px 10%;
     border-radius: 0px 0px 24px 24px;
 }
 
@@ -159,11 +170,12 @@ header > nav > a:hover {
 
 h1 {
     color: #FFF;
-    font-size: 96px;
-    text-align: center;
+    font-size: 72px;
+    text-align: left;
     letter-spacing: 1px;
     font-weight: 700;
     margin-top: 30vh;
+    margin-bottom: 24px;
 }
 
 @keyframes raise {
@@ -463,7 +475,7 @@ footer > p > a {
 }
 
 footer > p > a:hover {
-    color: var(--hover);
+    color: #0086df;
 }
 
 footer > .socials {
