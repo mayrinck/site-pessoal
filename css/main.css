@@ -29,7 +29,6 @@ body {
     width: 100%;
     height: auto;
     font-size: 14px;
-    padding-top: 70px;
     overflow-x: hidden;
     background-color: var(--bgl);
 }
@@ -96,10 +95,11 @@ header {
     right: 0px;
     width: 100%;
     height: 55px;
-    background: var(--bg);
+    background: #2831247c;
     padding: 20px 0px;
     z-index: 100;
-    border-radius: 0px 0px 24px 24px;
+    border-bottom: 1px solid #ffffff1f;
+    backdrop-filter: blur(16px);
 }
 
 .me {
@@ -145,7 +145,7 @@ header > nav {
 header > nav > a {
     float: left;
     font-size: 1.1em;
-    color: #FFFFFF88;
+    color: #ffffffcc;
     text-decoration: none;
     transition: all 0.22s linear;
 }
@@ -160,9 +160,12 @@ header > nav > a:hover {
     width: 80%;
     height: 100vh;
     max-height: 700px;
-    background: var(--bg);
+    background-image: url("../media/images/hero.webp");
+    background-size: cover;
     padding: 0px 10%;
+    padding-top: 80px;
     border-radius: 0px 0px 24px 24px;
+    box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, .4);
 }
 
 .hero > .wrapper {
