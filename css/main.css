@@ -29,7 +29,6 @@ body {
     width: 100%;
     height: auto;
     font-size: 14px;
-    overflow-x: hidden;
     background-color: var(--bgl);
 }
 
@@ -53,7 +52,7 @@ dialog::backdrop {
 a {
     text-decoration: none;
     color: #0086df;
-    transition: all 0.22s ease;
+    transition: all 250ms ease;
 }
 
 a:hover {
@@ -68,7 +67,7 @@ button {
     border: 2px solid #FFF;
     background: transparent;
     cursor: pointer;
-    transition: all 0.22s ease;
+    transition: all 250ms ease;
 }
 
 button:hover {
@@ -90,23 +89,29 @@ button:hover {
 
 header {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    width: 100%;
+    top: 16px;
+    left: 2%;
+    right: 2%;
+    width: 96%;
     height: 55px;
-    background: #2831247c;
+    background: #cdcdcd14;
     padding: 20px 0px;
     z-index: 100;
     border-bottom: 1px solid #ffffff1f;
-    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    backdrop-filter: none;
+    transition: all 250ms ease;
+}
+
+.scrolled {
+    backdrop-filter: contrast(0.35) blur(16px);
 }
 
 .me {
     float: left;
     width: 300px;
     height: auto;
-    margin-left: 10%;
+    margin-left: 8%;
 }
 
 .me > img {
@@ -135,7 +140,7 @@ header {
 header > nav {
     display: flex;
     float: right;
-    margin-right: 10%;
+    margin-right: 8%;
     margin-top: 8px;
     justify-content: right;
     align-items: center;
@@ -279,7 +284,7 @@ h2, h3, h4, h5, h6 {
     float: right;
     width: 45%;
     height: 550px;
-    border-radius: 25px;
+    border-radius: 16px;
     background-color: var(--bg);
     background-image: url(../media/images/pp2.jpg);
     background-size: cover;
@@ -350,7 +355,7 @@ h2, h3, h4, h5, h6 {
     width: 50vh;
     height: auto;
     padding: 8px;
-    border-radius: 10px;
+    border-radius: 16px;
     padding-bottom: 100%;
     flex: none;
     order: 0;
