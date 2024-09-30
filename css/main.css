@@ -104,6 +104,8 @@ header {
 }
 
 .scrolled {
+    top: 0px;
+    border-radius: 0px 0px 16px 16px;
     backdrop-filter: contrast(0.35) blur(16px);
 }
 
