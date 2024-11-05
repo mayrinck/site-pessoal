@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
 
 @font-face {
     font-family: myFirstFont;
@@ -8,16 +8,16 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Afacad Flux", sans-serif;
 }
 
 :root {
-    --default: #7cb518;
-    --hover: #A6E538;
-    --bg: #0c0c0c;
-    --bgl: #FDFDFD;
-    --input: #e5e5e5;
-    font-size: 14px;
+    --default: #42E2B8;
+    --hover: #1cfdc1;
+    --bg: #252422;
+    --bgl: #FCFCFC;
+    --input: #dddddd;
+    font-size: 16px;
 }
 
 html {
@@ -28,7 +28,7 @@ body {
     float: left;
     width: 100%;
     height: auto;
-    font-size: 14px;
+    font-size: 1rem;
     background-color: var(--bgl);
 }
 
@@ -41,22 +41,23 @@ dialog {
     max-width: 600px;
     max-height: 700px;
     border-radius: 20px;
-    background-color: #FFF;
+    background-color: var(--bgl);
     padding: 32px;
 }
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 
 a {
     text-decoration: none;
     color: #0086df;
-    transition: all 250ms ease;
+    transition: all 200ms ease;
 }
 
 a:hover {
-    color: #004e83;
+    color: #2baaff;
 }
 
 button {
@@ -67,7 +68,7 @@ button {
     border: 2px solid #FFF;
     background: transparent;
     cursor: pointer;
-    transition: all 250ms ease;
+    transition: all 200ms ease;
 }
 
 button:hover {
@@ -76,7 +77,7 @@ button:hover {
 }
 
 .button-primary {
-    transition: all 0.22s linear;
+    transition: all 200ms ease;
     background: var(--default);
     color: var(--bg);
     border: none;
@@ -100,12 +101,13 @@ header {
     border-bottom: 1px solid #ffffff1f;
     border-radius: 16px;
     backdrop-filter: none;
-    transition: all 250ms ease;
+    transition: all 200ms ease;
 }
 
 .scrolled {
     top: 0px;
     border-radius: 0px 0px 16px 16px;
+    background-color: #2424244b;
     backdrop-filter: contrast(0.35) blur(16px);
 }
 
@@ -128,15 +130,16 @@ header {
     float: left;
     margin-left: 16px;
     margin-top: 5px;
-    font-size: 1em;
+    font-size: 1rem;
     color: #FFFFFF99;
 }
 
 .me > .name {
     margin-top: 0px;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 700;
     color: #FFFFFF;
+    line-height: 20px;
 }
 
 header > nav {
@@ -152,9 +155,9 @@ header > nav {
 header > nav > a {
     float: left;
     font-size: 1.1em;
-    color: #ffffffcc;
+    color: #FFFFFF;
     text-decoration: none;
-    transition: all 0.22s linear;
+    transition: all 200ms ease;
 }
 
 header > nav > a:hover {
@@ -195,35 +198,10 @@ h1 {
     font-size: 72px;
     text-align: left;
     letter-spacing: 1px;
+    line-height: 72px;
     font-weight: 700;
-    margin-top: 23vh;
+    margin-top: 16vh;
     margin-bottom: 24px;
-}
-
-@keyframes raise {
-    0% {margin-top: 0px;}
-    15% {margin-top: 0px;}
-    20% {margin-top: -40px;}
-    35% {margin-top: -40px;}
-    40% {margin-top: -80px;}
-    55% {margin-top: -80px;}
-    60% {margin-top: -120px;}
-    75% {margin-top: -120px;}
-    80% {margin-top: -160px;}
-    100% {margin-top: -160px;}
-}
-
-@keyframes change-background {
-    0% {background: #000;}
-    15% {background: #000;}
-    20% {background: #000;}
-    35% {background: #000;}
-    40% {background: #000;}
-    55% {background: #000;}
-    60% {background: #000;}
-    75% {background: #000;}
-    80% {background: #000;}
-    100% {background: #000;}
 }
 
 .anim-text {
@@ -296,7 +274,7 @@ h2, h3, h4, h5, h6 {
 .go-to-linkedin {
     color: var(--bg);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.22s linear;
+    transition: all 200ms ease;
 }
 
 .go-to-linkedin:hover {
@@ -309,7 +287,7 @@ h2, h3, h4, h5, h6 {
     width: 24px;
     height: 24px;
     fill: var(--bg);
-    transition: fill 0.22s linear;
+    transition: all 200ms ease;
 }
 
 .go-to-linkedin:hover > svg {
@@ -330,6 +308,7 @@ h2, h3, h4, h5, h6 {
     border: none;
     border-radius: 8px;
     outline: none;
+    margin-bottom: 20px;
 }
 
 .my-cases {
@@ -375,7 +354,7 @@ h2, h3, h4, h5, h6 {
     padding: 24px;
     background: #000;
     border-radius: 10px;
-    transition: all 0.15s ease-out;
+    transition: all 200ms ease;
 }
 
 .my-cases > .flex-section .case:hover > div {
@@ -436,7 +415,7 @@ h2, h3, h4, h5, h6 {
     margin-left: calc(50% - 80px);
     color: var(--bg);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.22s linear;
+    transition: all 200ms ease;
 }
 
 .all-cases:hover {
@@ -514,6 +493,12 @@ article {
     gap: 24px;
 }
 
+article > h1 {
+    font-size: 3rem;
+    color: var(--bg);
+    margin: 0px;
+}
+
 article > p {
     font-size: 1.2rem;
     line-height: 2rem;
@@ -542,7 +527,7 @@ footer > p {
 }
 
 footer > p > a {
-    transition: all 0.22s linear;
+    transition: all 200ms ease;
     text-decoration: none;
     color: var(--bg);
 }
@@ -564,4 +549,26 @@ footer > .socials svg {
     fill: var(--bg);
     width: 24px;
     height: 24px;
+    transition: all 200ms ease;
+}
+
+footer > .socials svg:hover {
+    fill: var(--hover);
+}
+
+#contact-form > .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+#contact-form > .description {
+    font-size: 1.35rem;
+    margin-bottom: 24px;
+}
+
+#contact-form > ul {
+    font-size: 1.35rem;
+    list-style-type: none;
+    margin-left: 12px;
 }
