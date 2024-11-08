@@ -100,7 +100,7 @@ header {
     z-index: 100;
     border-bottom: 1px solid #ffffff1f;
     border-radius: 16px;
-    backdrop-filter: none;
+    backdrop-filter: blur(8px);
     transition: all 200ms ease;
 }
 
@@ -168,9 +168,11 @@ header > nav > a:hover {
     float: left;
     width: 80%;
     height: 100vh;
-    max-height: 700px;
-    background-image: url("../media/images/hero.webp");
+    max-height: 720px;
+    background-image: url("../media/images/hero.png");
+    background-position: bottom center;
     background-size: cover;
+    background-repeat: no-repeat;
     padding: 0px 10%;
     padding-top: 80px;
     border-radius: 0px 0px 24px 24px;
@@ -341,7 +343,7 @@ h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
-.my-cases {
+.my-cases, #blog-wrapper {
     width: 80%;
     height: auto;
     float: left;
@@ -440,19 +442,19 @@ h2, h3, h4, h5, h6 {
 
 .all-cases {
     float: left;
-    width: 160px;
+    width: 200px;
     height: auto;
-    margin-left: calc(50% - 80px);
+    margin-left: calc(50% - 100px);
     color: var(--bg);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     transition: all 200ms ease;
 }
 
 .all-cases:hover {
-    box-shadow: 0px 8px 16px #a6e53865;
+    box-shadow: 0px 8px 16px #11111144;
 }
 
-.overview, .key-learnings {
+.overview, .project-data, .key-learnings {
     width: 80%;
     height: auto;
     padding: 100px 10%;
@@ -485,6 +487,12 @@ aside {
     position: sticky;
     right: 0px;
     top: 0px;
+}
+
+#blog-wrapper .card {
+    width: 300px;
+    height: 350px;
+
 }
 
 main, .article-hero {
@@ -566,7 +574,7 @@ footer > p > a:hover {
     color: #0086df;
 }
 
-footer > .socials {
+.socials {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -575,15 +583,19 @@ footer > .socials {
     gap: 12px;
 }
 
-footer > .socials svg {
+.socials svg {
     fill: var(--bg);
     width: 24px;
     height: 24px;
     transition: all 200ms ease;
 }
 
-footer > .socials svg:hover {
+.socials svg:hover {
     fill: var(--hover);
+}
+
+#contact-form {
+    position: relative;
 }
 
 #contact-form > .title {
@@ -601,4 +613,15 @@ footer > .socials svg:hover {
     font-size: 1.35rem;
     list-style-type: none;
     margin-left: 12px;
+}
+
+#close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    padding: 4px;
+    background: none;
+    border: none;
+    z-index: 4;
+    fill: var(--bg);
 }

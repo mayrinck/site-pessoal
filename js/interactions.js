@@ -13,7 +13,7 @@ return (...args) => {
     };
 };
 
-// Função para verificar o scroll da página
+// Função para verificar o scroll da página e alterar o header caso haja algum
 const checkScroll = () => {
 const { scrollY } = window;  // Usando desestruturação
     if (scrollY > 100) {
@@ -25,24 +25,6 @@ const { scrollY } = window;  // Usando desestruturação
 
 // Escuta o evento de scroll da janela com debounce para otimizar a performance
 window.addEventListener('scroll', debounce(checkScroll));
-
-// Seleciona todos os links âncora da página que começam com '#'
-const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-// Função para realizar o smooth scroll
-const smoothScroll = (event) => {
-  event.preventDefault(); // Previne o comportamento padrão de pular direto para a âncora
-  
-  const targetId = event.currentTarget.getAttribute('href'); // Obtém o ID do destino
-  const targetElement = document.querySelector(body); // Seleciona o elemento alvo
-  
-  if (targetElement) {
-    targetElement.scrollIntoView({
-      behavior: 'smooth', // Faz o scroll suave
-      block: 'start' // Alinha o topo do elemento com o topo da página
-    });
-  }
-};
 
 // Adiciona o evento de clique a cada link âncora
 anchorLinks.forEach(link => {
