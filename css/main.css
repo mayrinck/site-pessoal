@@ -167,13 +167,10 @@ header > nav > a:hover {
 .hero {
     position: relative;
     float: left;
-    width: 80%;
-    height: 680px;
+    width: 90%;
+    height: 700px;
     background: #efefef;
     padding: 0px 5%;
-    margin: 0px 5%;
-    margin-top: 160px;
-    border-radius: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
