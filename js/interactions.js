@@ -5,7 +5,7 @@ const CloseTrigger = document.getElementById("close");
 const header = document.querySelector('header');
 
 // Função debounce para limitar a frequência da função checkScroll
-const debounce = (func, wait = 20) => {
+const debounce = (func, wait = 10) => {
 let timeout;
 return (...args) => {
     clearTimeout(timeout);
@@ -25,11 +25,6 @@ const { scrollY } = window;  // Usando desestruturação
 
 // Escuta o evento de scroll da janela com debounce para otimizar a performance
 window.addEventListener('scroll', debounce(checkScroll));
-
-// Adiciona o evento de clique a cada link âncora
-anchorLinks.forEach(link => {
-  link.addEventListener('click', smoothScroll);
-});
 
 ContactTrigger.addEventListener("click", () => {
     ContactDialog.showModal();
