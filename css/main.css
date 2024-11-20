@@ -12,9 +12,9 @@
 }
 
 :root {
-    --default: #42E2B8;
-    --hover: #1cfdc1;
-    --bg: #161616;
+    --default: #735CDD;
+    --hover: #8b71ff;
+    --bg: #242424;
     --bgl: #FCFCFC;
     --input: #dddddd;
     font-size: 16px;
@@ -79,7 +79,7 @@ button:hover {
 .button-primary {
     transition: all 200ms ease;
     background: var(--default);
-    color: var(--bg);
+    color: var(--bgl);
     border: none;
 }
 
