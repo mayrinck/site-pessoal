@@ -585,6 +585,10 @@ main, .article-hero {
     border-radius: 24px;
 }
 
+main {
+    border-radius: 0px;
+}
+
 .article-hero {
     margin-top: 165px;
     height: 400px;
@@ -605,13 +609,33 @@ main, .article-hero {
     color: #FFF;
 }
 
-article {
+.article-bind {
     position: relative;
+    display: block;
+}
+
+article {
     width: 60%;
-    margin: 28px 20%;
+    margin: 28px 0px;
+    margin-left: calc(20% - 220px);
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+aside {
+    width: 220px;
+    height: auto;
+    position: sticky;
+    left: 0%;
+    top: 120px;
+    background: #FFF;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    border-radius: 16px;
 }
 
 article > h1 {
