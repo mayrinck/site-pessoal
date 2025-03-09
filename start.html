@@ -27,36 +27,28 @@
 </head>
 <body>
     <header>
-        <a tabindex="1" href="index.html">
-            <div class="me">
-                <img src="media\images\pp2.jpg">
-                <p class="greeting">Oi, eu sou</p>
-                <p class="name">Renan Mayrinck</p>
-            </div>
-        </a>
-
         <nav>
             <a tabindex="2" href="cases.html">Portfolio</a>
-            <a tabindex="3" href="index.html#about">Sobre</a>
-            <a tabindex="4" href="cursos.html">Cursos e Mentorias</a>
-            <a tabindex="5" href="articles.html">Artigos</a>
-            <button tabindex="6" class="button-primary" id="contact">Entre em contato</button>
+            <a tabindex="3" href="cursos.html">Cursos e Mentorias</a>
+            <a tabindex="4" href="articles.html">Artigos</a>
+            <button tabindex="5" class="button-primary" id="contact">Entre em contato</button>
         </nav>
     </header>
 
     <section class="hero">
 
-        <h1>Oi, eu sou <br>Renan Mayrinck</h1>
-        
-        <p>Um UX & UI Designer do Rio de Janeiro, <wbr>conectando experiências humanas a perfeição digital.</p>
+        <div class="decoration">
+            <span>Oi, eu sou</span>
+            <h1 id="hero-title">Renan Mayrinck</h1>
+        </div>
 
         <div class="wrapper">
             <a href="cases.html">
-                <button>Meus trabalhos</button>
+                <button>Portfolio</button>
             </a>
 
             <a href="#about">
-                <button>Carreira</button>
+                <button>Me conheça</button>
             </a>
         </div>
     </section>
@@ -68,20 +60,21 @@
         
         <div class="left">
             <h4>
-                Mais de 10 anos de experiência!
+                Um UX & UI Designer do Rio de Janeiro, <wbr>conectando experiências humanas a perfeição digital.
             </h4>
 
             <p class="description">
-                Sou um especialista em design de experiência do usuário (UX/UI) e meu foco está em 
+                Mais de uma decada, criando experiência memoráveis. Meu foco está em 
                 proporcionar experiências excepcionais e humanamente significativas. Com experiência em 
                 diversas áreas, incluindo design gráfico, branding, marketing, web design e edição de vídeos, 
                 bem como habilidades em game design e modelagem 3D, busco constantemente inovar e 
                 explorar caminhos fora da curva nos projetos.
                 <br><br>
-                Além de atuar como contratado ou freelancer, compartilho minha paixão e conhecimento 
-                por meio de workshops, palestras e mentorias personalizadas para outros profissionais 
-                da área. Você também pode encontrar valiosos insights e tutoriais em 
-                <a href="https://www.youtube.com/renanmayrinckdesign">meu canal no YouTube</a>.
+                Além da atuação como contratado ou freelancer para empresas e clientes independentes, compartilho 
+                conhecimentos por meio de workshops, palestras e mentorias personalizadas para outros profissionais 
+                da área. Você também pode encontrar meus insights e tutoriais sobre design no 
+                <a href="https://www.youtube.com/renanmayrinckdesign">meu canal no YouTube</a> ou 
+                <a href="https://www.superprof.com.br/aprenda-fundamentos-design-com-figma-torne-vetor-melhorias-experiencia-produtos-servicos.html">me contratar como seu mentor</a>.
             </p>
 
             <a href="https://www.linkedin.com/in/renan-mayrinck/">
@@ -93,68 +86,14 @@
         </div>
     </section>
 
-    <section class="more-about-me">
-        <div class="big-frame">
-            <h4>Um pouco mais sobre mim</h4>
-
-            <p class="description">
-                Um pouco mais do que tenho feito na minha carreira como designer, mentor e criador.
-            </p>
-        </div>
-
-        <div class="small-frame">
-            <h5>Experiências</h5>
-
-            <div class="card">
-                <p class="title">
-                    Penpot contributor (Desde 2023)
-                </p>
-
-                <p>Tenho contribuido com templates, tutoriais e suporte para usuários do Penpot.</p>
-            </div>
-
-            <div class="card">
-                <p class="title">
-                    Inkscape contributor (2023)
-                </p>
-
-                <p>Contribui com algumas ideias e correções no site da ferramenta.</p>
-            </div>
-        </div>
-        
-        <div class="small-frame">
-            <h5>Cursos e mentorias</h5>
-
-            <a rel="noreferrer" href="https://www.superprof.com.br/aprenda-fundamentos-design-com-figma-torne-vetor-melhorias-experiencia-produtos-servicos.html">
-                <div class="card">
-                    <p class="title">
-                        Mentoria para designers
-                    </p>
-
-                    <p>Mentoria onde ajudo alunos nacionais e internacionais a melhorarem suas habilidades em UI e UX Design através da minha experiência.</p>
-                </div>
-            </a>
-            
-            <a rel="doreferrer" href="https://renanmayrinck.gumroad.com/l/fundamentos-penpot">
-                <div class="card">
-                    <p class="title">
-                        Curso: Fundamentos do Penpot
-                    </p>
-
-                    <p>Um excelente curso 100% em português sobre a ferramenta onde você paga o quanto quiser para assistir (e tem certificado 👀).</p>
-                </div>
-            </a>
-        </div>
-    </section>
-
     <section id="cases" class="my-cases">
-        <h2>Meus trabalhos</h2>
+        <h2>Cases</h2>
 
         <div class="flex-section">
             <a href="https://www.behance.net/gallery/87484457/Inkscape-Redesign-UI-UX" target="_blank">
                 <div class="case picdoc">
                     <div>
-                        <span>Picdoc - Plataforma de Telemedicina</span>
+                        <span>Picdoc - Plataforma de telemedicina</span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Veja o case</title><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
                     </div>
                 </div>

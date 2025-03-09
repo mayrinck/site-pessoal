@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap');
 
 @font-face {
-    font-family: myFirstFont;
-    src: url(../media/fonts/coolvetica.woff);
+    font-family: "Babel Sans";
+    src: url(../media/fonts/BabelSans.woff);
 }
 
 * {
     margin: 0;
     padding: 0;
-    font-family: "Afacad Flux", sans-serif;
+    font-family: "Babel Sans", serif;
 }
 
 :root {
-    --default: #735CDD;
-    --hover: #8b71ff;
-    --bg: #242424;
-    --bgl: #FCFCFC;
-    --input: #dddddd;
+    --default: #9d35e2;
+    --hover: #A052D5;
+    --bg: #000000;
+    --bgl: #ffffff;
+    --input: #333b3c;
     font-size: 16px;
 }
 
@@ -29,7 +29,7 @@ body {
     width: 100%;
     height: auto;
     font-size: 1rem;
-    background-color: var(--bgl);
+    background-color: var(--bg);
 }
 
 dialog {
@@ -52,12 +52,12 @@ dialog::backdrop {
 
 a {
     text-decoration: none;
-    color: #0086df;
-    transition: all 200ms ease;
+    color: #88E2DE;
+    transition: all 165ms ease;
 }
 
 a:hover {
-    color: #2baaff;
+    color: #a8fffb;
 }
 
 button {
@@ -68,7 +68,7 @@ button {
     border: 2px solid #FFF;
     background: transparent;
     cursor: pointer;
-    transition: all 200ms ease;
+    transition: all 165ms ease;
 }
 
 button:hover {
@@ -77,9 +77,9 @@ button:hover {
 }
 
 .button-primary {
-    transition: all 200ms ease;
+    transition: all 165ms ease;
     background: var(--default);
-    color: var(--bgl);
+    color: var(--bg);
     border: none;
 }
 
@@ -95,12 +95,17 @@ header {
     right: 16px;
     width: calc(100% - 32px);
     height: auto;
-    background: #FFF;
+    background: transparent;
     padding: 20px calc(10% - 16px);
     z-index: 100;
     border-radius: 16px;
-    transition: all 200ms ease;
+    transition: all 165ms ease;
     box-sizing: border-box;
+    backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .scrolled {
@@ -111,8 +116,9 @@ header {
     padding: 20px 10%;
     color: var(--bg);
     border-radius: 0px;
-    background-color: #FFF;
-    box-shadow: 0px 8px 16px #3d3d3d44;
+    background: #000000AA;
+    backdrop-filter: blur(16px);
+    box-shadow: 0px 8px 16px #00000044;
 }
 
 .me {
@@ -132,34 +138,32 @@ header {
 .me > .name {
     float: left;
     margin-left: 16px;
-    margin-top: 5px;
+    margin-top: 4px;
     font-size: 1rem;
-    color: var(--bg);
+    color: var(--bgl);
 }
 
 .me > .name {
     margin-top: 0px;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--bg);
-    line-height: 20px;
+    color: var(--bgl);
+    line-height: 28px;
 }
 
 header > nav {
     display: flex;
-    float: right;
-    margin-top: 8px;
     justify-content: right;
     align-items: center;
-    gap: 44px;
+    gap: 40px;
 }
 
 header > nav > a {
     float: left;
     font-size: 1.1em;
-    color: var(--bg);
+    color: var(--bgl);
     text-decoration: none;
-    transition: all 200ms ease;
+    transition: all 165ms ease;
 }
 
 header > nav > a:hover {
@@ -184,10 +188,13 @@ header > nav > a:hover {
 .hero {
     position: relative;
     float: left;
-    width: 90%;
-    height: 700px;
-    background: #efefef;
-    padding: 0px 5%;
+    width: 80%;
+    height: 100vh;
+    min-height: 640px;
+    background-color: var(--bg);
+    background-image: url(../media/images/fundo.jpeg);
+    background-size: cover;
+    padding: 0px 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -197,31 +204,58 @@ header > nav > a:hover {
 .hero > .wrapper {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    justify-content: center;
+    gap: 24px;
 }
 
 .hero > p {
+    color: var(--bgl);
     font-size: 1.5rem;
 }
 
-.hero > .wrapper button {
-    background: var(--bg);
-    color: #FFF;
-}
-
 h1 {
-    color: var(--bg);
-    font-size: 5rem;
+    color: var(--bgl);
+    font-size: 7rem;
     text-align: left;
     letter-spacing: 1px;
     line-height: 72px;
     font-weight: 700;
 }
 
+.decoration {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    align-self: center;
+}
+
+#hero-title {
+    font-family: "Rock Salt", "Anybody";
+    font-size: 10rem;
+    line-height: 8.6rem;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+}
+
+.decoration > span {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    opacity: 0.65;
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
 h2, h3, h4, h5, h6 {
     font-size: 3.25em;
     letter-spacing: 0.025em;
-    color: var(--bg);
+    color: var(--bgl);
     font-weight: 600;
 }
 
@@ -249,7 +283,7 @@ h2, h3, h4, h5, h6 {
     line-height: 26px;
     width: 90%;
     height: auto;
-    color: var(--bg);
+    color: var(--bgl);
     margin: 32px 0px;
     margin-top: 20px;
 }
@@ -266,9 +300,9 @@ h2, h3, h4, h5, h6 {
 }
 
 .go-to-linkedin {
-    color: var(--bg);
+    color: var(--bgl);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    transition: all 200ms ease;
+    transition: all 165ms ease;
 }
 
 .go-to-linkedin:hover {
@@ -280,8 +314,8 @@ h2, h3, h4, h5, h6 {
     float: left;
     width: 24px;
     height: 24px;
-    fill: var(--bg);
-    transition: all 200ms ease;
+    fill: var(--bgl);
+    transition: all 165ms ease;
 }
 
 .go-to-linkedin:hover > svg {
@@ -292,57 +326,6 @@ h2, h3, h4, h5, h6 {
     float: left;
     margin-left: 12px;
     margin-top: 2px;
-}
-
-.more-about-me {
-    padding: 40px 10%;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.more-about-me > .big-frame {
-    width: 100%;
-    height: auto;
-}
-
-.more-about-me > .big-frame > .description {
-    font-size: 1.35rem;
-    opacity: 0.8;
-}
-
-.more-about-me > .small-frame {
-    width: calc(50% - 36px);
-    min-height: 290px;
-    height: auto;
-    padding: 24px;
-    border-radius: 24px;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    transition: all 200ms ease;
-    box-sizing: border-box;
-}
-
-.more-about-me > .small-frame > h5 {
-    font-size: 2rem;
-}
-
-.more-about-me > .small-frame .card {
-    width: 100%;
-    height: auto;
-    padding: 12px 0px;
-    border-bottom: 1px solid var(--bg);
-}
-
-.more-about-me > .small-frame > .card:last-child,
-.more-about-me > .small-frame > a:last-child > .card {
-    border-bottom: none;
-}
-
-.more-about-me > .small-frame .card > .title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--bg);
 }
 
 #search {
@@ -416,7 +399,7 @@ h2, h3, h4, h5, h6 {
     width: 40%;
     color: var(--bg);
     font-size: 1rem;
-    transition: all 200ms ease;
+    transition: all 165ms ease;
 }
 
 #blog-wrapper .card > .date {
@@ -450,7 +433,7 @@ h2, h3, h4, h5, h6 {
     padding: 24px;
     background: #000;
     border-radius: 10px;
-    transition: all 200ms ease;
+    transition: all 165ms ease;
 }
 
 .my-cases > .flex-section .case:hover > div {
@@ -511,7 +494,7 @@ h2, h3, h4, h5, h6 {
     margin-left: calc(50% - 100px);
     color: var(--bg);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    transition: all 200ms ease;
+    transition: all 165ms ease;
 }
 
 .all-cases:hover {
@@ -673,7 +656,7 @@ footer > p {
 }
 
 footer > p > a {
-    transition: all 200ms ease;
+    transition: all 165ms ease;
     text-decoration: none;
     color: var(--bg);
 }
@@ -695,7 +678,7 @@ footer > p > a:hover {
     fill: var(--bg);
     width: 24px;
     height: 24px;
-    transition: all 200ms ease;
+    transition: all 165ms ease;
 }
 
 .socials svg:hover {
