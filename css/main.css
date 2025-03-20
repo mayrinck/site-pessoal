@@ -773,3 +773,35 @@ footer > p > a:hover {
     z-index: 4;
     fill: var(--bg);
 }
+
+
+@media screen and (max-width: 1152px) {
+    .hero {
+        /* background-image: url(../media/images/fundo-vertical.jpeg); */
+        background-position: center;
+        background-size: cover;
+    }
+
+    #hero-title {
+        text-align: left;
+        font-size: 3rem;
+        line-height: 4.4rem;
+    }
+
+    .about-me, .more-about-me {
+        flex-direction: column;
+    }
+
+    .about-me > .left,
+    .about-me > .right {
+        width: 100%;
+    }
+
+    .about-me > .right {
+        height: 300px;
+    }
+
+    .my-cases > .flex-section, #blog-wrapper {
+        flex-direction: column;
+    }
+}
