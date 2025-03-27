@@ -39,7 +39,6 @@ dialog {
     left: 0;
     right: 0;
     margin: auto;
-    margin-top: 20vh;
     max-width: 600px;
     max-height: 700px;
     border-radius: 20px;
@@ -54,12 +53,12 @@ dialog::backdrop {
 
 a {
     text-decoration: none;
-    color: #88E2DE;
+    color: #2e8ee7;
     transition: var(--transition);
 }
 
 a:hover {
-    color: #a8fffb;
+    color: #77bdff;
 }
 
 a > strong {
@@ -523,6 +522,12 @@ h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
+.penpot {
+    background-image: url(../media/images/projects/penpot.webp);
+    background-position: center;
+    background-size: cover;
+}
+
 .globo1 {
     background-image: url(../media/images/projects/globo3.png);
     background-position: center;
@@ -723,6 +728,7 @@ article > iframe {
     padding: 36px;
     background-color: var(--default);
     background-image: url(../media/images/bg2.png);
+    background-size: cover;
     color: #FFF;
     border-radius: var(--radius);
     display: flex;
@@ -730,8 +736,13 @@ article > iframe {
     gap: 24px;
 }
 
+.cta-title {
+    color: var(--hover);
+}
+
 .final-cta > p {
-    font-size: 1.35rem;
+    width: 50%;
+    font-size: 1.2rem;
 }
 
 footer {
