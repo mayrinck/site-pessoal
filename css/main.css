@@ -17,6 +17,7 @@
     --bg: #000000;
     --bgl: #ffffff;
     --input: #333b3c;
+    --radius: 24px;
     --transition: all 165ms ease;
     font-size: 16px;
 }
@@ -714,6 +715,24 @@ article > iframe {
     height: 400px;
 }
 
+.final-cta {
+    box-sizing: border-box;
+    width: 80%;
+    height: auto;
+    margin: 48px 10%;
+    padding: 36px;
+    background-color: var(--default);
+    background-image: url(../media/images/bg2.png);
+    color: #FFF;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.final-cta > p {
+    font-size: 1.35rem;
+}
 
 footer {
     display: flex;
