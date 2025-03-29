@@ -33,3 +33,19 @@ ContactTrigger.addEventListener("click", () => {
 CloseTrigger.addEventListener("click", () => {
     ContactDialog.close();
 });
+
+//Nas páginas de artigo, verifica se o usuário clicou no botão de compartilhar e então abre o diálogo nativo de compartilhamento da plataforma (se houver)
+const url = encodeURIComponent(window.location.href);
+const title = encodeURIComponent(document.title);
+const shareLink = window.location.href;
+
+const shareData = {
+    title: title,
+    url: url,
+};
+
+const shareTrigger = document.querySelector("#share");
+
+shareTrigger.addEventListener("click", async () => {
+    navigator.share(shareData);
+});

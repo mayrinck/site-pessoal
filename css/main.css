@@ -332,19 +332,6 @@ h2, h3, h4, h5, h6 {
     margin-top: 2px;
 }
 
-.contents {
-    position: relative;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0px 10%;
-}
-
-.contents > h3 {
-    width: 100%;
-}
-
 .news {
     box-sizing: border-box;
     width: 100%;
@@ -397,7 +384,7 @@ h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
-.my-cases, #blog-wrapper {
+.my-cases {
     width: 80%;
     height: auto;
     float: left;
@@ -433,7 +420,6 @@ h2, h3, h4, h5, h6 {
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
-    margin: 32px 0px;
 }
 
 #blog-wrapper a {
@@ -450,7 +436,8 @@ h2, h3, h4, h5, h6 {
     width: 330px;
     height: 420px;
     box-sizing: border-box;
-    background: #FFF;
+    background: #121212;
+    color: var(--bgl);
     border-radius: 24px;
     padding: 16px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -467,12 +454,13 @@ h2, h3, h4, h5, h6 {
     width: 100%;
     font-size: 1.2rem;
     font-weight: 700;
+    color: inherit;
 }
 
 #blog-wrapper .card > .date,
 #blog-wrapper .card > .snippet {
     width: 40%;
-    color: var(--bg);
+    color: inherit;
     font-size: 1rem;
     transition: var(--transition);
 }
@@ -635,30 +623,20 @@ h2, h3, h4, h5, h6 {
 
 }
 
-main, .article-hero {
+.article-hero {
+    box-sizing: border-box;
+    width: 80%;
+    height: 400px;
+    margin: 0px 10%;
+    margin-top: 165px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    gap: 12px;
-    position: relative;
-    width: 80%;
-    height: auto;
-    margin: 80px 10%;
-    padding: 0px 60px;
-    box-sizing: border-box;
-    margin-bottom: 0px;
+    gap: 0px;
+    padding: 48px;
     border-radius: 24px;
-}
-
-main {
-    border-radius: 0px;
-}
-
-.article-hero {
-    margin-top: 165px;
-    height: 400px;
-    background-color: var(--bg);
+    background-color: #121212;
+    background-image: url(../media/images/bg2.png);
     background-size: cover;
     background-position: center;
 }
@@ -670,32 +648,39 @@ main {
     color: var(--bgl);
 }
 
-.article-hero > .description {
-    margin-top: 16px;
-    color: #FFF;
+.article-hero > time {
+    color: var(--bgl);
+    opacity: 0.65;
 }
 
-.article-bind {
-    position: relative;
-    display: block;
+main {
+    width: 80%;
+    margin: 64px 10%;
+    padding: 0px;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 32px;
 }
 
 article {
-    width: 60%;
-    margin: 28px 0px;
-    margin-left: calc(20% - 220px);
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    flex-grow: 1;
 }
 
 aside {
-    width: 220px;
+    width: 280px;
     height: auto;
     position: sticky;
     left: 0%;
     top: 120px;
-    background: #FFF;
+    color: var(--bgl);
+    background: #121212;
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -704,20 +689,59 @@ aside {
     border-radius: 16px;
 }
 
-article > h1 {
-    font-size: 3rem;
-    color: var(--bgl);
-    margin: 0px;
+aside > .title {
+    font-size: 2rem;
+}
+
+aside > ul {
+    list-style-type: none;
+    line-height: 1.55rem;
 }
 
 article > p {
-    font-size: 1.2rem;
+    color: var(--bgl);
+    font-size: 1.35rem;
     line-height: 2rem;
+}
+
+article > img {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
 }
 
 article > iframe {
     width: 100%;
     height: 400px;
+}
+
+.contents {
+    box-sizing: border-box;
+    width: 80%;
+    height: auto;
+    margin: 48px 10%;
+    padding: 36px;
+    gap: 32px;
+    color: #FFF;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contents h3 {
+    width: 100%;
+    color: #4dd9a7;
+}
+
+#articles {
+    margin-left: calc(50% - 84px);
+}
+
+.yt:hover {
+    background: red;
+    border-color: red;
+    color: var(--bgl);
 }
 
 .final-cta {
@@ -733,7 +757,9 @@ article > iframe {
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
 }
 
 .cta-title {
