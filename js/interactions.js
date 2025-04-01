@@ -47,5 +47,5 @@ const shareData = {
 const shareTrigger = document.querySelector("#share");
 
 shareTrigger.addEventListener("click", async () => {
-    navigator.share(shareData);
+    navigator.share(shareLink);
 });
