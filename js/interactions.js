@@ -41,11 +41,12 @@ const shareLink = window.location.href;
 
 const shareData = {
     title: title,
+    text: document.querySelector("h1"),
     url: url,
 };
 
 const shareTrigger = document.querySelector("#share");
 
 shareTrigger.addEventListener("click", async () => {
-    navigator.share(shareLink);
+    navigator.share(shareData);
 });
