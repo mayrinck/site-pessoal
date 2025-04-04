@@ -37,12 +37,11 @@ CloseTrigger.addEventListener("click", () => {
 //Nas páginas de artigo, verifica se o usuário clicou no botão de compartilhar e então abre o diálogo nativo de compartilhamento da plataforma (se houver)
 const url = encodeURIComponent(window.location.href);
 const title = encodeURIComponent(document.title);
-const shareLink = window.location.href;
+const shareLink = url.substring(url.lastIndexOf('/')+1);
 
 const shareData = {
     title: title,
-    text: document.querySelector("h1"),
-    url: url,
+    url: shareLink,
 };
 
 const shareTrigger = document.querySelector("#share");
