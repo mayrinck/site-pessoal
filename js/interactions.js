@@ -35,7 +35,7 @@ CloseTrigger.addEventListener("click", () => {
 });
 
 //Nas páginas de artigo, verifica se o usuário clicou no botão de compartilhar e então abre o diálogo nativo de compartilhamento da plataforma (se houver)
-const linkAtual = window.location.href;
+const urk = window.location.href;
 const title = encodeURIComponent(document.title);
 const shareLink = url.substring(url.lastIndexOf('/')+1);
 
@@ -51,7 +51,7 @@ shareTrigger.addEventListener("click", async () => {
 });
 
 document.getElementById('copy').addEventListener('click', () => {
-    navigator.clipboard.writeText(linkAtual)
+    navigator.clipboard.writeText(url)
     .then(() => {
         alert('✅ Link copiado para a área de transferência!');
     })
