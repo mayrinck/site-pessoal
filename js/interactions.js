@@ -50,13 +50,23 @@ shareTrigger.addEventListener("click", async () => {
     navigator.share(shareData);
 });
 
-document.getElementById('copy').addEventListener('click', () => {
+const botao = document.getElementById('copy');
+
+botao.addEventListener('click', () => {
     navigator.clipboard.writeText(url)
     .then(() => {
-        console.log('✅ Link copiado para a área de transferência!');
+        // Feedback visual
+        const textoOriginal = botao.innerText;
+        botao.innerText = '✅ Copiado!';
+        botao.classList.add('copiado');
+
+        setTimeout(() => {
+        botao.innerText = textoOriginal;
+        botao.classList.remove('copiado');
+        }, 750);
     })
     .catch(err => {
         console.error('Erro ao copiar o link:', err);
-        console.log('❌ Falha ao copiar o link. Verifique as permissões do navegador.');
+        alert('❌ Não foi possível copiar o link.');
     });
 });

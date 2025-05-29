@@ -1,8 +1,8 @@
 // Lista de elementos como strings HTML
     const elementos = [
-      '<a class="entry" title="Clique para ler o artigo completo" href="artigos/whiteboarding-no-penpot.html"><div class="card"><div class="image whiteboard"></div><span class="title">Como fazer Whiteboarding no Penpot</span><p class="date">escrito em 15/06/2024</p><p class="snippet">Ler artigo</p></div></a>',
-      '<a class="entry" title="Clique para ler o artigo completo" href="artigos/alternativas-adobe-gratuitas.html"><div class="card"><div class="image placeholder"></div><span class="title">Alternativas gratuitas para os programas da Adobe!</span><p class="date">escrito em 08/04/2025</p><p class="snippet">Ler artigo</p></div></a>',
-      '<a class="entry" title="Clique para ler o artigo completo" href="artigos/ocio-criativo.html"><div class="card"><div class="image ocio"></div><span class="title">Sobre o Ocio Criativo: Você está realmente descansando?</span><p class="date">escrito em 08/04/2025</p><p class="snippet">Ler artigo</p></div></a>',
+      '<a class="entry" title="Clique para ler o artigo completo" href="../artigos/whiteboarding-no-penpot.html"><div class="card"><div class="image whiteboard"></div><span class="title">Como fazer Whiteboarding no Penpot</span><p class="date">escrito em 15/06/2024</p><p class="snippet">Ler artigo</p></div></a>',
+      '<a class="entry" title="Clique para ler o artigo completo" href="../artigos/alternativas-adobe-gratuitas.html"><div class="card"><div class="image placeholder"></div><span class="title">Alternativas gratuitas para os programas da Adobe!</span><p class="date">escrito em 08/04/2025</p><p class="snippet">Ler artigo</p></div></a>',
+      '<a class="entry" title="Clique para ler o artigo completo" href="../artigos/ocio-criativo.html"><div class="card"><div class="image ocio"></div><span class="title">Sobre o Ocio Criativo: Você está realmente descansando?</span><p class="date">escrito em 08/04/2025</p><p class="snippet">Ler artigo</p></div></a>',
       '<div class="item">🍓 Morango</div>',
       '<div class="item">🍍 Abacaxi</div>',
       '<div class="item">🥝 Kiwi</div>',

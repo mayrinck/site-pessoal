@@ -85,6 +85,10 @@ button:hover {
     background: #FFF;
 }
 
+.pop:active { /* Faz os botões aumentarem levemente quando clicados */
+    transform: scale(1.10);
+}
+
 .button-primary {
     transition: var(--transition);
     background: var(--default);
@@ -720,7 +724,8 @@ aside {
 }
 
 aside > .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 aside > ul {
@@ -731,7 +736,8 @@ aside > ul {
 article > p {
     color: var(--bgl);
     font-size: 1.35rem;
-    line-height: 2rem;
+    line-height: 150%;
+    scroll-margin-top: 200px;
 }
 
 article > img {
@@ -809,6 +815,13 @@ article > iframe {
     justify-content: center;
     align-items: center;
     gap: var(--gap);
+}
+
+#copy.copiado, #copy:hover.copiado {
+    background-color: #62df7f !important;
+    color: #FFF;
+    border: none;
+    transform: scale(1.15);
 }
 
 footer {
