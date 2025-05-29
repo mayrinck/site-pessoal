@@ -459,6 +459,27 @@ h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
+/* imagens de fundo pros cards do blog */
+.whiteboard {
+    background-image: url("../media/images/blog/UWK.webp");
+}
+
+.ocio {
+    background-image: url("../media/images/blog/ocio.webp");
+}
+
+.placeholder {
+    background-image: url("../media/images/blog/uwk-title.webp");
+}
+
+.adobe {
+    background-image: url("../media/images/blog/uwk-title.webp");
+}
+
+.penpot {
+    background-image: url("../media/images/blog/uwk-title.webp");
+}
+
 #blog-wrapper .card > .title {
     width: 100%;
     font-size: 1.2rem;
