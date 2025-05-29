@@ -36,7 +36,7 @@ CloseTrigger.addEventListener("click", () => {
 
 //Nas páginas de artigo, verifica se o usuário clicou no botão de compartilhar e então abre o diálogo nativo de compartilhamento da plataforma (se houver)
 const url = window.location.href;
-const title = encodeURIComponent(document.title);
+const title = document.querySelector("h1").innerHTML;
 const shareLink = url.substring(url.lastIndexOf('/')+1);
 
 const shareData = {
@@ -53,10 +53,10 @@ shareTrigger.addEventListener("click", async () => {
 document.getElementById('copy').addEventListener('click', () => {
     navigator.clipboard.writeText(url)
     .then(() => {
-        alert('✅ Link copiado para a área de transferência!');
+        console.log('✅ Link copiado para a área de transferência!');
     })
     .catch(err => {
         console.error('Erro ao copiar o link:', err);
-        alert('❌ Falha ao copiar o link. Verifique as permissões do navegador.');
+        console.log('❌ Falha ao copiar o link. Verifique as permissões do navegador.');
     });
 });
