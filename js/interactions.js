@@ -35,7 +35,7 @@ CloseTrigger.addEventListener("click", () => {
 });
 
 //Nas páginas de artigo, verifica se o usuário clicou no botão de compartilhar e então abre o diálogo nativo de compartilhamento da plataforma (se houver)
-const urk = window.location.href;
+const url = window.location.href;
 const title = encodeURIComponent(document.title);
 const shareLink = url.substring(url.lastIndexOf('/')+1);
 
