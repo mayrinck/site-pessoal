@@ -970,7 +970,9 @@ footer > p > a:hover {
 }
 
 @media screen and (max-width: 960px) {
-    .article-hero {
+    .article-hero, 
+    .final-cta, 
+    .final-cta.home {
         width: 90%;
         margin-left: 5%;
         margin-right: 5%;
