@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown Article Studio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #1e1e1e;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .tabs {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .tabs button {
+      margin: 0 5px;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #555;
+      color: white;
+    }
+
+    .tabs button.active {
+      background: #007bff;
+    }
+
+    .filename-input {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filename-input input {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      width: 300px;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #333;
+      margin: 20px 0;
+    }
+
+    .toolbar {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .toolbar button {
+      margin: 5px 3px;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: white;
+    }
+
+    .toolbar button:hover {
+      background: #0056b3;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 10px;
+      font-family: inherit;
+      font-size: 16px;
+      line-height: 1.5;
+      resize: vertical;
+      border-radius: 5px;
+      border: 1px solid #444;
+      background: #2b2b2b;
+      color: #f1f1f1;
+    }
+
+    /* NOVO: grid perfeito no modo lado a lado */
+    #modo-lado .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .preview {
+      border-left: 1px solid #444;
+      padding: 10px;
+      background: #1a1a1a;
+      border-radius: 5px;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .success {
+      color: #4caf50;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Markdown Article Studio</h1>
+
+  <div class="tabs">
+    <button onclick="trocarModo('lado')" class="active" id="btn-lado">Modo Lado a Lado</button>
+    <button onclick="trocarModo('aba')" id="btn-aba">Modo por Abas</button>
+    <button onclick="trocarModo('vertical')" id="btn-vertical">Modo Vertical</button>
+  </div>
+
+  <div class="filename-input">
+    <input type="text" id="nomeArquivo" placeholder="Nome do arquivo (sem extensão)">
+  </div>
+
+  <hr>
+
+  <div class="toolbar">
+    <button onclick="inserirMarkdown('# ', '')">Título</button>
+    <button onclick="inserirMarkdown('**', '**')"><b>Negrito</b></button>
+    <button onclick="inserirMarkdown('*', '*')"><i>Itálico</i></button>
+    <button onclick="inserirMarkdown('> ', '')">Citação</button>
+    <button onclick="inserirMarkdown('- ', '')">Lista</button>
+    <button onclick="inserirMarkdown('`', '`')">Código</button>
+    <button onclick="inserirMarkdown('![alt](url)', '')">Imagem</button>
+    <button onclick="inserirMarkdown('[texto](url)', '')">Link</button>
+    <button onclick="inserirTabela()">Tabela</button>
+  </div>
+
+  <!-- MODO LADO A LADO -->
+  <div id="modo-lado">
+    <div class="content-grid">
+      <div class="editor">
+        <h2>Editor:</h2>
+        <textarea id="inputText" oninput="atualizarPreview()" placeholder="Digite seu artigo aqui usando Markdown..."></textarea>
+      </div>
+
+      <div class="preview">
+        <h2>Pré-visualização:</h2>
+        <div id="previewArea"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODO ABAS -->
+  <div id="modo-aba" class="hidden">
+    <div class="tabs">
+      <button onclick="mostrarAba('editor')" id="aba-editor" class="active">Editor</button>
+      <button onclick="mostrarAba('preview')" id="aba-preview">Pré-visualização</button>
+    </div>
+
+    <div id="editor-aba">
+      <textarea id="inputText2" oninput="sincronizarTexto()"></textarea>
+    </div>
+
+    <div id="preview-aba" class="hidden">
+      <div class="preview" id="previewArea2"></div>
+    </div>
+  </div>
+
+  <!-- MODO VERTICAL -->
+  <div id="modo-vertical" class="hidden">
+    <div class="editor" style="width: 100%;">
+      <h2>Editor:</h2>
+      <textarea id="inputText3" oninput="sincronizarTexto()"></textarea>
+    </div>
+
+    <div class="preview" style="width: 100%; margin-top: 20px;">
+      <h2>Pré-visualização:</h2>
+      <div id="previewArea3"></div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button onclick="gerarArquivo()" style="background: #28a745;">Baixar Artigo</button>
+    <div id="mensagem" class="success"></div>
+  </div>
+</div>
+
+<script src="libraries/marked.min.js"></script>
+
+<script>
+  function inserirMarkdown(prefixo, sufixo) {
+    const textarea = document.querySelector("#inputText");
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const textoSelecionado = textarea.value.substring(start, end) || "texto";
+    let novoTexto;
+    if (prefixo.includes("url") || prefixo.includes("alt")) {
+      novoTexto = prefixo;
+    } else {
+      novoTexto = prefixo + textoSelecionado + sufixo;
+    }
+    textarea.value = textarea.value.substring(0, start) + novoTexto + textarea.value.substring(end);
+    textarea.focus();
+    atualizarPreview();
+    sincronizarTexto();
+  }
+
+  function inserirTabela() {
+    const tabelaMarkdown = `| Cabeçalho 1 | Cabeçalho 2 | Cabeçalho 3 |\n| ----------- | ----------- | ----------- |\n| Dado 1 | Dado 2 | Dado 3 |\n`;
+    document.querySelector("#inputText").value += '\n' + tabelaMarkdown;
+    atualizarPreview();
+    sincronizarTexto();
+  }
+
+  function atualizarPreview() {
+    const markdown = document.querySelector("#inputText").value;
+    const htmlConvertido = marked.parse(markdown);
+    document.querySelector('#previewArea').innerHTML = htmlConvertido;
+  }
+
+  function sincronizarTexto() {
+    const texto = document.querySelector("#inputText").value;
+    document.querySelector("#inputText2").value = texto;
+    document.querySelector("#inputText3").value = texto;
+    document.querySelector('#previewArea2').innerHTML = marked.parse(texto);
+    document.querySelector('#previewArea3').innerHTML = marked.parse(texto);
+  }
+
+  function gerarArquivo() {
+    const markdown = document.querySelector("#inputText").value;
+    const htmlConvertido = marked.parse(markdown);
+    const nomeArquivo = document.getElementById("nomeArquivo").value.trim() || "artigo";
+    const conteudoHTML = `<article>\n${htmlConvertido}\n</article>`;
+    const blob = new Blob([conteudoHTML], { type: "text/html" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = nomeArquivo + ".html";
+    link.click();
+
+    document.getElementById('mensagem').innerText = "Arquivo gerado com sucesso!";
+    setTimeout(() => { document.getElementById('mensagem').innerText = ""; }, 3000);
+  }
+
+  function trocarModo(modo) {
+    document.getElementById("modo-lado").classList.add("hidden");
+    document.getElementById("modo-aba").classList.add("hidden");
+    document.getElementById("modo-vertical").classList.add("hidden");
+    document.getElementById("btn-lado").classList.remove("active");
+    document.getElementById("btn-aba").classList.remove("active");
+    document.getElementById("btn-vertical").classList.remove("active");
+
+    if (modo === 'lado') {
+      document.getElementById("modo-lado").classList.remove("hidden");
+      document.getElementById("btn-lado").classList.add("active");
+    } else if (modo === 'aba') {
+      document.getElementById("modo-aba").classList.remove("hidden");
+      document.getElementById("btn-aba").classList.add("active");
+    } else if (modo === 'vertical') {
+      document.getElementById("modo-vertical").classList.remove("hidden");
+      document.getElementById("btn-vertical").classList.add("active");
+    }
+    sincronizarTexto();
+  }
+
+  function mostrarAba(qual) {
+    document.getElementById("editor-aba").classList.add("hidden");
+    document.getElementById("preview-aba").classList.add("hidden");
+    document.getElementById("aba-editor").classList.remove("active");
+    document.getElementById("aba-preview").classList.remove("active");
+
+    if (qual === 'editor') {
+      document.getElementById("editor-aba").classList.remove("hidden");
+      document.getElementById("aba-editor").classList.add("active");
+    } else {
+      document.getElementById("preview-aba").classList.remove("hidden");
+      document.getElementById("aba-preview").classList.add("active");
+    }
+  }
+
+  atualizarPreview();
+</script>
+
+</body>
+</html>
