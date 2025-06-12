@@ -1,308 +1,234 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Markdown Article Studio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #e0e0e0;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #1e1e1e;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      border-radius: 10px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #ffffff;
-    }
-
-    .tabs {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .tabs button {
-      margin: 0 5px;
-      padding: 8px 15px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background: #555;
-      color: white;
-    }
-
-    .tabs button.active {
-      background: #007bff;
-    }
-
-    .filename-input {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .filename-input input {
-      padding: 8px;
-      font-size: 16px;
-      border-radius: 5px;
-      border: none;
-      width: 300px;
-    }
-
-    hr {
-      border: 0;
-      height: 1px;
-      background: #333;
-      margin: 20px 0;
-    }
-
-    .toolbar {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    .toolbar button {
-      margin: 5px 3px;
-      padding: 8px 15px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background: #007bff;
-      color: white;
-    }
-
-    .toolbar button:hover {
-      background: #0056b3;
-    }
-
-    textarea {
-      width: 100%;
-      height: 300px;
-      padding: 10px;
-      font-family: inherit;
-      font-size: 16px;
-      line-height: 1.5;
-      resize: vertical;
-      border-radius: 5px;
-      border: 1px solid #444;
-      background: #2b2b2b;
-      color: #f1f1f1;
-    }
-
-    /* NOVO: grid perfeito no modo lado a lado */
-    #modo-lado .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .preview {
-      border-left: 1px solid #444;
-      padding: 10px;
-      background: #1a1a1a;
-      border-radius: 5px;
-    }
-
-    .actions {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .success {
-      color: #4caf50;
-      margin-top: 10px;
-    }
-
-    .hidden {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marti - Markdown Article Editor</title>
+    <link rel="stylesheet" href="css/marti.css">
+    <script src="libraries/marked.min.js"></script>
 </head>
 <body>
+    <div class="container">
+        <h1>Marti Markdown Articles Generator</h1>
 
-<div class="container">
-  <h1>Markdown Article Studio</h1>
+        <div class="mode-buttons">
+            <button id="side-by-side" title="Lado a lado">📃</button>
+            <button id="vertical" title="Vertical">↕️</button>
+            <button id="tabs" title="Abas">🗂️</button>
+        </div>
 
-  <div class="tabs">
-    <button onclick="trocarModo('lado')" class="active" id="btn-lado">Modo Lado a Lado</button>
-    <button onclick="trocarModo('aba')" id="btn-aba">Modo por Abas</button>
-    <button onclick="trocarModo('vertical')" id="btn-vertical">Modo Vertical</button>
-  </div>
+        <div class="metadata">
+            <input type="text" id="fileName" placeholder="Nome do arquivo (sem extensão)">
+            <input type="text" id="pageTitle" placeholder="Título da página">
+            <input type="text" id="pageDescription" placeholder="Descrição da página">
+            <input type="text" id="metaTags" placeholder="Meta tags (separadas por vírgula)">
+            <button id="generateTags">🏷️ Gerar Tags</button>
+        </div>
 
-  <div class="filename-input">
-    <input type="text" id="nomeArquivo" placeholder="Nome do arquivo (sem extensão)">
-  </div>
+        <hr>
 
-  <hr>
+        <div class="toolbar">
+            <button onclick="insertMarkdown('**', '**')">B</button>
+            <button onclick="insertMarkdown('*', '*')">I</button>
+            <button onclick="insertMarkdown('`', '`')">Code</button>
+            <button onclick="insertMarkdown('![](', ')')">Img</button>
+            <button onclick="insertMarkdown('[', '](url)')">Link</button>
+            <button onclick="insertTable()">Tabela</button>
+            <span id="saveStatus">💾 Salvo</span>
+        </div>
 
-  <div class="toolbar">
-    <button onclick="inserirMarkdown('# ', '')">Título</button>
-    <button onclick="inserirMarkdown('**', '**')"><b>Negrito</b></button>
-    <button onclick="inserirMarkdown('*', '*')"><i>Itálico</i></button>
-    <button onclick="inserirMarkdown('> ', '')">Citação</button>
-    <button onclick="inserirMarkdown('- ', '')">Lista</button>
-    <button onclick="inserirMarkdown('`', '`')">Código</button>
-    <button onclick="inserirMarkdown('![alt](url)', '')">Imagem</button>
-    <button onclick="inserirMarkdown('[texto](url)', '')">Link</button>
-    <button onclick="inserirTabela()">Tabela</button>
-  </div>
+        <div id="editorPreviewWrapper" class="side-by-side">
+            <textarea id="markdownInput" placeholder="Escreva seu artigo em Markdown..."></textarea>
+            <div id="preview" class="preview"></div>
+        </div>
 
-  <!-- MODO LADO A LADO -->
-  <div id="modo-lado">
-    <div class="content-grid">
-      <div class="editor">
-        <h2>Editor:</h2>
-        <textarea id="inputText" oninput="atualizarPreview()" placeholder="Digite seu artigo aqui usando Markdown..."></textarea>
-      </div>
+        <div class="tabs-wrapper" style="display: none;">
+            <div class="tabs">
+                <button id="tabEditor">Editor</button>
+                <button id="tabPreview">Preview</button>
+            </div>
+            <div id="tabEditorContent">
+                <textarea id="markdownInputTab" placeholder="Escreva seu artigo em Markdown..."></textarea>
+            </div>
+            <div id="tabPreviewContent" class="preview"></div>
+        </div>
 
-      <div class="preview">
-        <h2>Pré-visualização:</h2>
-        <div id="previewArea"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODO ABAS -->
-  <div id="modo-aba" class="hidden">
-    <div class="tabs">
-      <button onclick="mostrarAba('editor')" id="aba-editor" class="active">Editor</button>
-      <button onclick="mostrarAba('preview')" id="aba-preview">Pré-visualização</button>
+        <button id="downloadBtn">📥 Baixar como HTML</button>
     </div>
 
-    <div id="editor-aba">
-      <textarea id="inputText2" oninput="sincronizarTexto()"></textarea>
-    </div>
+    <script>
+        const mdInput = document.getElementById('markdownInput');
+        const preview = document.getElementById('preview');
+        const saveStatus = document.getElementById('saveStatus');
+        const markdownInputTab = document.getElementById('markdownInputTab');
+        const tabPreviewContent = document.getElementById('tabPreviewContent');
 
-    <div id="preview-aba" class="hidden">
-      <div class="preview" id="previewArea2"></div>
-    </div>
-  </div>
+        // Auto-save
+        function autoSave() {
+            localStorage.setItem('martiContent', mdInput.value);
+            localStorage.setItem('martiTitle', document.getElementById('pageTitle').value);
+            localStorage.setItem('martiDesc', document.getElementById('pageDescription').value);
+            localStorage.setItem('martiFileName', document.getElementById('fileName').value);
+            localStorage.setItem('martiTags', document.getElementById('metaTags').value);
+            saveStatus.textContent = '💾 Salvo';
+        }
 
-  <!-- MODO VERTICAL -->
-  <div id="modo-vertical" class="hidden">
-    <div class="editor" style="width: 100%;">
-      <h2>Editor:</h2>
-      <textarea id="inputText3" oninput="sincronizarTexto()"></textarea>
-    </div>
+        function loadSaved() {
+            if(localStorage.getItem('martiContent')) mdInput.value = localStorage.getItem('martiContent');
+            if(localStorage.getItem('martiTitle')) document.getElementById('pageTitle').value = localStorage.getItem('martiTitle');
+            if(localStorage.getItem('martiDesc')) document.getElementById('pageDescription').value = localStorage.getItem('martiDesc');
+            if(localStorage.getItem('martiFileName')) document.getElementById('fileName').value = localStorage.getItem('martiFileName');
+            if(localStorage.getItem('martiTags')) document.getElementById('metaTags').value = localStorage.getItem('martiTags');
+            renderMarkdown();
+        }
 
-    <div class="preview" style="width: 100%; margin-top: 20px;">
-      <h2>Pré-visualização:</h2>
-      <div id="previewArea3"></div>
-    </div>
-  </div>
+        mdInput.addEventListener('input', () => {
+            renderMarkdown();
+            saveStatus.textContent = '⏳ Salvando...';
+            clearTimeout(window.autoSaveTimer);
+            window.autoSaveTimer = setTimeout(autoSave, 500);
+        });
 
-  <div class="actions">
-    <button onclick="gerarArquivo()" style="background: #28a745;">Baixar Artigo</button>
-    <div id="mensagem" class="success"></div>
-  </div>
-</div>
+        function renderMarkdown() {
+            preview.innerHTML = marked.parse(mdInput.value);
+            markdownInputTab.value = mdInput.value;
+            tabPreviewContent.innerHTML = marked.parse(mdInput.value);
+        }
 
-<script src="libraries/marked.min.js"></script>
+        // Markdown inserções rápidas
+        function insertMarkdown(open, close) {
+            const input = mdInput;
+            const start = input.selectionStart;
+            const end = input.selectionEnd;
+            const text = input.value;
+            input.value = text.substring(0, start) + open + text.substring(start, end) + close + text.substring(end);
+            input.focus();
+            renderMarkdown();
+            autoSave();
+        }
 
-<script>
-  function inserirMarkdown(prefixo, sufixo) {
-    const textarea = document.querySelector("#inputText");
-    const start = textarea.selectionStart;
-    const end = textarea.selectionEnd;
-    const textoSelecionado = textarea.value.substring(start, end) || "texto";
-    let novoTexto;
-    if (prefixo.includes("url") || prefixo.includes("alt")) {
-      novoTexto = prefixo;
-    } else {
-      novoTexto = prefixo + textoSelecionado + sufixo;
-    }
-    textarea.value = textarea.value.substring(0, start) + novoTexto + textarea.value.substring(end);
-    textarea.focus();
-    atualizarPreview();
-    sincronizarTexto();
-  }
+        // Inserir tabela básica
+        function insertTable() {
+            const table = `| Coluna 1 | Coluna 2 |\n| --- | --- |\n| Valor 1 | Valor 2 |\n`;
+            mdInput.value += '\n' + table;
+            renderMarkdown();
+            autoSave();
+        }
 
-  function inserirTabela() {
-    const tabelaMarkdown = `| Cabeçalho 1 | Cabeçalho 2 | Cabeçalho 3 |\n| ----------- | ----------- | ----------- |\n| Dado 1 | Dado 2 | Dado 3 |\n`;
-    document.querySelector("#inputText").value += '\n' + tabelaMarkdown;
-    atualizarPreview();
-    sincronizarTexto();
-  }
+        // Gerar Tags (simples)
+        document.getElementById("generateTags").addEventListener('click', () => {
+            const words = mdInput.value.match(/\b\w{4,}\b/g);
+            if (!words) return;
+            const freq = {};
+            words.forEach(w => freq[w] = (freq[w] || 0) + 1);
+            const tags = Object.entries(freq).sort((a,b) => b[1]-a[1]).slice(0, 10).map(e => e[0]).join(', ');
+            document.getElementById('metaTags').value = tags;
+            autoSave();
+        });
 
-  function atualizarPreview() {
-    const markdown = document.querySelector("#inputText").value;
-    const htmlConvertido = marked.parse(markdown);
-    document.querySelector('#previewArea').innerHTML = htmlConvertido;
-  }
+        // Download HTML com template completo
+        document.getElementById("downloadBtn").addEventListener('click', () => {
+            const title = document.getElementById('pageTitle').value;
+            const description = document.getElementById('pageDescription').value;
+            const tags = document.getElementById('metaTags').value;
+            const fileName = document.getElementById('fileName').value || 'artigo';
+            const today = new Date().toISOString().split('T')[0];
 
-  function sincronizarTexto() {
-    const texto = document.querySelector("#inputText").value;
-    document.querySelector("#inputText2").value = texto;
-    document.querySelector("#inputText3").value = texto;
-    document.querySelector('#previewArea2').innerHTML = marked.parse(texto);
-    document.querySelector('#previewArea3').innerHTML = marked.parse(texto);
-  }
+            const articleContent = marked.parse(mdInput.value);
 
-  function gerarArquivo() {
-    const markdown = document.querySelector("#inputText").value;
-    const htmlConvertido = marked.parse(markdown);
-    const nomeArquivo = document.getElementById("nomeArquivo").value.trim() || "artigo";
-    const conteudoHTML = `<article>\n${htmlConvertido}\n</article>`;
-    const blob = new Blob([conteudoHTML], { type: "text/html" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = nomeArquivo + ".html";
-    link.click();
+            const template = `
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="author" content="Renan Mayrinck">
+            <meta name="description" content="${description}">
+            <meta name="keywords" content="${tags}">
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="${title}">
+            <meta name="og:description" content="${description}">
+            <meta property="og:image" content="../media/images/fundo.jpeg">
+            <meta name="og:author" content="Renan Mayrinck">
+            <meta name="og:url" content="">
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:title" content="${title}">
+            <meta name="twitter:description" content="${description}">
+            <meta name="twitter:image" content="https://renanmayrinck.com/media/images/fundo.jpeg">
+            <meta name="twitter:url" content="">
+            <meta name="twitter:author" content="Renan Mayrinck">
+            <link rel="stylesheet" href="../css/main.css">
+            <link rel="shortcut icon" href="../media/images/pp3.jpg" type="image/x-icon">
+            <title>${title}</title>
+            </head>
+            <body>
+            <header>
+            <nav>
+            <a tabindex="1" href="../start.html">Início</a>
+            <a tabindex="2" href="../portfolio.html">Portfolio</a>
+            <a tabindex="3" href="../cursos.html">Cursos e Mentorias</a>
+            <a tabindex="4" href="../artigos.html"><strong>Artigos</strong></a>
+            <button tabindex="5" class="button-primary" id="contact">Entre em contato</button>
+            </nav>
+            <button id="menu-trigger"><img src="../media/icons/menu.svg" alt="menu"></button>
+            </header>
+            <section class="article-hero" style="background-image: url('../media/images/blog/uwk-title.webp');">
+            <h1>${title}</h1>
+            <p><time datetime="${today}">${today}</time> por <span class="author">Renan Mayrinck</span></p>
+            </section>
+            <main class="article-bind">
+            <aside><p class="title">Conteúdos</p><ul></ul></aside>
+            <article>${articleContent}</article>
+            </main>
+            <section class="final-cta"><h5 class="cta-title">Gostou deste artigo? Compartilhe 😊</h5>
+            <div class="buttons"><button class="pop" id="contact-again">Entre em contato</button></div></section>
+            </body>
+            </html>`;
 
-    document.getElementById('mensagem').innerText = "Arquivo gerado com sucesso!";
-    setTimeout(() => { document.getElementById('mensagem').innerText = ""; }, 3000);
-  }
+            const blob = new Blob([template], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${fileName}.html`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
 
-  function trocarModo(modo) {
-    document.getElementById("modo-lado").classList.add("hidden");
-    document.getElementById("modo-aba").classList.add("hidden");
-    document.getElementById("modo-vertical").classList.add("hidden");
-    document.getElementById("btn-lado").classList.remove("active");
-    document.getElementById("btn-aba").classList.remove("active");
-    document.getElementById("btn-vertical").classList.remove("active");
+        // Modos de visualização
+        document.getElementById("side-by-side").addEventListener("click", () => {
+            document.getElementById("editorPreviewWrapper").className = "side-by-side";
+            document.querySelector(".tabs-wrapper").style.display = "none";
+        });
+        document.getElementById("vertical").addEventListener("click", () => {
+            document.getElementById("editorPreviewWrapper").className = "vertical";
+            document.querySelector(".tabs-wrapper").style.display = "none";
+        });
+        document.getElementById("tabs").addEventListener("click", () => {
+            document.getElementById("editorPreviewWrapper").className = "hidden";
+            document.querySelector(".tabs-wrapper").style.display = "block";
+        });
 
-    if (modo === 'lado') {
-      document.getElementById("modo-lado").classList.remove("hidden");
-      document.getElementById("btn-lado").classList.add("active");
-    } else if (modo === 'aba') {
-      document.getElementById("modo-aba").classList.remove("hidden");
-      document.getElementById("btn-aba").classList.add("active");
-    } else if (modo === 'vertical') {
-      document.getElementById("modo-vertical").classList.remove("hidden");
-      document.getElementById("btn-vertical").classList.add("active");
-    }
-    sincronizarTexto();
-  }
+        document.getElementById("tabEditor").addEventListener("click", () => {
+            document.getElementById("tabEditorContent").style.display = "block";
+            document.getElementById("tabPreviewContent").style.display = "none";
+        });
+        document.getElementById("tabPreview").addEventListener("click", () => {
+            markdownInputTab.value = mdInput.value;
+            tabPreviewContent.innerHTML = marked.parse(mdInput.value);
+            document.getElementById("tabEditorContent").style.display = "none";
+            document.getElementById("tabPreviewContent").style.display = "block";
+        });
 
-  function mostrarAba(qual) {
-    document.getElementById("editor-aba").classList.add("hidden");
-    document.getElementById("preview-aba").classList.add("hidden");
-    document.getElementById("aba-editor").classList.remove("active");
-    document.getElementById("aba-preview").classList.remove("active");
+        markdownInputTab.addEventListener('input', () => {
+            mdInput.value = markdownInputTab.value;
+            renderMarkdown();
+            autoSave();
+        });
 
-    if (qual === 'editor') {
-      document.getElementById("editor-aba").classList.remove("hidden");
-      document.getElementById("aba-editor").classList.add("active");
-    } else {
-      document.getElementById("preview-aba").classList.remove("hidden");
-      document.getElementById("aba-preview").classList.add("active");
-    }
-  }
-
-  atualizarPreview();
-</script>
-
+        // Inicializa
+        loadSaved();
+    </script>
 </body>
 </html>
