@@ -16,9 +16,11 @@
     --hover: #A052D5;
     --green: #4dd9a7;
     --bg: light-dark(#000, #FFF);
+    --text: #d5d5d5;
     --bgl: #ffffff;
     --bgd: #000000;
     --input: #222222;
+    --headings: 2.35rem;
     --radius: 24px;
     --gap: 24px;
     --transition: all 165ms ease;
@@ -35,6 +37,11 @@ body {
     height: auto;
     font-size: 1rem;
     background-color: var(--bgd);
+}
+
+input {
+    font-size: 1rem;
+    color: var(--bgl);
 }
 
 dialog {
@@ -87,6 +94,10 @@ button:hover {
     background: var(--bgl);
 }
 
+p {
+    letter-spacing: 0.5px;
+}
+
 .pop:active { /* Faz os botões aumentarem levemente quando clicados */
     transform: scale(1.10);
 }
@@ -120,7 +131,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-bottom: 1px solid #9d35e240;
 }
 
@@ -137,6 +148,13 @@ header {
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     box-shadow: 0px 8px 16px #00000044;
+}
+
+header > .name {
+    font-family: "Rock Salt";
+    font-size: 1.25rem;
+    color: var(--bgl);
+    opacity: 0.75;
 }
 
 header > nav {
@@ -159,10 +177,8 @@ header > nav > a:hover {
 }
 
 .menu-trigger {
-    background: var(--bgl);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    display: none;
+    border: none;
 }
 
 .hero {
@@ -245,31 +261,6 @@ h2, h3, h4, h5, h6 {
     letter-spacing: 0.025em;
     color: var(--bgl);
     font-weight: 600;
-}
-
-article > h2 {
-    margin-top: var(--gap);
-    font-size: 2.8rem;
-}
-
-article > h3 {
-    margin-top: var(--gap);
-    font-size: 2.3rem;
-}
-
-article > h4 {
-    margin-top: var(--gap);
-    font-size: 1.8rem;
-}
-
-article > h5 {
-    margin-top: var(--gap);
-    font-size: 1.3rem;
-}
-
-article > h6 {
-    margin-top: var(--gap);
-    font-size: 1rem;
 }
 
 .about-me, .more-about-me {
@@ -398,6 +389,8 @@ article > h6 {
     height: auto;
     float: left;
     margin: 64px 10%;
+    margin-top: 200px;
+    color: var(--text);
     scroll-margin-top: 100px;
 }
 
@@ -480,6 +473,60 @@ article > h6 {
     background-size: cover;
 }
 
+.mentorship > p {
+    font-size: 1.35rem;
+}
+
+.mentorship > .grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    align-content: stretch;
+    justify-items: start;
+    justify-content: stretch;
+    column-gap: var(--gap);
+}
+
+.grid .card {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    background: var(--input);
+    color: var(--bgl);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    align-items: start;
+    align-content: stretch;
+    justify-content: end;
+    gap: 24px;
+}
+
+.grid .card > .title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.title span {
+    padding: 4px 8px;
+    margin-left: 4px;
+    border-radius: 8px;
+    background: var(--green);
+    color: var(--input);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.grid .card > img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* imagens de fundo pros cards do blog */
 .whiteboard {
     background-image: url("../media/images/blog/UWK.webp");
@@ -521,7 +568,7 @@ article > h6 {
 }
 
 #blog-wrapper .card:hover {
-    box-shadow: 0px 8px 16px rgb(194 103 255 / 30%);
+    box-shadow: 0px 8px 16px rgba(44, 44, 44, 0.199);
 }
 
 #blog-wrapper .card:hover > .snippet {
@@ -630,14 +677,26 @@ article > h6 {
 .overview, .project-data, .key-learnings, .tools {
     width: 80%;
     height: auto;
-    padding: 100px 10%;
+    padding: 64px 10%;
+    padding-top: 24px;
     margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 24px;
 }
 
 .overview > p {
     color: var(--bgl);
     font-size: 1.65rem;
     line-height: 2.5rem;
+}
+
+.project-data > p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--bgl);
 }
 
 .key-learnings {
@@ -725,6 +784,19 @@ article {
     flex-grow: 1;
 }
 
+article > h1, 
+article > h2, 
+article > h3, 
+article > h4, 
+article > h5, 
+article > h6 {
+    margin: var(--gap) 0px;
+    font-size: var(--headings);
+    line-height: 3rem;
+    color: var(--hover);
+    scroll-margin-top: 200px;
+}
+
 aside {
     box-sizing: border-box;
     width: 280px;
@@ -748,15 +820,26 @@ aside > .title {
 }
 
 aside > ul {
+    font-size: 1rem;
+    line-height: 150%;
     list-style-type: none;
-    line-height: 1.55rem;
 }
 
+article > ul, 
 article > p {
-    color: var(--bgl);
+    color: var(--text);
     font-size: 1.35rem;
     line-height: 150%;
     scroll-margin-top: 200px;
+}
+
+article > p strong {
+    color: var(--bgl);
+}
+
+article > ul {
+    padding-left: 36px;
+    line-height: 175%;
 }
 
 article > img {
@@ -828,7 +911,8 @@ article > iframe {
 }
 
 .final-cta > p {
-    width: 700px;
+    width: auto;
+    padding: 0px 24px;
     font-size: 1.2rem;
 }
 
@@ -894,7 +978,7 @@ footer > p > a:hover {
 }
 
 #contact-form {
-    position: relative;
+    position: fixed;
 }
 
 #contact-form > .title {
@@ -997,20 +1081,17 @@ footer > p > a:hover {
 }
 
 @media screen and (max-width: 960px) {
+    body {
+        font-size: 14px;
+    }
+
     .article-hero, 
     .final-cta, 
     .final-cta.home, 
     footer {
         width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    header, .scrolled {
-        width: 100%;
-        top: 0px;
-        left: 0px;
-        right: 0px;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     main {
@@ -1027,5 +1108,62 @@ footer > p > a:hover {
         position: relative;
         top: 0px;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav {
+        top: -100%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu-trigger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    h2, h3, h4, h5, h6 {
+        font-size: 2rem;
+    }
+    
+    header, .scrolled {
+        width: 100vw;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        border-radius: 0px;
+        padding: 20px calc(10% - 16px);
+    }
+
+    .article-hero, 
+    .final-cta, 
+    .final-cta.home, 
+    footer {
+        width: calc(100% - 48px);
+        margin: none;
+    }
+
+    footer, 
+    #blog-wrapper, 
+    .my-cases > .flex-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        gap: var(--gap);
+        justify-content: center;
+    }
+
+    footer .socials {
+        justify-content: center;
+    }
+
+    .socials svg {
+        width: 32px;
+        height: 32px;
     }
 }
