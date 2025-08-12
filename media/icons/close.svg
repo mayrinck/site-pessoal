@@ -8,17 +8,17 @@
    fill="none"
    stroke="#000000"
    version="1.1"
-   id="svg3"
-   sodipodi:docname="menu-svgrepo-com.svg"
+   id="svg2"
+   sodipodi:docname="close-svgrepo-com.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs3" />
+     id="defs2" />
   <sodipodi:namedview
-     id="namedview3"
+     id="namedview2"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -26,34 +26,27 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.7025"
-     inkscape:cx="399.28826"
-     inkscape:cy="399.28826"
+     inkscape:zoom="1.05625"
+     inkscape:cx="400"
+     inkscape:cy="400"
      inkscape:window-width="1920"
      inkscape:window-height="1014"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3" />
+     inkscape:current-layer="svg2" />
   <line
      x1="16"
-     y1="32"
+     y1="16"
      x2="48"
-     y2="32"
+     y2="48"
      id="line1"
      style="fill:#ffffff;stroke:#ffffff" />
   <line
-     x1="16"
-     y1="20"
-     x2="48"
-     y2="20"
+     x1="48"
+     y1="16"
+     x2="16"
+     y2="48"
      id="line2"
-     style="fill:#ffffff;stroke:#ffffff" />
-  <line
-     x1="16"
-     y1="44"
-     x2="48"
-     y2="44"
-     id="line3"
      style="fill:#ffffff;stroke:#ffffff" />
 </svg>

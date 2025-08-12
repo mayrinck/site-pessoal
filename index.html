@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,80 +20,238 @@
     <meta name="twitter:description" content="Um profissional apaixonado pelo Design e especializado em experiência do usuário (UI/UX Design). Os mais de 10 anos atuando me fizeram perceber que não se pode só resolver o problema, é preciso ousar, ir além, ser diferente e surpreender.">
     <meta name="twitter:image" content="https://renanmayrinck.com/media/images/fundo.jpeg">
     <meta name="twitter:url" content="https://renanmayrinck.com">
-    
-    <link rel="stylesheet" href="css/links.css">
-    <link rel="shortcut icon" href="media/images/favicon.png" type="image/x-icon">
+
+    <title>Designer de experiências UX/UI — Renan Mayrinck</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="media/images/pp3.jpg" type="image/x-icon">
 
     <script defer data-domain="renanmayrinck.com" src="https://plausible.io/js/script.js"></script>
 </head>
 
 <body>
-    <main>
-        <h1 id="name" class="links-my-name">
-            <span>Renan</span>
-            <br />
-            <span>Mayrinck</span>
-        </h1>
+    <header>
+        <a href="index.html" class="name">Renan Mayrinck</a>
 
-        <h2 id="title" class="links-my-title">
-            Designer de experiências <wbr>(UX, UI)
-        </h2>
+        <nav class="active">
+            <a tabindex="1" href="index.html"><strong>Início</strong></a>
+            <a tabindex="2" href="portfolio.html">Portfolio</a>
+            <a tabindex="3" href="cursos.html">Cursos e Mentorias</a>
+            <a tabindex="4" href="artigos.html">Artigos</a>
+            <button tabindex="5" class="button-primary" id="contact">Entre em contato</button>
+        </nav>
 
-        <h3 id="description" class="links-description">
-            Sou um profissional que vivencia o Design todos os dias. Sou especializado em design de experiência do usuário (UX Design). Com os meus 10 anos de experiência como freelancer e contratado e formação superior em Design Gráfico com ênfase em Web Design, estou pronto para elevar a qualidade e experiência geral de produtos e serviços para novos níveis.
-        </h3>
+        <button class="menu-trigger">
+            <img class="menu" src="media/icons/menu.svg" alt="menu">
+            <img class="close" src="media/icons/close.svg" alt="close">
+        </button>
+    </header>
 
-        <div class="links-social-links">
-            <a href="mailto:renanmayrinck@duck.com" id="email" class="links-email">
-                <svg width="21" height="21" fill="#FFF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 8.608v8.142a3.25 3.25 0 0 1-3.066 3.245L18.75 20H5.25a3.25 3.25 0 0 1-3.245-3.066L2 16.75V8.608l9.652 5.056a.75.75 0 0 0 .696 0L22 8.608ZM5.25 4h13.5a3.25 3.25 0 0 1 3.234 2.924L12 12.154l-9.984-5.23a3.25 3.25 0 0 1 3.048-2.919L5.25 4h13.5-13.5Z"/>
-                </svg>
-                <span>Email</span>
-            </a>
-            
-            <a href="https://www.linkedin.com/in/renan-mayrinck/" id="linkedin" target="_blank" rel="noreferrer noopener" class="links-linked-in H6">
-                <svg width="20" height="21" viewBox="0 0 20 21" fill="#FFF" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M4.6875 0.0975342H15.3125C17.9013 0.0975342 20 2.1962 20 4.78503V15.41C20 17.9989 17.9013 20.0975 15.3125 20.0975H4.6875C2.09867 20.0975 0 17.9989 0 15.41V4.78503C0 2.1962 2.09867 0.0975342 4.6875 0.0975342ZM15.5729 15.9104H13.6758C13.607 15.9104 13.5411 15.8831 13.4925 15.8345C13.4439 15.7859 13.4165 15.7199 13.4165 15.6512V12.1276C13.4165 11.2255 13.4005 10.0642 12.1602 10.0642C10.9021 10.0642 10.7096 11.047 10.7096 12.0618V15.6508C10.7096 15.7196 10.6823 15.7855 10.6337 15.8342C10.5851 15.8828 10.5191 15.9101 10.4504 15.9101H8.55336C8.4846 15.9101 8.41866 15.8828 8.37004 15.8342C8.32142 15.7855 8.29411 15.7196 8.29411 15.6508V8.39027C8.29411 8.32151 8.32142 8.25557 8.37004 8.20695C8.41866 8.15833 8.4846 8.13101 8.55336 8.13101H10.3537C10.4225 8.13101 10.4884 8.15833 10.537 8.20695C10.5857 8.25557 10.613 8.32151 10.613 8.39027V9.17343C10.613 9.17796 10.6145 9.18235 10.6173 9.18593C10.6201 9.18952 10.6239 9.1921 10.6283 9.19328C10.6327 9.19446 10.6373 9.19418 10.6415 9.19248C10.6457 9.19078 10.6492 9.18776 10.6515 9.18386C11.1252 8.38275 12.0028 7.90299 12.9335 7.9376C15.3817 7.9376 15.8332 9.54793 15.8332 11.6429L15.8322 15.6512C15.8322 15.72 15.8049 15.7859 15.7562 15.8345C15.7076 15.8831 15.6417 15.9104 15.5729 15.9104ZM5.56858 7.06766C4.79955 7.06766 4.1665 6.43494 4.1665 5.66591C4.1665 4.89695 4.79923 4.26416 5.56832 4.26416C6.33722 4.26416 6.96994 4.89682 6.97007 5.66565C6.97007 6.43448 6.33741 7.0676 5.56858 7.06766ZM6.51708 15.9104H4.61755C4.54879 15.9104 4.48285 15.8831 4.43423 15.8345C4.38561 15.7859 4.35829 15.7199 4.35829 15.6512V8.39027C4.35829 8.32151 4.38561 8.25557 4.43423 8.20695C4.48285 8.15833 4.54879 8.13101 4.61755 8.13101H6.51708C6.58584 8.13101 6.65178 8.15833 6.7004 8.20695C6.74902 8.25557 6.77634 8.32151 6.77634 8.39027V15.6512C6.77634 15.7199 6.74902 15.7859 6.7004 15.8345C6.65178 15.8831 6.58584 15.9104 6.51708 15.9104Z">
-                    </path>
-                </svg>
-                <span>LinkedIn</span>
+    <section class="hero">
+        <div class="decoration">
+            <h1 id="hero-title">Renan Mayrinck</h1>
+            <span>Um UI/UX Designer autêntico, do Rio de Janeiro</span>
+        </div>
+
+        <div class="wrapper">
+            <a href="portfolio.html">
+                <button>Meu Portfolio</button>
             </a>
 
-            <a href="https://www.instagram.com/renanmayrinck/" id="instagram" target="_blank" rel="noreferrer noopener" class="links-instagram">
-                <svg width="20" height="21" viewBox="0 0 20 21" fill="#FFF" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.0286 0.0987646C11.7583 0.0959644 12.488 0.103298 13.2176 0.120765L13.4116 0.127765C13.6356 0.135765 13.8566 0.145765 14.1236 0.157765C15.1876 0.207765 15.9136 0.375765 16.5506 0.622765C17.2106 0.876765 17.7666 1.22076 18.3226 1.77676C18.831 2.27637 19.2244 2.88071 19.4756 3.54776C19.7226 4.18476 19.8906 4.91176 19.9406 5.97576C19.9526 6.24176 19.9626 6.46376 19.9706 6.68776L19.9766 6.88176C19.9943 7.61096 20.002 8.34036 19.9996 9.06977L20.0006 9.81577V11.1258C20.003 11.8555 19.9954 12.5852 19.9776 13.3148L19.9716 13.5088C19.9636 13.7328 19.9536 13.9538 19.9416 14.2208C19.8916 15.2848 19.7216 16.0108 19.4756 16.6478C19.2252 17.3155 18.8317 17.9204 18.3226 18.4198C17.8225 18.9281 17.2179 19.3215 16.5506 19.5728C15.9136 19.8198 15.1876 19.9878 14.1236 20.0378C13.8566 20.0498 13.6356 20.0598 13.4116 20.0678L13.2176 20.0738C12.4881 20.0915 11.7583 20.0992 11.0286 20.0968L10.2826 20.0978H8.97358C8.24384 20.1002 7.5141 20.0926 6.78458 20.0748L6.59058 20.0688C6.35319 20.0602 6.11585 20.0502 5.87858 20.0388C4.81458 19.9888 4.08858 19.8188 3.45058 19.5728C2.78326 19.3221 2.17881 18.9286 1.67958 18.4198C1.17062 17.92 0.776801 17.3153 0.525577 16.6478C0.278577 16.0108 0.110577 15.2848 0.0605769 14.2208C0.0494399 13.9835 0.0394398 13.7461 0.030577 13.5088L0.0255771 13.3148C0.00714068 12.5852 -0.00119355 11.8555 0.000577001 11.1258V9.06977C-0.00221397 8.34037 0.00512015 7.61096 0.0225771 6.88176L0.029577 6.68776C0.037577 6.46376 0.047577 6.24176 0.059577 5.97576C0.109577 4.91076 0.277577 4.18576 0.524577 3.54776C0.77595 2.88038 1.17054 2.27621 1.68058 1.77776C2.17947 1.26852 2.78354 0.874337 3.45058 0.622765C4.08858 0.375765 4.81358 0.207765 5.87858 0.157765L6.59058 0.127765L6.78458 0.122765C7.51376 0.104338 8.24316 0.0960033 8.97258 0.0977646L11.0286 0.0987646ZM10.0006 5.09876C9.33808 5.08939 8.68033 5.21179 8.06555 5.45883C7.45077 5.70588 6.89122 6.07264 6.41942 6.53782C5.94762 7.003 5.57298 7.5573 5.31726 8.16853C5.06155 8.77975 4.92987 9.43571 4.92987 10.0983C4.92987 10.7608 5.06155 11.4168 5.31726 12.028C5.57298 12.6392 5.94762 13.1935 6.41942 13.6587C6.89122 14.1239 7.45077 14.4907 8.06555 14.7377C8.68033 14.9847 9.33808 15.1071 10.0006 15.0978C11.3267 15.0978 12.5984 14.571 13.5361 13.6333C14.4738 12.6956 15.0006 11.4238 15.0006 10.0978C15.0006 8.77168 14.4738 7.49991 13.5361 6.56223C12.5984 5.62455 11.3267 5.09876 10.0006 5.09876ZM10.0006 7.09876C10.3991 7.09142 10.7951 7.16356 11.1654 7.31097C11.5357 7.45838 11.8729 7.67811 12.1574 7.95731C12.4418 8.23651 12.6678 8.5696 12.822 8.93711C12.9763 9.30462 13.0558 9.69918 13.0558 10.0978C13.0559 10.4963 12.9766 10.8909 12.8224 11.2585C12.6683 11.626 12.4424 11.9592 12.1581 12.2385C11.8737 12.5178 11.5366 12.7376 11.1663 12.8852C10.796 13.0327 10.4001 13.105 10.0016 13.0978C9.20593 13.0978 8.44287 12.7817 7.88026 12.2191C7.31765 11.6565 7.00158 10.8934 7.00158 10.0978C7.00158 9.30212 7.31765 8.53905 7.88026 7.97644C8.44287 7.41383 9.20593 7.09776 10.0016 7.09776L10.0006 7.09876ZM15.2506 3.59876C14.928 3.61168 14.6229 3.74892 14.3992 3.98174C14.1755 4.21456 14.0506 4.5249 14.0506 4.84776C14.0506 5.17063 14.1755 5.48097 14.3992 5.71379C14.6229 5.94661 14.928 6.08385 15.2506 6.09676C15.5821 6.09676 15.9 5.96507 16.1345 5.73065C16.3689 5.49623 16.5006 5.17829 16.5006 4.84676C16.5006 4.51524 16.3689 4.1973 16.1345 3.96288C15.9 3.72846 15.5821 3.59676 15.2506 3.59676V3.59876Z" fill="white"></path>
-                </svg>
-                <span>Instagram</span>
+            <a href="#about">
+                <button>Me conheça</button>
+            </a>
+        </div>
+    </section>
+
+    <section id="cases" class="my-cases">
+        <h2>Portfolio</h2>
+
+        <div class="flex-section">
+            <!--
+            <a href="portfolio/picdoc.html">
+                <div class="case picdoc">
+                    <div>
+                        <span>Picdoc</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Veja o case</title><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="portfolio/penpot-desktop.html">
+                <div class="case penpot">
+                    <div>
+                        <span>Penpot Desktop</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Veja o case</title><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="portfolio/portal-do-fornecedor-globo.html">
+                <div class="case globo1">
+                    <div>
+                        <span>Globo - Portal do fornecedor</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Veja o case</title><path d="M5,17.59L15.59,7H9V5H19V15H17V8.41L6.41,19L5,17.59Z" /></svg>
+                    </div>
+                </div>
+            </a>
+            -->
+
+            <a href="#">
+                <div class="case skeleton">
+
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="case skeleton">
+
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="case skeleton">
+
+                </div>
             </a>
         </div>
 
-        <a style="width: 100%" href="https://www.behance.net/RenanMayrinck" target="_blank" rel="noreferrer noopener">
-            <div class="card">
-                <div class="links-container2">
-                    <h4 class="links-description1">Meu portfolio</h4>
-                </div>
-            </div>
+        <a href="portfolio.html">
+            <button class="all-cases">Ver o portfolio</button>
+        </a>
+    </section>
+
+        <section id="about" class="about-me">
+        <div class="right">
+            <!-- AQUI TEM UMA IMAGEM -->
+        </div>
+        
+        <div class="left">
+            <h2>
+                Sou um UX & UI Designer do Rio de Janeiro que transforma desafios em experiências digitais de alto valor.
+            </h2>
+
+            <p class="description">
+                Trago mais de uma década de experiência e conhecimentos em UI/UX design e outras áreas criativas para criar projetos autênticos e inovadores. 
+                Além de atender diretamente o mercado com meu trabalho, compartilho conhecimentos com outros profissinais através de <a href="https://www.youtube.com/@RenanMayrinckDesign?sub_confirmation=1">conteúdos online</a>, 
+                palestras e <a href="https://www.superprof.com.br/aprenda-fundamentos-design-com-figma-torne-vetor-melhorias-experiencia-produtos-servicos.html">mentorias</a>.
+            </p>
+
+            <a href="https://www.linkedin.com/in/renan-mayrinck/">
+                <button class="go-to-linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" /></svg>
+                    <span>Mais no LinkedIn</span>
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <section class="final-cta home">
+        <h4 class="cta-title">
+            E ai, vamos conversar?
+        </h4>
+
+        <p>
+            Quer levar seu produto para o próximo nível? Vamos conversar e pensar juntos como melhorar seu produto!
+        </p>
+
+        <a target="_blank" href="mailto:renanmayrinck@duck.com?subject=Oi, quero um orçamento">
+            <button>Fazer um orçamento</button>
         </a>
 
-        <a style="width: 100%" href="https://www.superprof.com.br/aprenda-fundamentos-design-com-figma-torne-vetor-melhorias-experiencia-produtos-servicos.html" target="_blank" rel="noreferrer noopener">
-            <div class="card mentoria">
-                <div class="links-container3">
-                    <h4 class="links-description2">
-                        <span>Mentoria - UX Design </span>
-                        <span class="links-text4">[agenda aberta!]</span>
-                    </h4>
-                </div>
-            </div>
-        </a>
+        <p style="font-size: 1rem;text-align: center;">renanmayrinck@duck.com</p>
+    </section>
 
-        <a style="width: 100%" href="https://www.youtube.com/c/RenanMayrinckDesign" target="_blank" rel="noreferrer noopener">
-            <div class="card conteudos">
-                <div class="links-container4">
-                    <h4 class="links-description3">Conteúdos gratuitos</h4>
+    <section class="contents">
+        <h4>Artigos e conteúdos</h4>
+
+        <p>Explore insights sobre design, ferramentas, tecnologia e tendências para aprimorar seus projetos.</p>
+
+        <div id="blog-wrapper">
+            <a class="entry big" title="Clique e veja os vídeos" href="https://www.youtube.com/renanmayrinckdesign">
+                <div class="card">
+                    <span class="title">
+                        Vídeos novos toda semana, no YouTube
+                    </span>
+
+                    <button class="yt">Assista agora</button>
                 </div>
-            </div>
+            </a>
+
+            <a class="entry" title="Clique para ler o artigo completo" href="artigos/whiteboarding-no-penpot.html">
+                <div class="card">
+                    <div class="image whiteboard"></div>
+                    <span class="title">Como fazer Whiteboarding no Penpot</span>
+                    <p class="date">escrito em 15/06/2024</p>
+                    <p class="snippet">Ler artigo</p>
+                </div>
+            </a>
+
+            <a class="entry" title="Clique para ler o artigo completo" href="artigos/ocio-criativo.html">
+                <div class="card">
+                    <div class="image ocio"></div>
+                    <span class="title">Sobre o Ocio Criativo: Você está realmente descansando?</span>
+                    <p class="date">escrito em 08/04/2025</p>
+                    <p class="snippet">Ler artigo</p>
+                </div>
+            </a>
+
+            <a class="entry" title="Clique para ler o artigo completo" href="artigos/alternativas-gratuitas-pacote-adobe.html">
+                <div class="card">
+                    <div class="image adobealt"></div>
+                    <span class="title">Alternativas gratuitas para os programas da Adobe!</span>
+                    <p class="date">escrito em 08/04/2025</p>
+                    <p class="snippet">Ler artigo</p>
+                </div>
+            </a>
+        </div>
+
+        <a id="articles" href="artigos.html">
+            <button>Ver mais conteúdos</button>
         </a>
-    </main>
+    </section>
+
+    <footer>
+        <p class="credits">
+            @RenanMayrinckDesign • Desde 2013
+        </p>
+
+        <div class="socials">
+            <a target="_blank" title="Meu email - renannayrinck@duck.com" href="mailto:renanmayrinck@duck.com">
+                <svg fill="#0c0c0c" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="path1" transform="matrix(0.047619,0,0,0.047619,0,-0.00946781)"><path d="M126.4,0.199C56.8,0.199 0,57 0,126.6L0,378.199C0,447.399 56.8,504.199 126.4,504.199L378,504.199C447.6,504.199 504.4,447.401 504.4,377.801L504.4,126.6C504,57 447.2,0.199 377.6,0.199L126.4,0.199ZM137.1,115.785L367.301,115.785C395.613,115.781 419.607,137.475 422.447,165.645L252.199,254.826L81.953,165.645C84.672,138.647 106.838,117.419 133.928,115.869L137.1,115.785ZM81.68,194.359L246.266,280.574C249.979,282.52 254.421,282.52 258.135,280.574L422.719,194.359L422.719,333.197C422.721,362.418 399.612,386.877 370.438,388.531L367.301,388.615L137.1,388.615C107.879,388.617 83.42,365.508 81.766,336.334L81.68,333.197L81.68,194.359Z" style="fill-rule:nonzero;"/></g></svg>
+            </a>
+
+            <a target="_blank" title="Meu perfil no Instagram" href="https://www.instagram.com/renanmayrinck">
+                <svg fill="#0c0c0c" width="100%" height="100%" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><rect x="0" y="0" width="800" height="800" style="fill:none;fill-rule:nonzero;"/><path d="M400,0c108.68,0 122.24,0.4 164.88,2.4c42.6,2 71.6,8.68 97.12,18.6c26.4,10.16 48.64,23.92 70.88,46.12c20.339,19.995 36.078,44.184 46.12,70.88c9.88,25.48 16.6,54.52 18.6,97.12c1.88,42.64 2.4,56.2 2.4,164.88c0,108.68 -0.4,122.24 -2.4,164.88c-2,42.6 -8.72,71.6 -18.6,97.12c-10.013,26.71 -25.756,50.905 -46.12,70.88c-20.001,20.332 -44.189,36.07 -70.88,46.12c-25.48,9.88 -54.52,16.6 -97.12,18.6c-42.64,1.88 -56.2,2.4 -164.88,2.4c-108.68,0 -122.24,-0.4 -164.88,-2.4c-42.6,-2 -71.6,-8.72 -97.12,-18.6c-26.706,-10.021 -50.9,-25.763 -70.88,-46.12c-20.343,-19.992 -36.083,-44.182 -46.12,-70.88c-9.92,-25.48 -16.6,-54.52 -18.6,-97.12c-1.88,-42.64 -2.4,-56.2 -2.4,-164.88c0,-108.68 0.4,-122.24 2.4,-164.88c2,-42.64 8.68,-71.6 18.6,-97.12c10.009,-26.712 25.753,-50.908 46.12,-70.88c19.986,-20.35 44.178,-36.091 70.88,-46.12c25.52,-9.92 54.48,-16.6 97.12,-18.6c42.64,-1.88 56.2,-2.4 164.88,-2.4Zm0,200c-109.717,0 -200,90.283 -200,200c0,109.717 90.283,200 200,200c109.717,0 200,-90.283 200,-200c0,-109.717 -90.283,-200 -200,-200Zm260,-10c0,-27.429 -22.571,-50 -50,-50c-27.429,0 -50,22.571 -50,50c0,27.429 22.571,50 50,50c27.429,0 50,-22.571 50,-50Zm-260,90c65.83,0 120,54.17 120,120c0,65.83 -54.17,120 -120,120c-65.83,0 -120,-54.17 -120,-120c0,-65.83 54.17,-120 120,-120Z" style="fill-rule:nonzero;"/></g></svg>
+            </a>
+
+            <a target="_blank" title="Meu perfil no LinkedIn" href="https://www.linkedin.com/in/renan-mayrinck">
+                <svg fill="#0c0c0c" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 504.4 504.4" xml:space="preserve"><g><g><path d="M377.6,0.2H126.4C56.8,0.2,0,57,0,126.6v251.6c0,69.2,56.8,126,126.4,126H378c69.6,0,126.4-56.8,126.4-126.4V126.6C504,57,447.2,0.2,377.6,0.2z M168,408.2H96v-208h72V408.2z M131.6,168.2c-20.4,0-36.8-16.4-36.8-36.8c0-20.4,16.4-36.8,36.8-36.8c20.4,0,36.8,16.4,36.8,36.8C168,151.8,151.6,168.2,131.6,168.2z M408.4,408.2H408h-60V307.4c0-24.4-3.2-55.6-36.4-55.6c-34,0-39.6,26.4-39.6,54v102.4h-60v-208h56v28h1.6c8.8-16,29.2-28.4,61.2-28.4c66,0,77.6,38,77.6,94.4V408.2z"/></g></g></svg>
+            </a>
+
+            <a target="_blank" title="Meu canal no YouTube" href="https://www.youtube.com/renanmayrinckdesign">
+                <svg fill="#0c0c0c" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 95.333 95.333" xml:space="preserve"><g><path d="M73.104,0H22.228C9.952,0,0,9.952,0,22.228v50.877c0,12.275,9.951,22.228,22.228,22.228h50.875c12.277,0,22.229-9.952,22.229-22.228V22.228C95.332,9.952,85.381,0,73.104,0z M65.209,52.786c-9.312,4.825-18.619,9.657-27.896,14.544c-2.105,1.109-4.021,1.062-5.922-0.32c-1.429-1.037-1.947-2.482-1.938-4.21c0.024-4.964,0.008-9.929,0.007-14.894c0-4.903-0.03-9.806,0.008-14.708c0.039-5.035,3.896-7.409,8.34-5.07c9.224,4.857,18.406,9.792,27.606,14.694c2.029,1.081,3.543,2.485,3.467,5.041C68.805,50.389,67.255,51.725,65.209,52.786z"/></g></svg>
+            </a>
+        </div>
+    </footer>
+
+    <dialog id="contact-form">
+        <button id="close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+        </button>
+
+        <p class="title">Obrigado pelo interesse 😊</p>
+
+        <p class="description">
+            Fico muito feliz que você deseja conversar comigo. Seja para fazer um orçamento de projeto ou tirar uma dúvida, abaixo estão meus contatos e redes.
+        </p>
+
+        <div class="col">
+            <a target="_blank" href="mailto:renanmayrinck@duck.com"><button>Enviar um email</button></a>
+            <a href="https://www.instagram.com/renanmayrinck/"><button>Meu Instagram</button></a>
+            <a href="https://www.linkedin.com/in/renan-mayrinck/"><button>Meu LinkedIn</button></a>
+        </div>
+    </dialog>
+
+    <script src="js\interactions.js"></script>
 </body>
 </html>

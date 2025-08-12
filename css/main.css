@@ -23,6 +23,7 @@
     --headings: 2.35rem;
     --radius: 24px;
     --gap: 24px;
+    --glass: blur(16px);
     --transition: all 165ms ease;
     font-size: 16px;
 }
@@ -60,8 +61,8 @@ dialog {
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.55);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: var(--glass);
+    backdrop-filter: var(--glass);
 }
 
 a {
@@ -127,7 +128,7 @@ header {
     border-radius: 16px;
     transition: var(--transition);
     box-sizing: border-box;
-    backdrop-filter: blur(16px);
+    backdrop-filter: var(--glass);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -145,8 +146,8 @@ header {
     border: none;
     border-radius: 0px;
     background: #000000AA;
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: var(--glass);
+    backdrop-filter: var(--glass);
     box-shadow: 0px 8px 16px #00000044;
 }
 
@@ -176,9 +177,22 @@ header > nav > a:hover {
     color: var(--hover);
 }
 
-.menu-trigger {
-    display: none;
+.menu-trigger, .menu-trigger:hover, .menu-trigger:focus {
+    padding: 0px;
+    width: 44px;
+    height: 32px;
     border: none;
+    margin-right: 8px;
+    background: transparent;
+}
+
+.menu-trigger, .menu-trigger > .close {
+    display: none;
+}
+
+.menu-trigger > img {
+    width: 32px;
+    height: 32px;
 }
 
 .hero {
@@ -222,6 +236,19 @@ h1 {
 
 .folio {
     gap: 8px;
+}
+
+#behance {
+    width: auto;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+}
+
+#behance > span {
+    margin-top: 3px;
 }
 
 .folio h1 {
@@ -513,7 +540,6 @@ h2, h3, h4, h5, h6 {
 
 .title span {
     padding: 4px 8px;
-    margin-left: 4px;
     border-radius: 8px;
     background: var(--green);
     color: var(--input);
@@ -534,6 +560,10 @@ h2, h3, h4, h5, h6 {
 
 .ocio {
     background-image: url("../media/images/blog/ocio.webp");
+}
+
+.adobealt {
+    background-image: url("../media/images/blog/adobe-alternativas.webp");
 }
 
 .placeholder {
@@ -587,7 +617,7 @@ h2, h3, h4, h5, h6 {
     border-radius: 16px;
     padding-bottom: 100%;
     flex: 1;
-    background-color: #555;
+    background-color: #222222;
     overflow: hidden;
 }
 
@@ -693,10 +723,16 @@ h2, h3, h4, h5, h6 {
     line-height: 2.5rem;
 }
 
-.project-data > p {
+.project-data p, 
+.project-data ul, 
+.project-data li {
     font-size: 1rem;
     line-height: 1.5rem;
     color: var(--bgl);
+}
+
+.project-data ul {
+    padding: 8px 24px;
 }
 
 .key-learnings {
@@ -1112,15 +1148,12 @@ footer > p > a:hover {
 }
 
 @media screen and (max-width: 800px) {
-    nav {
-        top: -100%;
-        position: absolute;
-        width: 100%;
-        height: 100%;
+    header > nav {
+        display: none;
     }
 
-    .menu-trigger {
-        display: block;
+    .menu-trigger, .mobilenav {
+        display: flex;
     }
 }
 
@@ -1136,14 +1169,40 @@ footer > p > a:hover {
         right: 0px;
         border-radius: 0px;
         padding: 20px calc(10% - 16px);
+        background: #000000AA;
+        border-bottom: 1px solid #ebebeb40;
+        box-shadow: none;
+    }
+
+    dialog {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        border: none;
+        border-radius: 0px;
     }
 
     .article-hero, 
     .final-cta, 
-    .final-cta.home, 
+    .final-cta.home,
+    .contents, .my-cases, .about-me,
     footer {
-        width: calc(100% - 48px);
-        margin: none;
+        width: 95%;
+        margin: 36px 2.5%;
+        padding: 0px;
+    }
+
+    .final-cta.home {
+        height: auto;
+        padding: 44px 24px;
+    }
+
+    .final-cta > h4, 
+    .final-cta > p {
+        width: 100%;
+        padding: 0px;
     }
 
     footer, 
