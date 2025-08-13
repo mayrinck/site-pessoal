@@ -1027,7 +1027,7 @@ h1.catch {
 
 #copy.copiado, #copy:hover.copiado {
     background-color: #62df7f !important;
-    color: #FFF;
+    color: var(--bgd);
     border: none;
     transform: scale(1.15);
 }
