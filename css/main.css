@@ -312,6 +312,7 @@ h2, h3, h4, h5, h6 {
     width: 80%;
     height: auto;
     padding: 128px 10%;
+    padding-bottom: 0px;
     gap: 64px;
     display: flex;
     align-items: center;
