@@ -40,6 +40,12 @@ body {
     background-color: var(--bgd);
 }
 
+img {
+    -moz-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
 input {
     font-size: 1rem;
     color: var(--bgl);
@@ -93,6 +99,16 @@ button {
 button:hover {
     color: var(--bgd);
     background: var(--bgl);
+}
+
+button > img {
+    width: 24px;
+    height: 24px;
+}
+
+.gumroad:hover {
+    background: #ff90e8;
+    border-color: #ff90e8;
 }
 
 p {
@@ -538,13 +554,15 @@ h2, h3, h4, h5, h6 {
     line-height: 150%;
 }
 
-.title span {
-    padding: 4px 8px;
+.pricetag {
+    width: auto;
+    padding: 4px 16px;
     border-radius: 8px;
     background: var(--green);
     color: var(--input);
     font-weight: 700;
     font-size: 1rem;
+    align-self: flex-start;
 }
 
 .grid .card > img {
@@ -798,8 +816,6 @@ h2, h3, h4, h5, h6 {
     opacity: 0.65;
 }
 
-
-
 main {
     width: 80%;
     margin: 64px 10%;
@@ -890,7 +906,6 @@ article > ul {
 article > img {
     width: 100%;
     height: auto;
-    pointer-events: none;
 }
 
 article > iframe {
@@ -898,7 +913,9 @@ article > iframe {
     height: 400px;
 }
 
-.mentorship, 
+
+.mentorship,
+.courses, 
 .contents {
     box-sizing: border-box;
     width: 80%;
@@ -912,7 +929,8 @@ article > iframe {
     justify-content: flex-start;
 }
 
-.mentorship h3, 
+.mentorship h3,
+.courses h3, 
 .contents h4 {
     width: 100%;
     color: #4dd9a7;
@@ -920,6 +938,43 @@ article > iframe {
 
 .mentorship h3 {
     color: var(--default);
+}
+
+h1.catch {
+    font-size: 2rem;
+}
+
+.courses > .index {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.courses > .index > .card {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: var(--gap);
+    background: var(--input);
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    overflow: hidden;
+}
+
+.index > .card > img {
+    border-radius: 8px;
+    width: auto;
+    height: 200px;
+}
+
+.index > .card > .info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
 }
 
 #articles {
@@ -1188,6 +1243,21 @@ footer > p > a:hover {
     #menu-trigger, .mobilenav {
         display: flex;
     }
+
+    .mentorship > .grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+    }
+
+    .courses > .index > .card {
+        flex-direction: column;
+    }
+
+    .index > .card > img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -1222,7 +1292,9 @@ footer > p > a:hover {
         line-height: 150%;
     }
 
-    .article-hero, 
+    .article-hero,
+    .courses,
+    .mentorship, 
     .final-cta, 
     .final-cta.home,
     .contents, .my-cases, .about-me,
