@@ -177,7 +177,7 @@ header > nav > a:hover {
     color: var(--hover);
 }
 
-.menu-trigger, .menu-trigger:hover, .menu-trigger:focus {
+#menu-trigger, #menu-trigger:hover, #menu-trigger:focus {
     padding: 0px;
     width: 44px;
     height: 32px;
@@ -186,11 +186,11 @@ header > nav > a:hover {
     background: transparent;
 }
 
-.menu-trigger, .menu-trigger > .close {
+#menu-trigger, #menu-trigger > .close {
     display: none;
 }
 
-.menu-trigger > img {
+#menu-trigger > img {
     width: 32px;
     height: 32px;
 }
@@ -833,6 +833,11 @@ article > h6 {
     scroll-margin-top: 200px;
 }
 
+article iframe {
+    width: 100%;
+    height: 360px;
+}
+
 aside {
     box-sizing: border-box;
     width: 280px;
@@ -851,12 +856,12 @@ aside {
 }
 
 aside > .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
 aside > ul {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 150%;
     list-style-type: none;
 }
@@ -927,7 +932,7 @@ article > iframe {
     margin: 48px 10%;
     padding: 36px;
     background-color: var(--default);
-    background-image: url(../media/images/bg2.png);
+    background-image: url(../media/images/blog/purple-grid.webp);
     background-size: cover;
     color: #FFF;
     border-radius: var(--radius);
@@ -940,6 +945,7 @@ article > iframe {
 
 .final-cta.home {
     height: 640px;
+    background-image: url(../media/images/bg2.png);
 }
 
 .cta-title {
@@ -1013,8 +1019,27 @@ footer > p > a:hover {
     fill: var(--hover);
 }
 
-#contact-form {
-    position: fixed;
+#mobnav > nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: var(--gap);
+}
+
+#mobnav > nav > a {
+    font-size: 1.5rem;
+    color: var(--bgd);
+    line-height: 110%;
+}
+
+#othercontact {
+    font-size: 1.5rem;
+}
+
+#mobnav > nav > a strong {
+    color: var(--default);
 }
 
 #contact-form > .title {
@@ -1049,10 +1074,10 @@ footer > p > a:hover {
     background: var(--hover);
 }
 
-#close {
+#close, #navclose {
     position: absolute;
-    right: 8px;
-    top: 8px;
+    right: 16px;
+    top: 16px;
     padding: 4px;
     background: none;
     border: none;
@@ -1145,20 +1170,28 @@ footer > p > a:hover {
         top: 0px;
         width: 100%;
     }
+
+    aside > ul > li {
+        margin-bottom: 8px;
+    }
 }
 
 @media screen and (max-width: 800px) {
+    body.internal {
+        padding-top: 100px;
+    }
+
     header > nav {
         display: none;
     }
 
-    .menu-trigger, .mobilenav {
+    #menu-trigger, .mobilenav {
         display: flex;
     }
 }
 
 @media screen and (max-width: 640px) {
-    h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6 {
         font-size: 2rem;
     }
     
@@ -1184,6 +1217,11 @@ footer > p > a:hover {
         border-radius: 0px;
     }
 
+    #hero-title {
+        font-size: 2rem;
+        line-height: 150%;
+    }
+
     .article-hero, 
     .final-cta, 
     .final-cta.home,
@@ -1191,7 +1229,25 @@ footer > p > a:hover {
     footer {
         width: 95%;
         margin: 36px 2.5%;
+        box-sizing: border-box;
+    }
+
+    .about-me {
         padding: 0px;
+    }
+
+    .article-hero {
+        width: 100%;
+        height: 75vh;
+        margin: 24px 0px;
+        border-radius: 0px;
+        justify-content: flex-end;
+        gap: var(--gap);
+    }
+
+    .article-hero > h1 {
+        font-size: 2.25rem;
+        line-height: 125%;
     }
 
     .final-cta {

@@ -1,6 +1,10 @@
 const ContactTrigger = document.getElementById("contact");
+const ContactTrigger2 = document.getElementById("othercontact");
 const ContactAbort = document.getElementById("clear");
 const ContactDialog = document.getElementById("contact-form");
+const NavTrigger = document.getElementById("menu-trigger");
+const NavDialog = document.getElementById("mobnav");
+const NavClose = document.getElementById("navclose");
 const CloseTrigger = document.getElementById("close");
 const header = document.querySelector('header');
 
@@ -30,27 +34,19 @@ ContactTrigger.addEventListener("click", () => {
     ContactDialog.showModal();
 });
 
+ContactTrigger2.addEventListener("click", () => {
+    NavDialog.close();
+    ContactDialog.showModal();
+});
+
+NavTrigger.addEventListener("click", () => {
+    NavDialog.showModal();
+});
+
 CloseTrigger.addEventListener("click", () => {
     ContactDialog.close();
 });
 
-// Escuta o evento de clique de um botão e abre o compartilhador nativo da plataforma
-document.getElementById("share").addEventListener("click", async () => {
-    const tituloArtigo = document.querySelector("h1")?.textContent.trim() || "este artigo";
-    const textoCompartilhamento = `Acabei de ler este artigo: ${tituloArtigo}, no site do @RenanMayrinck`;
-
-    if (navigator.share) {
-    try {
-        await navigator.share({
-        title: document.title,
-        text: textoCompartilhamento,
-        url: window.location.href
-        });
-        console.log("Compartilhamento realizado com sucesso!");
-    } catch (error) {
-        console.error("Erro ao compartilhar:", error);
-    }
-    } else {
-    alert("O compartilhamento nativo não é suportado neste dispositivo/navegador.");
-    }
+NavClose.addEventListener("click", () => {
+    NavDialog.close();
 });

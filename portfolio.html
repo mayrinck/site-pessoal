@@ -27,17 +27,21 @@
 
     <script defer data-domain="renanmayrinck.com" src="https://plausible.io/js/script.js"></script>
 </head>
-<body>
+<body class="internal">
     <header>
         <a href="index.html" class="name">Renan Mayrinck</a>
         
         <nav>
             <a tabindex="1" href="index.html">Início</a>
             <a tabindex="2" href="portfolio.html"><strong>Portfolio</strong></a>
-            <a tabindex="3" href="cursos.html">Cursos e Mentorias</a>
+            <a tabindex="3" href="produtos.html">Cursos e Mentorias</a>
             <a tabindex="4" href="artigos.html">Artigos</a>
             <button tabindex="5" class="button-primary" id="contact">Entre em contato</button>
         </nav>
+
+        <button id="menu-trigger">
+            <img class="menu" src="media/icons/menu.svg" alt="menu">
+        </button>
     </header>
 
     <section class="my-cases">
@@ -187,6 +191,20 @@
             <a href="https://www.instagram.com/renanmayrinck/"><button>Meu Instagram</button></a>
             <a href="https://www.linkedin.com/in/renan-mayrinck/"><button>Meu LinkedIn</button></a>
         </div>
+    </dialog>
+
+    <dialog id="mobnav">
+        <button id="navclose">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+        </button>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="portfolio.html"><strong>Portfolio</strong></a>
+            <a href="produtos.html">Cursos e Mentorias</a>
+            <a href="artigos.html">Artigos</a>
+            <button class="button-primary" id="othercontact">Entre em contato</button>
+        </nav>
     </dialog>
 
     <script src="js\interactions.js"></script>
