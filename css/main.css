@@ -1205,6 +1205,10 @@ footer > p > a:hover {
         font-size: 14px;
     }
 
+    .hero {
+        background-image: url(../media/images/fundo-vertical.jpeg);
+    }
+
     .article-hero, 
     .final-cta, 
     .final-cta.home, 
