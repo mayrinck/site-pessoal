@@ -432,7 +432,6 @@ h2, h3, h4, h5, h6 {
     height: auto;
     float: left;
     margin: 64px 10%;
-    margin-top: 200px;
     color: var(--text);
     scroll-margin-top: 100px;
 }
