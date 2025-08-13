@@ -861,9 +861,13 @@ aside > .title {
 }
 
 aside > ul {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 150%;
     list-style-type: none;
+}
+
+aside > ul > li {
+    margin-bottom: 8px;
 }
 
 article > ul, 
@@ -1169,10 +1173,6 @@ footer > p > a:hover {
         position: relative;
         top: 0px;
         width: 100%;
-    }
-
-    aside > ul > li {
-        margin-bottom: 8px;
     }
 }
 
