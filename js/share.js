@@ -15,6 +15,6 @@ document.getElementById("share").addEventListener("click", async () => {
         console.error("Erro ao compartilhar:", error);
     }
     } else {
-    alert("O compartilhamento nativo não é suportado neste dispositivo/navegador.");
+    alert("O compartilhamento nativo não é suportado neste dispositivo/navegador, mas você pode copiar o link no botão ao lado");
     }
 });
