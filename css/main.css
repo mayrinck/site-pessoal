@@ -1330,6 +1330,10 @@ footer > p > a:hover {
         padding: 44px 24px;
     }
 
+    .final-cta > h4 {
+        text-align: center;
+    }
+
     .final-cta > h4, 
     .final-cta > p {
         width: 100%;
