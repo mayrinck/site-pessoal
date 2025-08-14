@@ -1153,7 +1153,6 @@ footer > p > a:hover {
 
 @media screen and (max-width: 1280px) {
     .hero {
-        /* background-image: url(../media/images/fundo-vertical.jpeg); */
         background-position: center;
         background-size: cover;
     }
@@ -1206,7 +1205,7 @@ footer > p > a:hover {
     }
 
     .hero {
-        background-image: url(../media/images/fundo-vertical.jpeg);
+        background-image: url(../media/images/fundo-vertical-2.jpeg);
     }
 
     .article-hero, 
