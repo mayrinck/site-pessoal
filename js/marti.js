@@ -1,124 +1,148 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+const mdInput = document.getElementById('markdownInput');
+const preview = document.getElementById('preview');
+const saveStatus = document.getElementById('saveStatus');
+const markdownInputTab = document.getElementById('markdownInputTab');
+const tabPreviewContent = document.getElementById('tabPreviewContent');
+
+// Auto-save
+function autoSave() {
+    localStorage.setItem('martiContent', mdInput.value);
+    localStorage.setItem('martiTitle', document.getElementById('pageTitle').value);
+    localStorage.setItem('martiDesc', document.getElementById('pageDescription').value);
+    localStorage.setItem('martiFileName', document.getElementById('fileName').value);
+    localStorage.setItem('martiTags', document.getElementById('metaTags').value);
+    saveStatus.textContent = '💾 Salvo';
+}
+
+function loadSaved() {
+    if(localStorage.getItem('martiContent')) mdInput.value = localStorage.getItem('martiContent');
+    if(localStorage.getItem('martiTitle')) document.getElementById('pageTitle').value = localStorage.getItem('martiTitle');
+    if(localStorage.getItem('martiDesc')) document.getElementById('pageDescription').value = localStorage.getItem('martiDesc');
+    if(localStorage.getItem('martiFileName')) document.getElementById('fileName').value = localStorage.getItem('martiFileName');
+    if(localStorage.getItem('martiTags')) document.getElementById('metaTags').value = localStorage.getItem('martiTags');
+    renderMarkdown();
+}
+
+mdInput.addEventListener('input', () => {
+    renderMarkdown();
+    saveStatus.textContent = '⏳ Salvando...';
+    clearTimeout(window.autoSaveTimer);
+    window.autoSaveTimer = setTimeout(autoSave, 500);
+});
+
+function renderMarkdown() {
+    preview.innerHTML = marked.parse(mdInput.value);
+    markdownInputTab.value = mdInput.value;
+    tabPreviewContent.innerHTML = marked.parse(mdInput.value);
+}
+
+// Markdown inserções rápidas
+function insertMarkdown(open, close) {
+    const input = mdInput;
+    const start = input.selectionStart;
+    const end = input.selectionEnd;
+    const text = input.value;
+    input.value = text.substring(0, start) + open + text.substring(start, end) + close + text.substring(end);
+    input.focus();
+    renderMarkdown();
+    autoSave();
+}
+
+// Inserir tabela básica
+function insertTable() {
+    const table = `| Coluna 1 | Coluna 2 |\n| --- | --- |\n| Valor 1 | Valor 2 |\n`;
+    mdInput.value += '\n' + table;
+    renderMarkdown();
+    autoSave();
+}
+
+// Gerar Tags (simples)
+document.getElementById("generateTags").addEventListener('click', () => {
+    const words = mdInput.value.match(/\b\w{4,}\b/g);
+    if (!words) return;
+    const freq = {};
+    words.forEach(w => freq[w] = (freq[w] || 0) + 1);
+    const tags = Object.entries(freq).sort((a,b) => b[1]-a[1]).slice(0, 10).map(e => e[0]).join(', ');
+    document.getElementById('metaTags').value = tags;
+    autoSave();
+});
+
+// Download HTML com template completo
+document.getElementById("downloadBtn").addEventListener('click', () => {
+    const title = document.getElementById('pageTitle').value;
+    const description = document.getElementById('pageDescription').value;
+    const tags = document.getElementById('metaTags').value;
+    const fileName = document.getElementById('fileName').value || 'artigo';
+    const today = new Date().toISOString().split('T')[0];
+
+    const articleContent = marked.parse(mdInput.value);
+
+    const template = `
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Um profissional apaixonado pelo Design e especializado em experiência do usuário (UI/UX Design). Os mais de 10 anos atuando me fizeram perceber que não se pode só resolver o problema, é preciso ousar, ir além, ser diferente e surpreender.">
-    <meta name="keywords" content="UX, UI, designer de experiência do usuário, especialista em design de interfaces, ux designer no rio de janeiro, designer experiênte, aprender design online, mentor de design online, curso de ux design online">
-    <meta name="robots" content="noindex">
-
-    <!-- OpenGraph Meta Tags -->
+    <meta name="author" content="Renan Mayrinck">
+    <meta name="description" content="${description}">
+    <meta name="keywords" content="${tags}">
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Designer de experiências (UX, UI) • Renan Mayrinck">
-    <meta name="og:description" content="Um profissional apaixonado pelo Design e especializado em experiência do usuário (UI/UX Design). Os mais de 10 anos atuando me fizeram perceber que não se pode só resolver o problema, é preciso ousar, ir além, ser diferente e surpreender.">
-    <meta property="og:image" content="media/images/fundo.jpeg">
-    <meta name="og:url" content="https://renanmayrinck.com">
-
-    <!-- Twitter Card Meta Tags -->
+    <meta property="og:title" content="${title}">
+    <meta name="og:description" content="${description}">
+    <meta property="og:image" content="../media/images/fundo.jpeg">
+    <meta name="og:author" content="Renan Mayrinck">
+    <meta name="og:url" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Designer de experiências (UX, UI) • Renan Mayrinck">
-    <meta name="twitter:description" content="Um profissional apaixonado pelo Design e especializado em experiência do usuário (UI/UX Design). Os mais de 10 anos atuando me fizeram perceber que não se pode só resolver o problema, é preciso ousar, ir além, ser diferente e surpreender.">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="https://renanmayrinck.com/media/images/fundo.jpeg">
-    <meta name="twitter:url" content="https://renanmayrinck.com">
-
-    <title>Case: Portal do Fornecedor Globo | Portfolio — Renan Mayrinck (UI & UX Designer)</title>
+    <meta name="twitter:url" content="">
+    <meta name="twitter:author" content="Renan Mayrinck">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="shortcut icon" href="../media/images/pp3.jpg" type="image/x-icon">
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4328323139328735"
      crossorigin="anonymous"></script>
     <script defer data-domain="renanmayrinck.com" src="https://plausible.io/js/script.js"></script>
-</head>
-<body>
+    <title>${title}</title>
+    </head>
+    <body>
     <header>
-        <a href="../index.html" class="name">Renan Mayrinck</a>
-
         <nav>
             <a tabindex="1" href="../index.html">Início</a>
-            <a tabindex="2" href="../portfolio.html"><strong>Portfolio</strong></a>
+            <a tabindex="2" href="../portfolio.html">Portfolio</a>
             <a tabindex="3" href="../produtos.html">Cursos e Mentorias</a>
-            <a tabindex="4" href="../artigos.html">Artigos</a>
-            <button tabindex="5" class="button-primary" id="contact">Entre em contato</button>
+            <a tabindex="4" href="../artigos.html"><strong>Artigos</strong></a>
         </nav>
-
         <button id="menu-trigger">
             <img class="menu" src="../media/icons/menu.svg" alt="menu">
         </button>
     </header>
-
-    <section class="hero folio" style="background-image: url('../media/images/projects/portal-do-fornecedor/banner-portal-fornecedor.webp');">
-        <h1>
-            Portal do fornecedor globo
-        </h1>
-
-        <p class="description">
-            2022
-        </p>
+    <section class="article-hero" style="background-image: url('../media/images/blog/uwk-title.webp');">
+    <h1>${title}</h1>
+    <p><time datetime="${today}">${today}</time> por <span class="author">Renan Mayrinck</span></p>
     </section>
-
-    <section class="overview">
-        <p>
-            A globo é uma gigante da comunicação nacional, tendo um conglomerado de diversas empresas e produtos sob sua gestão. Dentre as empresas, só a TV Globo fala com 100 milhões de brasileiros todos os dias, obtendo amplo alcance nacional. O Portal do Fornecedor da globo é o ponto de contato principal entre empresa e fornecedores. É onde o fornecedor pode acessar o sistema de suprimentos, tirar dúvidas e se cadastrar para prestar serviços.
-        </p>
-    </section>
-
-    <section class="project-data">
-        <p>
-
-        </p>
+    <main class="article-bind">
+    <aside><p class="title">Conteúdos</p><ul></ul></aside>
+    <article>${articleContent}</article>
+    </main>
+    <section class="final-cta"><h5 class="cta-title">Gostou deste artigo? Compartilhe 😊</h5>
+    <div class="buttons"><button class="pop" id="contact-again">Entre em contato</button></div></section>
+    <section class="final-cta">
+        <h5 class="cta-title">Gostou deste artigo? Compartilhe 😊</h5>
         
-        <a target="_blank" href="https://web.archive.org/web/20230524011645/https://portaldofornecedor.g.globo/">
-            <button>Acessar portal</button>
-        </a>
-    </section>
-
-    <section class="tools">
-        <h6>Ferramentas utilizadas:</h6>
-
-        <div class="wrapper">
-            <a href="https://www.figma.com/" referrerpolicy="no-referrer">
-                <img src="../media/icons/figma.webp" title="Figma" alt="Figma">
-            </a>
-            
-            <a href="https://affinity.serif.com/designer/" referrerpolicy="no-referrer">
-                <img src="../media/icons/designer.webp" title="Affinity Designer" alt="Affinity Designer">
-            </a>
-
-            <a href="https://gimp.org" referrerpolicy="no-referrer">
-                <img src="../media/icons/gimp.webp" title="GIMP" alt="GIMP">
-            </a>
+        <div class="buttons">
+            <button class="pop" id="share">📣 Quero compartilhar</button>
+            <button id="copy" title="Copiar Link">📋 Copiar Link</button>
         </div>
-
-        <a target="_blank" title="Ver no Behance" href="https://www.behance.net/gallery/174524801/Globo-Portal-do-Fornecedor">
-            <button id="behance"> <img src="../media/icons/behance.svg" alt="Behance logo"> <span>Ver projeto no Behance</span> </button>
-        </a>
-    </section>
-    
-    <section class="key-learnings">
-        <h2>Aprendizados</h2>
-
-        <ol>
-            <li>Uma pesquisa curta é melhor do que não ter pesquisa alguma.</li>
-            <li>É importante perceber o que já deu certo em projetos que compartilham uma mesma base de usuários. Isso facilita saber que padrões de interação já são aceitos e quais não.</li>
-            <li>Nem sempre o layout mais arrojado e refinado é o que traz resultados melhores.</li>
-        </ol>
     </section>
 
-    <section class="final-cta home">
-        <h4 class="cta-title">
-            E ai, vamos conversar?
-        </h4>
+    <section class="contents">
+        <h4>Veja outros conteúdos:</h4>
 
-        <p>
-            Quer levar seu produto para o próximo nível? Vamos conversar e pensar juntos em boas soluções.
-        </p>
-
-        <a target="_blank" href="mailto:renanmayrinck@duck.com?subject=Oi, quero um orçamento">
-            <button>Fazer um orçamento</button>
-        </a>
-
-        <p style="font-size: 1rem;text-align: center;">renanmayrinck@duck.com</p>
+        <div id="blog-wrapper">
+            <!-- CONTEÚDO SERÁ GERADO AQUI VIA RECOMMENDATIONS.JS -->
+        </div>
     </section>
 
     <footer>
@@ -127,7 +151,7 @@
         </p>
 
         <div class="socials">
-            <a target="_blank" title="Meu email - renannayrinck@duck.com" href="mailto:renan.mtk@gmail.com">
+            <a target="_blank" title="Meu email - renannayrinck@duck.com" href="mailto:renanmayrinck@duck.com">
                 <svg fill="#0c0c0c" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="path1" transform="matrix(0.047619,0,0,0.047619,0,-0.00946781)"><path d="M126.4,0.199C56.8,0.199 0,57 0,126.6L0,378.199C0,447.399 56.8,504.199 126.4,504.199L378,504.199C447.6,504.199 504.4,447.401 504.4,377.801L504.4,126.6C504,57 447.2,0.199 377.6,0.199L126.4,0.199ZM137.1,115.785L367.301,115.785C395.613,115.781 419.607,137.475 422.447,165.645L252.199,254.826L81.953,165.645C84.672,138.647 106.838,117.419 133.928,115.869L137.1,115.785ZM81.68,194.359L246.266,280.574C249.979,282.52 254.421,282.52 258.135,280.574L422.719,194.359L422.719,333.197C422.721,362.418 399.612,386.877 370.438,388.531L367.301,388.615L137.1,388.615C107.879,388.617 83.42,365.508 81.766,336.334L81.68,333.197L81.68,194.359Z" style="fill-rule:nonzero;"/></g></svg>
             </a>
 
@@ -169,14 +193,59 @@
         </button>
 
         <nav>
-            <a href="../index.html">Início</a>
-            <a href="../portfolio.html"><strong>Portfolio</strong></a>
+            <a href="../index.html"><strong>Início</strong></a>
+            <a href="../portfolio.html">Portfolio</a>
             <a href="../produtos.html">Cursos e Mentorias</a>
             <a href="../artigos.html">Artigos</a>
             <button class="button-primary" id="othercontact">Entre em contato</button>
         </nav>
-    </dialog>
+    </dialog>    
 
     <script src="../js/interactions.js"></script>
-</body>
-</html>
+    <script src="../js/share.js"></script>
+    <script src="../js/recommendations.js"></script>
+    </body>
+    </html>`;
+
+    const blob = new Blob([template], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${fileName}.html`;
+    a.click();
+    URL.revokeObjectURL(url);
+});
+
+// Modos de visualização
+document.getElementById("side-by-side").addEventListener("click", () => {
+    document.getElementById("editorPreviewWrapper").className = "side-by-side";
+    document.querySelector(".tabs-wrapper").style.display = "none";
+});
+document.getElementById("vertical").addEventListener("click", () => {
+    document.getElementById("editorPreviewWrapper").className = "vertical";
+    document.querySelector(".tabs-wrapper").style.display = "none";
+});
+document.getElementById("tabs").addEventListener("click", () => {
+    document.getElementById("editorPreviewWrapper").className = "hidden";
+    document.querySelector(".tabs-wrapper").style.display = "block";
+});
+
+document.getElementById("tabEditor").addEventListener("click", () => {
+    document.getElementById("tabEditorContent").style.display = "block";
+    document.getElementById("tabPreviewContent").style.display = "none";
+});
+document.getElementById("tabPreview").addEventListener("click", () => {
+    markdownInputTab.value = mdInput.value;
+    tabPreviewContent.innerHTML = marked.parse(mdInput.value);
+    document.getElementById("tabEditorContent").style.display = "none";
+    document.getElementById("tabPreviewContent").style.display = "block";
+});
+
+markdownInputTab.addEventListener('input', () => {
+    mdInput.value = markdownInputTab.value;
+    renderMarkdown();
+    autoSave();
+});
+
+// Inicializa
+loadSaved();
