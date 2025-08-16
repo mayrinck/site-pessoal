@@ -655,6 +655,17 @@ h2, h3, h4, h5, h6 {
     bottom: 2%;
 }
 
+.skeleton {
+    background: red;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+  0% {background-color: var(--input);}
+  50% {background-color: #181818}
+  100% {background-color: var(--input);}
+}
+
 .vero {
     background-image: url(../media/images/projects/vero.png);
     background-size: cover;
