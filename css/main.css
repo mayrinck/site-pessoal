@@ -610,6 +610,10 @@ h2, h3, h4, h5, h6 {
     background-image: url("../media/images/blog/ocio.webp");
 }
 
+.design-linux {
+    background-image: url("../media/images/blog/design-linux.webp");
+}
+
 .adobealt {
     background-image: url("../media/images/blog/adobe-alternativas.webp");
 }
@@ -993,7 +997,7 @@ aside > ul > li {
     margin-bottom: 8px;
 }
 
-article > ul, 
+article li, 
 article > p {
     color: var(--text);
     font-size: 1.35rem;
@@ -1005,7 +1009,17 @@ article > p strong {
     color: var(--bgl);
 }
 
-article > ul {
+article p > img {
+    width: 100%;
+    height: auto;
+}
+
+.media-block {
+    text-align: center;
+    font-size: 1rem;
+}
+
+article ul, article ol {
     padding-left: 36px;
     line-height: 175%;
 }
