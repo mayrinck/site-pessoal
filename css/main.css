@@ -1273,6 +1273,11 @@ footer > p > a:hover {
     fill: var(--bgd);
 }
 
+#navclose {
+    right: 42px;
+    top: 28px;
+}
+
 @media screen and (min-width: 2000px) {
     body {
         -webkit-zoom: 2;
