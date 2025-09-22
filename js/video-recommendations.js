@@ -5,6 +5,7 @@ const elementos = [
     '<a class="entry" title="Clique para assistir o vídeo" href="https://www.youtube.com/watch?v=gtjYaEetL08"><div class="card"> <img src="media/images/thumbs/research.webp" alt="Thumbnail" class="thumb"> <span class="title">Como se começa uma pesquisa de UX?</span> <p class="date">aprox. 3min</p> <p class="snippet">Assistir agora</p> </div> </a>',
     '<a class="entry" title="Clique para assistir o vídeo" href="https://youtu.be/3EAbFhohRp4?si=RijUFR7K7ugMzLwc"> <div class="card"> <img src="media/images/thumbs/paradoxo.webp" alt="Thumbnail" class="thumb"> <span class="title">O Paradoxo da escolha (UX Design)</span> <p class="date">aprox. 10min</p> <p class="snippet">Assistir agora</p> </div> </a>',
     '<a class="entry" title="Clique para assistir o vídeo" href="https://www.youtube.com/watch?v=cztKoJz5NPs"> <div class="card"> <img src="media/images/thumbs/programas.webp" alt="Thumbnail" class="thumb"> <span class="title">Conheça as MELHORES ferramentas de DESIGN - 100% GRATUITAS e OPEN-SOURCE</span> <p class="date">aprox. 9min</p> <p class="snippet">Assistir agora</p> </div> </a>',
+    '<a class="entry" title="Clique para assistir o vídeo" href="https://youtu.be/UmhZQofSR9A?si=DoOwjHZME1usbjJx"> <div class="card"> <img src="media/images/thumbs/coreswcag.webp" alt="Thumbnail" class="thumb"> <span class="title">Melhorando a EXPERIÊNCIA de quem não vê as CORES</span> <p class="date">aprox. 20min</p> <p class="snippet">Assistir agora</p> </div> </a>',
 ];
 
 // Embaralha os elementos (algoritmo Fisher-Yates)
