@@ -8,6 +8,7 @@ const elementos = [
     '<a class="entry" title="Clique para assistir o vídeo" href="https://youtu.be/UmhZQofSR9A?si=DoOwjHZME1usbjJx"> <div class="card"> <img src="media/images/thumbs/coreswcag.webp" alt="Thumbnail" class="thumb"> <span class="title">Melhorando a EXPERIÊNCIA de quem não vê as CORES</span> <p class="date">aprox. 20min</p> <p class="snippet">Assistir agora</p> </div> </a>',
     '<a class="entry" title="Clique para assistir o vídeo" href="https://youtu.be/gBtE1TLaPIw?si=Hz7hU__hfHPM06Us"> <div class="card"> <img src="media/images/thumbs/nesting.webp" alt="Thumbnail" class="thumb"> <span class="title">O que é NESTING? Entenda e contrua interfaces melhores!</span> <p class="date">aprox. 8min</p> <p class="snippet">Assistir agora</p> </div> </a>',
     '<a class="entry" title="Clique para assistir o vídeo" href="https://youtu.be/AqLPn7XQLWg"> <div class="card"> <img src="media/images/thumbs/macos.jpg" alt="Thumbnail" class="thumb"> <span class="title">Faz diferença usar Mac no design?</span> <p class="date">aprox. 11min</p> <p class="snippet">Assistir agora</p> </div> </a>',
+    '<a class="entry" title="Clique para assistir o vídeo" href="https://www.youtube.com/watch?v=hDpCNK4MbPg"> <div class="card"> <img src="media/images/thumbs/linux.webp" alt="Thumbnail" class="thumb"> <span class="title">Da pra ser designer usando Linux?</span> <p class="date">aprox. 12min</p> <p class="snippet">Assistir agora</p> </div> </a>',
 ];
 
 // Embaralha os elementos (algoritmo Fisher-Yates)
