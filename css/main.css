@@ -488,8 +488,9 @@ h2, h3, h4, h5, h6 {
 }
 
 .mywork > p {
-    font-size: 20px;
-    width: 50%;
+    font-size: 16px;
+    line-height: 26px;
+    width: 62%;
 }
 
 .spec {
@@ -520,7 +521,7 @@ h2, h3, h4, h5, h6 {
 
 .spec > p {
     color: inherit;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
 }
 
@@ -1383,23 +1384,18 @@ footer > p > a:hover {
         width: 100%;
         height: auto;
         margin: 32px 0px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 16px;
-        grid-row-gap: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
     }
-    
-    .picdoc { grid-area: 1 / 1 / 2 / 2; }
-    .penpot { grid-area: 1 / 2 / 2 / 3; }
-    .globo1 { grid-area: 2 / 1 / 3 / 2; }
-    .inkscape { grid-area: 2 / 2 / 3 / 3; }
-    .vero { grid-area: 3 / 1 / 4 / 2; }
-    .devmind { grid-area: 3 / 2 / 4 / 3; }
 
     #blog-wrapper {
         display: flex;
         flex-direction: column;
+    }
+
+    .mywork > p {
+        width: 100%;
     }
 }
 
@@ -1556,8 +1552,7 @@ footer > p > a:hover {
     }
 
     footer, 
-    #blog-wrapper, 
-    .my-cases > .flex-section {
+    #blog-wrapper {
         display: flex;
         flex-direction: column;
     }
