@@ -487,6 +487,11 @@ h2, h3, h4, h5, h6 {
     gap: 24px;
 }
 
+.mywork > p {
+    font-size: 20px;
+    width: 50%;
+}
+
 .spec {
     display: flex;
     align-items: start;
@@ -499,6 +504,7 @@ h2, h3, h4, h5, h6 {
     flex: 1;
     flex-grow: 1;
     border-radius: 24px;
+    opacity: 0;
     transition: var(--transition);
 }
 
@@ -1586,5 +1592,5 @@ footer > p > a:hover {
 .slide-in-bck-center{-webkit-animation:slide-in-bck-center .7s cubic-bezier(.25,.46,.45,.94) reverse both;animation:slide-in-bck-center .7s cubic-bezier(.25,.46,.45,.94) reverse both}
 @-webkit-keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
 
-.slit-in-horizontal{-webkit-animation:slit-in-horizontal .7s ease-out both;animation:slit-in-horizontal .35s ease-out both}
+.slit-in-horizontal{opacity:1;-webkit-animation:slit-in-horizontal .7s ease-out both;animation:slit-in-horizontal .35s ease-out both}
 @-webkit-keyframes slit-in-horizontal{0%{-webkit-transform:translateZ(-800px) rotateX(90deg);transform:translateZ(-800px) rotateX(90deg);opacity:0}54%{-webkit-transform:translateZ(-160px) rotateX(87deg);transform:translateZ(-160px) rotateX(87deg);opacity:1}100%{-webkit-transform:translateZ(0) rotateX(0);transform:translateZ(0) rotateX(0)}}@keyframes slit-in-horizontal{0%{-webkit-transform:translateZ(-800px) rotateX(90deg);transform:translateZ(-800px) rotateX(90deg);opacity:0}54%{-webkit-transform:translateZ(-160px) rotateX(87deg);transform:translateZ(-160px) rotateX(87deg);opacity:1}100%{-webkit-transform:translateZ(0) rotateX(0);transform:translateZ(0) rotateX(0)}}
