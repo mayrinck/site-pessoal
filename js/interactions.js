@@ -31,6 +31,7 @@ const { scrollY } = window;  // Usando desestruturação
 window.addEventListener('scroll', debounce(checkScroll));
 
 ContactTrigger.addEventListener("click", () => {
+    ContactDialog.classList.add("slide-in-elliptic-top-fwd");
     ContactDialog.showModal();
 });
 
