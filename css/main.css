@@ -602,13 +602,16 @@ h2, h3, h4, h5, h6 {
     color: var(--bgl);
 }
 
-#blog-wrapper .card > .image {
+#blog-wrapper .card > img {
     width: 100%;
-    height: 160px;
+    height: 150px;
     border-radius: 16px;
-    background-color: #d8d8d8;
+    background-color: var(--input);
     background-position: center;
     background-size: cover;
+    pointer-events: none;
+    user-select: none;
+    object-fit: cover;
 }
 
 .card > .thumb {
@@ -670,35 +673,6 @@ h2, h3, h4, h5, h6 {
     width: 100%;
     height: auto;
     border-radius: 10px;
-}
-
-/* imagens de fundo pros cards do blog */
-.whiteboard {
-    background-image: url("../media/images/blog/UWK.webp");
-}
-
-.ocio {
-    background-image: url("../media/images/blog/ocio.webp");
-}
-
-.design-linux {
-    background-image: url("../media/images/blog/design-linux.webp");
-}
-
-.adobealt {
-    background-image: url("../media/images/blog/adobe-alternativas.webp");
-}
-
-.placeholder {
-    background-image: url("../media/images/blog/uwk-title.webp");
-}
-
-.adobe {
-    background-image: url("../media/images/blog/uwk-title.webp");
-}
-
-.penpot {
-    background-image: url("../media/images/blog/uwk-title.webp");
 }
 
 #blog-wrapper .card > .title {
@@ -811,6 +785,21 @@ h2, h3, h4, h5, h6 {
 
 .inkscape {
     background-image: url(../media/images/projects/inkscape.png);
+    background-size: cover;
+}
+
+.lugod {
+    background-image: url(../media/images/blog/purple-grid.webp);
+    background-size: cover;
+}
+
+.griss {
+    background-image: url(../media/images/projects/grisson.png);
+    background-size: cover;
+}
+
+.ilustra {
+    background-image: url(../media/images/blog/purple-grid.webp);
     background-size: cover;
 }
 
@@ -1040,6 +1029,8 @@ aside {
     box-sizing: border-box;
     width: 280px;
     height: auto;
+    max-height: 400px;
+    overflow-y: auto;
     position: sticky;
     left: 0%;
     top: 120px;
@@ -1356,7 +1347,7 @@ footer > p > a:hover {
     }
 }
 
-@media screen and (max-width: 1380px) {
+@media screen and (max-width: 1440px) {
     .hero {
         background-position: center;
         background-size: cover;
@@ -1366,6 +1357,16 @@ footer > p > a:hover {
         text-align: left;
         font-size: 3rem;
         line-height: 4.4rem;
+    }
+
+    .mywork > p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1155px) {
+    body {
+        font-size: 14px;
     }
 
     .about-me, .more-about-me {
@@ -1379,16 +1380,6 @@ footer > p > a:hover {
 
     .about-me > .right {
         height: 300px;
-    }
-
-    .mywork > p {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 1180px) {
-    body {
-        font-size: 14px;
     }
 
     .article-hero, 
@@ -1417,6 +1408,8 @@ footer > p > a:hover {
         position: relative;
         top: 0px;
         width: 100%;
+        height: auto;
+        max-height: none;
     }
 
     .my-cases > .flex-section {
@@ -1573,11 +1566,9 @@ footer > p > a:hover {
     }
 }
 
-
-
-/* /////////////////////////////////// */
-/* ////////// ANIMATIONS ///////////// */
-/* /////////////////////////////////// */
+/* //////////////////////////////// */
+/* ////////// ANIMATIONS ////////// */
+/* //////////////////////////////// */
 
 .slide-in-blurred-bottom{-webkit-animation:slide-in-blurred-bottom .6s cubic-bezier(.23,1.000,.32,1.000) both;animation:slide-in-blurred-bottom .6s cubic-bezier(.23,1.000,.32,1.000) both}
 @-webkit-keyframes slide-in-blurred-bottom{0%{-webkit-transform:translateY(1000px) scaleY(2.5) scaleX(.2);transform:translateY(1000px) scaleY(2.5) scaleX(.2);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;-webkit-filter:blur(40px);filter:blur(40px);opacity:0}100%{-webkit-transform:translateY(0) scaleY(1) scaleX(1);transform:translateY(0) scaleY(1) scaleX(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes slide-in-blurred-bottom{0%{-webkit-transform:translateY(1000px) scaleY(2.5) scaleX(.2);transform:translateY(1000px) scaleY(2.5) scaleX(.2);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;-webkit-filter:blur(40px);filter:blur(40px);opacity:0}100%{-webkit-transform:translateY(0) scaleY(1) scaleX(1);transform:translateY(0) scaleY(1) scaleX(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-filter:blur(0);filter:blur(0);opacity:1}}
@@ -1590,3 +1581,6 @@ footer > p > a:hover {
 
 .slit-in-horizontal{opacity:1;-webkit-animation:slit-in-horizontal .7s ease-out both;animation:slit-in-horizontal .35s ease-out both}
 @-webkit-keyframes slit-in-horizontal{0%{-webkit-transform:translateZ(-800px) rotateX(90deg);transform:translateZ(-800px) rotateX(90deg);opacity:0}54%{-webkit-transform:translateZ(-160px) rotateX(87deg);transform:translateZ(-160px) rotateX(87deg);opacity:1}100%{-webkit-transform:translateZ(0) rotateX(0);transform:translateZ(0) rotateX(0)}}@keyframes slit-in-horizontal{0%{-webkit-transform:translateZ(-800px) rotateX(90deg);transform:translateZ(-800px) rotateX(90deg);opacity:0}54%{-webkit-transform:translateZ(-160px) rotateX(87deg);transform:translateZ(-160px) rotateX(87deg);opacity:1}100%{-webkit-transform:translateZ(0) rotateX(0);transform:translateZ(0) rotateX(0)}}
+
+.puff-in-hor{-webkit-animation:puff-in-hor .4s cubic-bezier(.47,0.000,.745,.715) both;animation:puff-in-hor .7s cubic-bezier(.47,0.000,.745,.715) both}
+@-webkit-keyframes puff-in-hor{0%{-webkit-transform:scaleX(2);transform:scaleX(2);-webkit-filter:blur(4px);filter:blur(4px);opacity:0}100%{-webkit-transform:scaleX(1);transform:scaleX(1);-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes puff-in-hor{0%{-webkit-transform:scaleX(2);transform:scaleX(2);-webkit-filter:blur(4px);filter:blur(4px);opacity:0}100%{-webkit-transform:scaleX(1);transform:scaleX(1);-webkit-filter:blur(0);filter:blur(0);opacity:1}}
