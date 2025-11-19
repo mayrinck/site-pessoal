@@ -658,25 +658,6 @@ h2, h3, h4, h5, h6 {
     line-height: 150%;
 }
 
-.pricetag {
-    width: auto;
-    padding: 4px 16px;
-    border-radius: 8px;
-    background: var(--green);
-    color: var(--input);
-    font-weight: 700;
-    font-size: 1rem;
-    align-self: flex-start;
-}
-
-.pricetag.alert {
-    background: #ffc421;
-}
-
-.pricetag.closed {
-    background: #f37474;
-}
-
 .grid .card > img {
     width: 100%;
     height: auto;
@@ -1167,6 +1148,44 @@ h1.catch {
     gap: var(--gap);
 }
 
+.index > .card > .info .title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--hover);
+}
+
+.index > .card > .info .description {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(-text);
+}
+
+.index > .card > .info a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.pricetag {
+    width: auto;
+    padding: 4px 16px;
+    border-radius: 8px;
+    background: var(--green);
+    color: var(--input);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.pricetag.alert {
+    background: #ffc421;
+}
+
+.pricetag.closed {
+    background: #f37474;
+}
+
 #articles {
     position: relative;
     left: 0;
@@ -1429,9 +1448,17 @@ footer > p > a:hover {
         gap: var(--gap);
     }
 
-    #blog-wrapper {
-        display: flex;
+    .index > .card > .info a {
         flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    #blog-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(auto-fill, auto);
     }
 }
 
