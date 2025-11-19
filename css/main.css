@@ -470,8 +470,7 @@ h2, h3, h4, h5, h6 {
     scroll-margin-top: 100px;
 }
 
-.my-cases > .flex-section,
-.mywork > .flex-section {
+.flex-section {
     width: 100%;
     height: auto;
     margin: 32px 0px;
@@ -692,13 +691,12 @@ h2, h3, h4, h5, h6 {
     color: var(--hover);
 }
 
-.my-cases > .flex-section a {
+.flex-section a {
     display: flex;
 }
 
-.my-cases > .flex-section .case {
+.flex-section .case {
     position: relative;
-    width: 100%;
     height: auto;
     padding: 8px;
     border-radius: 16px;
@@ -708,7 +706,11 @@ h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-.my-cases > .flex-section .case > div {
+.flex-section .case > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     bottom: -40%;
     left: 2%;
@@ -720,7 +722,7 @@ h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
-.my-cases > .flex-section .case:hover > div {
+.flex-section .case:hover > div {
     bottom: 2%;
 }
 
@@ -779,7 +781,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .lugod {
-    background-image: url(../media/images/blog/purple-grid.webp);
+    background-image: url(../media/images/projects/lugod.png);
     background-size: cover;
 }
 
@@ -793,16 +795,22 @@ h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
-.my-cases > .flex-section .case > div > span {
+.experiments {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    margin-top: 64px;
+}
+
+.flex-section .case > div > span {
     float: left;
     width: auto;
     max-width: 70%;
-    margin-top: 8px;
     font-size: 1.5em;
     color: #FFF;
 }
 
-.my-cases > .flex-section .case > div > svg {
+.flex-section .case > div > svg {
     fill: #FFF;
     width: 44px;
     height: 44px;
@@ -1390,6 +1398,10 @@ footer > p > a:hover {
     .mywork > p {
         width: 100%;
     }
+
+    .flex-section .case > div > span {
+        font-size: 1.16rem;
+    }
 }
 
 @media screen and (max-width: 1155px) {
@@ -1440,7 +1452,7 @@ footer > p > a:hover {
         max-height: none;
     }
 
-    .my-cases > .flex-section {
+    .flex-section {
         width: 100%;
         height: auto;
         margin: 32px 0px;
