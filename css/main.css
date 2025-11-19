@@ -669,6 +669,14 @@ h2, h3, h4, h5, h6 {
     align-self: flex-start;
 }
 
+.pricetag.alert {
+    background: #ffc421;
+}
+
+.pricetag.closed {
+    background: #f37474;
+}
+
 .grid .card > img {
     width: 100%;
     height: auto;
