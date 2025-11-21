@@ -18,13 +18,13 @@ function addClickListener() {
 
     if (contactButton) {
         contactButton.addEventListener("click", function() {
-        window.sa_event && window.sa_event('contato_por_email');
+        window.sa_event && window.sa_event('contato');
         });
     }
 
     if (jobButton) {
         jobButton.addEventListener("click", function() {
-        window.sa_event && window.sa_event('contato_para_orçamento');
+        window.sa_event && window.sa_event('contato');
         });
     }
 }
