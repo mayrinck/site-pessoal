@@ -157,6 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Dados de Analytics
+sa_event("contato");
+
+
 
 
 
