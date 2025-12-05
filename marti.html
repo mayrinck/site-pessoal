@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -64,3 +65,239 @@
 </html>
 
 <script src="js/marti.js"></script>
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marti - Markdown Article Editor</title>
+    <link rel="stylesheet" href="css/marti.css">
+    <script src="libraries/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Marti Markdown Articles Generator</h1>
+
+        <div class="mode-buttons">
+            <button id="side-by-side" title="Lado a lado">📃</button>
+            <button id="vertical" title="Vertical">↕️</button>
+            <button id="tabs" title="Abas">🗂️</button>
+        </div>
+
+        <div class="metadata">
+            <input type="text" id="fileName" placeholder="Nome do arquivo (sem extensão)">
+            <input type="text" id="pageTitle" placeholder="Título da página">
+            <input type="text" id="pageDescription" placeholder="Descrição da página">
+            <input type="text" id="metaTags" placeholder="Meta tags (separadas por vírgula)">
+            <button id="generateTags">🏷️ Gerar Tags</button>
+        </div>
+
+        <hr>
+
+        <div class="toolbar">
+            <button onclick="insertMarkdown('**', '**')">B</button>
+            <button onclick="insertMarkdown('*', '*')">I</button>
+            <button onclick="insertMarkdown('`', '`')">Code</button>
+            <button onclick="insertMarkdown('![](', ')')">Img</button>
+            <button onclick="insertMarkdown('[', '](url)')">Link</button>
+            <button onclick="insertTable()">Tabela</button>
+            <span id="saveStatus">💾 Salvo</span>
+        </div>
+
+        <div id="editorPreviewWrapper" class="side-by-side">
+            <textarea id="markdownInput" placeholder="Escreva seu artigo em Markdown..."></textarea>
+            <div id="preview" class="preview"></div>
+        </div>
+
+        <div class="tabs-wrapper" style="display: none;">
+            <div class="tabs">
+                <button id="tabEditor">Editor</button>
+                <button id="tabPreview">Preview</button>
+            </div>
+            <div id="tabEditorContent">
+                <textarea id="markdownInputTab" placeholder="Escreva seu artigo em Markdown..."></textarea>
+            </div>
+            <div id="tabPreviewContent" class="preview"></div>
+        </div>
+
+        <button id="downloadBtn">📥 Baixar como HTML</button>
+    </div>
+
+    <script>
+        const mdInput = document.getElementById('markdownInput');
+        const preview = document.getElementById('preview');
+        const saveStatus = document.getElementById('saveStatus');
+        const markdownInputTab = document.getElementById('markdownInputTab');
+        const tabPreviewContent = document.getElementById('tabPreviewContent');
+
+        // Auto-save
+        function autoSave() {
+            localStorage.setItem('martiContent', mdInput.value);
+            localStorage.setItem('martiTitle', document.getElementById('pageTitle').value);
+            localStorage.setItem('martiDesc', document.getElementById('pageDescription').value);
+            localStorage.setItem('martiFileName', document.getElementById('fileName').value);
+            localStorage.setItem('martiTags', document.getElementById('metaTags').value);
+            saveStatus.textContent = '💾 Salvo';
+        }
+
+        function loadSaved() {
+            if(localStorage.getItem('martiContent')) mdInput.value = localStorage.getItem('martiContent');
+            if(localStorage.getItem('martiTitle')) document.getElementById('pageTitle').value = localStorage.getItem('martiTitle');
+            if(localStorage.getItem('martiDesc')) document.getElementById('pageDescription').value = localStorage.getItem('martiDesc');
+            if(localStorage.getItem('martiFileName')) document.getElementById('fileName').value = localStorage.getItem('martiFileName');
+            if(localStorage.getItem('martiTags')) document.getElementById('metaTags').value = localStorage.getItem('martiTags');
+            renderMarkdown();
+        }
+
+        mdInput.addEventListener('input', () => {
+            renderMarkdown();
+            saveStatus.textContent = '⏳ Salvando...';
+            clearTimeout(window.autoSaveTimer);
+            window.autoSaveTimer = setTimeout(autoSave, 500);
+        });
+
+        function renderMarkdown() {
+            preview.innerHTML = marked.parse(mdInput.value);
+            markdownInputTab.value = mdInput.value;
+            tabPreviewContent.innerHTML = marked.parse(mdInput.value);
+        }
+
+        // Markdown inserções rápidas
+        function insertMarkdown(open, close) {
+            const input = mdInput;
+            const start = input.selectionStart;
+            const end = input.selectionEnd;
+            const text = input.value;
+            input.value = text.substring(0, start) + open + text.substring(start, end) + close + text.substring(end);
+            input.focus();
+            renderMarkdown();
+            autoSave();
+        }
+
+        // Inserir tabela básica
+        function insertTable() {
+            const table = `| Coluna 1 | Coluna 2 |\n| --- | --- |\n| Valor 1 | Valor 2 |\n`;
+            mdInput.value += '\n' + table;
+            renderMarkdown();
+            autoSave();
+        }
+
+        // Gerar Tags (simples)
+        document.getElementById("generateTags").addEventListener('click', () => {
+            const words = mdInput.value.match(/\b\w{4,}\b/g);
+            if (!words) return;
+            const freq = {};
+            words.forEach(w => freq[w] = (freq[w] || 0) + 1);
+            const tags = Object.entries(freq).sort((a,b) => b[1]-a[1]).slice(0, 10).map(e => e[0]).join(', ');
+            document.getElementById('metaTags').value = tags;
+            autoSave();
+        });
+
+        // Download HTML com template completo
+        document.getElementById("downloadBtn").addEventListener('click', () => {
+            const title = document.getElementById('pageTitle').value;
+            const description = document.getElementById('pageDescription').value;
+            const tags = document.getElementById('metaTags').value;
+            const fileName = document.getElementById('fileName').value || 'artigo';
+            const today = new Date().toISOString().split('T')[0];
+
+            const articleContent = marked.parse(mdInput.value);
+
+            const template = `
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="author" content="Renan Mayrinck">
+            <meta name="description" content="${description}">
+            <meta name="keywords" content="${tags}">
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="${title}">
+            <meta name="og:description" content="${description}">
+            <meta property="og:image" content="../media/images/fundo.jpeg">
+            <meta name="og:author" content="Renan Mayrinck">
+            <meta name="og:url" content="">
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:title" content="${title}">
+            <meta name="twitter:description" content="${description}">
+            <meta name="twitter:image" content="https://renanmayrinck.com/media/images/fundo.jpeg">
+            <meta name="twitter:url" content="">
+            <meta name="twitter:author" content="Renan Mayrinck">
+            <link rel="stylesheet" href="../css/main.css">
+            <link rel="shortcut icon" href="../media/images/pp3.jpg" type="image/x-icon">
+            <title>${title}</title>
+            </head>
+            <body>
+            <header>
+            <nav>
+            <a tabindex="1" href="../start.html">Início</a>
+            <a tabindex="2" href="../portfolio.html">Portfolio</a>
+            <a tabindex="3" href="../cursos.html">Cursos e Mentorias</a>
+            <a tabindex="4" href="../artigos.html"><strong>Artigos</strong></a>
+            <button tabindex="5" class="button-primary" id="contact">Entre em contato</button>
+            </nav>
+            <button id="menu-trigger"><img src="../media/icons/menu.svg" alt="menu"></button>
+            </header>
+            <section class="article-hero" style="background-image: url('../media/images/blog/uwk-title.webp');">
+            <h1>${title}</h1>
+            <p><time datetime="${today}">${today}</time> por <span class="author">Renan Mayrinck</span></p>
+            </section>
+            <main class="article-bind">
+            <aside><p class="title">Conteúdos</p><ul></ul></aside>
+            <article>${articleContent}</article>
+            </main>
+            <section class="final-cta"><h5 class="cta-title">Gostou deste artigo? Compartilhe 😊</h5>
+            <div class="buttons"><button class="pop" id="contact-again">Entre em contato</button></div></section>
+            </body>
+            </html>`;
+
+            const blob = new Blob([template], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${fileName}.html`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        // Modos de visualização
+        document.getElementById("side-by-side").addEventListener("click", () => {
+            document.getElementById("editorPreviewWrapper").className = "side-by-side";
+            document.querySelector(".tabs-wrapper").style.display = "none";
+        });
+        document.getElementById("vertical").addEventListener("click", () => {
+            document.getElementById("editorPreviewWrapper").className = "vertical";
+            document.querySelector(".tabs-wrapper").style.display = "none";
+        });
+        document.getElementById("tabs").addEventListener("click", () => {
+            document.getElementById("editorPreviewWrapper").className = "hidden";
+            document.querySelector(".tabs-wrapper").style.display = "block";
+        });
+
+        document.getElementById("tabEditor").addEventListener("click", () => {
+            document.getElementById("tabEditorContent").style.display = "block";
+            document.getElementById("tabPreviewContent").style.display = "none";
+        });
+        document.getElementById("tabPreview").addEventListener("click", () => {
+            markdownInputTab.value = mdInput.value;
+            tabPreviewContent.innerHTML = marked.parse(mdInput.value);
+            document.getElementById("tabEditorContent").style.display = "none";
+            document.getElementById("tabPreviewContent").style.display = "block";
+        });
+
+        markdownInputTab.addEventListener('input', () => {
+            mdInput.value = markdownInputTab.value;
+            renderMarkdown();
+            autoSave();
+        });
+
+        // Inicializa
+        loadSaved();
+    </script>
+</body>
+</html>
+>>>>>>> d25b43c (syncing)
