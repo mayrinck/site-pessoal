@@ -111,9 +111,14 @@ button > img {
     height: 24px;
 }
 
-.gumroad:hover {
-    background: #ff90e8;
-    border-color: #ff90e8;
+.udemy {
+    background: #6d28d2;
+    border-color: #6d28d2;
+}
+
+.udemy:hover {
+    background: #813ce8;
+    border-color: #813ce8;
 }
 
 p {
