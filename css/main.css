@@ -896,6 +896,14 @@ h2, h3, h4, h5, h6 {
     gap: 24px;
 }
 
+.prototype {
+    width: 100%;
+    height: fit-content;
+    min-height: 720px;
+    border: none;
+    border-radius: var(--radius);
+}
+
 .overview > p {
     color: var(--bgl);
     font-size: 1.65rem;
