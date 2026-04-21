@@ -26,6 +26,7 @@
     --glass: blur(16px);
     --transition: all 165ms ease;
     font-size: 16px;
+    interpolate-size: allow-keywords;
 }
 
 html {
@@ -111,16 +112,6 @@ button > img {
     height: 24px;
 }
 
-.udemy {
-    background: #6d28d2;
-    border-color: #6d28d2;
-}
-
-.udemy:hover {
-    background: #813ce8;
-    border-color: #813ce8;
-}
-
 p {
     letter-spacing: 0.5px;
 }
@@ -139,6 +130,47 @@ p {
 .button-primary:hover {
     background: var(--hover);
     color: var(--bgd);
+}
+
+details {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    padding: var(--gap);
+    border-radius: var(--radius);
+    color: var(--text);
+    background: #181818;
+    cursor: pointer;
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+details[open] {
+    background: var(--input);
+}
+
+details > summary {
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details > p {
+    padding-block: 1rem;
+}
+
+details::details-content {
+    block-size: 0;
+    transition: var(--transition);
+    transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+    block-size: auto;
 }
 
 section video {
@@ -306,6 +338,16 @@ h1 {
     position: relative;
 }
 
+#course-title {
+    font-family: "Anybody";
+    font-size: 5rem;
+    line-height: 8rem;
+    font-weight: 800;
+    letter-spacing: 0.35rem;
+    text-align: center;
+    position: relative;
+}
+
 .decoration > span {
     color: #FFF;
     font-size: 1rem;
@@ -314,6 +356,11 @@ h1 {
     opacity: 0.65;
     margin-left: 5px;
     text-transform: uppercase;
+}
+
+.decoration .signature {
+    color: var(--bgl);
+    font-family: "Rock Salt";
 }
 
 h2, h3, h4, h5, h6 {
@@ -743,7 +790,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .vero {
-    background-image: url(../media/images/projects/vero.png);
+    background-image: url(../media/images/projects/vero/vero.webp);
     background-size: cover;
 }
 
@@ -781,7 +828,7 @@ h2, h3, h4, h5, h6 {
 }
 
 .inkscape {
-    background-image: url(../media/images/projects/inkscape.png);
+    background-image: url(../media/images/projects/inkscape/inkscape.png);
     background-size: cover;
 }
 
@@ -1384,6 +1431,31 @@ dialog#mobnav {
     right: 42px;
     top: 28px;
 }
+
+
+/* ////////////////////////////////////// */
+/* RELACIONADOS A LANDING PAGES DE CURSOS */
+/* ////////////////////////////////////// */
+.udemy {
+    background: #6d28d2;
+    border-color: #6d28d2;
+    color: var(--bgl);
+}
+
+.udemy:hover {
+    background: #813ce8;
+    border-color: #813ce8;
+    color: var(--bgl);
+}
+
+.attributes {
+    
+}
+
+
+/* ///////////////////////////// */
+/* RELACIONADOS A RESPONSIVIDADE */
+/* ///////////////////////////// */
 
 @media screen and (min-width: 2000px) {
     body {
