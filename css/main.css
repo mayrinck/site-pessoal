@@ -15,6 +15,7 @@
     --default: #9d35e2;
     --hover: #A052D5;
     --green: #4dd9a7;
+    --penpot-green: #32efb9;
     --bg: light-dark(#000, #FFF);
     --text: #d5d5d5;
     --bgl: #ffffff;
@@ -577,27 +578,39 @@ h2, h3, h4, h5, h6 {
 }
 
 .spec > img {
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
     pointer-events: none;
 }
 
 .spec > p {
     color: inherit;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
 .spec > span {
     color: var(--text);
-    font-size: 14px;
+    font-size: 1.15rem;
     font-weight: 400;
+}
+
+.spec > .big {
+    width: 96px;
+    height: 96px;
 }
 
 .spec.re {
     color: #3bc9db;
     border: 2px solid #3bc9db;
     background: linear-gradient(225deg, rgba(7, 41, 47, 1) 0%,rgba(1, 10, 12, 1) 100%);
+}
+
+.spec.pt {
+    color: var(--penpot-green);
+    border: 2px solid var(--penpot-green);
+    background: linear-gradient(225deg, rgba(28, 75, 63, 0) 0%,rgba(28, 75, 63, 0.65) 100%);
+
 }
 
 .spec.dg {
@@ -1197,6 +1210,7 @@ h1.catch {
 }
 
 .faq {
+    gap: 8px;
     align-items: center;
 }
 
@@ -1474,6 +1488,8 @@ dialog#mobnav {
 
 .reasoning {
     gap: 0px;
+    align-items: center !important;
+    align-content: center !important;
 }
 
 .reasoning > p {

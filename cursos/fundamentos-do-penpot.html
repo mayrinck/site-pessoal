@@ -25,6 +25,8 @@
     
     <link rel="stylesheet" href="../css/main.css">
     <link rel="shortcut icon" href="../media/images/pp3.jpg" type="image/x-icon">
+
+    <script type="application/ld+json" src="../js/penpot-faq.json"></script>
 </head>
 
 <body>
@@ -52,11 +54,35 @@
         </div>
     </section>
 
+    <section class="contents">
+        <h2>O que é o Penpot?</h2>
+        <p>É a primeira plataforma de design e prototipação open-source que fala a língua nativa da web. Enquanto ferramentas proprietárias criam "muros" entre o design e o código, o Penpot utiliza padrões abertos como SVG, e recursos nativos do CSS como Flexbox e CSS Grid, permitindo desenhos eficientes, adaptáveis e realistas. O Penpot também é uma plataforma para colaboração sem atritos entre designers e desenvolvedores. Ao escolher o Penpot, você ganha a liberdade de uma ferramenta gratuita e profissional que quase elimina o handoff e evita retrabalhos e as perdas de tradução, garantindo que o que você projeta seja exatamente o que será implementado, tudo isso sem ficar refém de formatos de arquivos fechados ou assinaturas caríssimas.</p>
+        <img src="../media/images/projects/penpot-desktop/penpot-desktop.png" alt="O cliente do Penpot em um belo desktop Linux">
+    </section>
+
     <section class="reasoning">
         <p>...mas e se você já conhece de <span id="SlotTools" class="cycle"></span></p>
         <h2>Por que aprender o Penpot?</h2>
 
+        <div class="flex-section">
+            <div class="spec pt">
+                <img class="big" src="../media/icons/fundamentos-penpot/soberania.svg" alt="Soberania digital">
+                <p>Soberania Digital e Propriedade de Dados</p>
+                <span>Em um cenário onde grandes corporações mudam termos de serviço e preços da noite para o dia, o Penpot oferece independência. Por ser código aberto, você (ou sua empresa) pode realizar o self-hosting (instalar em servidor próprio), garantindo que seus arquivos e projetos nunca fiquem inacessíveis por decisões de terceiros ou quedas globais de serviços proprietários.</span>
+            </div>
 
+            <div class="spec pt">
+                <img class="big" src="../media/icons/fundamentos-penpot/seupc.svg" alt="Combate ao SaaS">
+                <p>Contra-ataque a "Saasificação" Abusiva</p>
+                <span>O custo de manter múltiplas assinaturas de design e tecnologia tornou-se um fardo para freelancers e agências. O Penpot surge como a resposta econômica e profissional, entregando recursos de ponta (como componentes, bibliotecas compartilhadas e integração com inteligência artificial) de forma gratuita, permitindo que o profissional invista seu capital em hardware ou educação, em vez de apenas "alugar" o acesso as suas próprias ferramentas de trabalho.</span>
+            </div>
+
+            <div class="spec pt">
+                <img class="big" src="../media/icons/fundamentos-penpot/console.svg" alt="Alinhamento aos devs">
+                <p>Alinhamento Nativo com o Desenvolvimento</p>
+                <span>O mercado de tecnologia busca cada vez mais profissionais "T-Shaped". Aprender o Penpot coloca o designer a frente, pois a ferramenta utiliza a lógica e exporta código real na construção dos protótipos. Dominar os fundamentos do Penpot significa entender como o layout moderno da web funciona, facilitando a comunicação com devs e acelerando o ciclo de entrega de produtos digitais, uma habilidade cada vez mais requisitada por empresas que buscam eficiência operacional.</span>
+            </div>
+        </div>
     </section>
 
     <section class="mywork">
@@ -107,9 +133,58 @@
         <h5>Tem alguma dúvida?</h5>
 
         <details>
-            <summary>Por que eu deveria aprender o Penpot?</summary>
+            <summary>O Penpot é realmente gratuito?</summary>
+            <p>
+                Sim, o Penpot é uma ferramenta gratuita e de código aberto (open-source). Você pode usar a versão na nuvem gratuitamente com times de até 10 pessoas ou instalar em seu próprio servidor sem limitações ou custos de licença.
+            </p>
+        </details>
+
+        <details>
+            <summary>O Penpot funciona no Windows, MacOS e Linux?</summary>
+            <p>
+                Por ser baseado em navegador, ele funciona em qualquer sistema operacional. Além disso, existe um <a href="" target="_blank">cliente desktop</a> mantido pela comunidade para todas as plataformas.
+            </p>
+        </details>
+
+        <details>
+            <summary>Que vantagens existem em aprender o Penpot?</summary>
             <p>
                 Além de adquirir versatilidade ao aprender uma nova ferramenta, aprender sobre o Penpot significa aprender sobre a principal plataforma de prototipação gratuita (de verdade) e de código aberto da atualidade. É a ferramenta gratuita mais poderosa que você vai encontrar como concorrente do Figma, Adobe XD, Sketch, Lunacy ou qualquer outra plataforma de prototipação. Se você quiser saber uma comparação por extenso entre o Penpot e o Figma, por exemplo, <a href="../artigos/figma-vs-penpot">tenho um artigo completo</a> apontando cada detalhe.
+            </p>
+        </details>
+
+        <details>
+            <summary>Posso trabalhar offline com o Penpot?</summary>
+            <p>
+                A versão oficial na núvem exige conexão constante, mas ao optar pelo self-hosting via Docker ou tecnologias similares, você pode rodar o Penpot em uma rede local ou ambiente controlado offline sem problemas.
+            </p>
+        </details>
+
+        <details>
+            <summary>O Penpot serve para criar protótipos de alta fidelidade?</summary>
+            <p>
+                Com certeza. Ele permite criar interações complexas, transições e fluxos de usuário prontos para testes de usabilidade e apresentações para clientes.
+            </p>
+        </details>
+
+        <details>
+            <summary>O Penpot suporta bibliotecas de componentes e design systems?</summary>
+            <p>
+                Sim, você pode criar sistemas de design completos, com componentes reutilizáveis, variantes, tokens e bibliotecas compartilhadas entre diferentes arquivos.
+            </p>
+        </details>
+
+        <details>
+            <summary>O Penpot é seguro para projetos corporativos?</summary>
+            <p>
+                Extremamente. Por permitir o controle total da infraestrutura (self-hosting), muitas empresas já o escolheram para garantir que dados sensíveis não saiam de seus servidores. Você também pode contratar suporte direto da Kaleidos, a criadora do Penpot, se quiser ajuda profissional para criar uma infraestrutura para usar o Penpot em uma corporação.
+            </p>
+        </details>
+
+        <details>
+            <summary>O Penpot abre arquivos de outros softwares?</summary>
+            <p>
+                Não diretamente, mas há formas de converter formatos dos outros programas para o Penpot. No caso so Figma, por exemplo, existe um plugin de conversão que permite trazer seus arquivos do Figma de forma rápida, facilitando a transição de plataforma.
             </p>
         </details>
 

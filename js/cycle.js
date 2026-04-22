@@ -7,7 +7,7 @@
        * @param {Array} items - Lista de objetos { icon: string (SVG ou HTML), label: string }.
        * @param {number} pauseDuration - Tempo de pausa em milissegundos (padrão 2000).
        */
-      function createSlotMachine(container, items, pauseDuration = 2000) {
+      function createSlotMachine(container, items, pauseDuration = 3000) {
         if (!container || !items || items.length === 0) return;
 
         // Duplicamos os itens para criar um loop contínuo sem "salto"

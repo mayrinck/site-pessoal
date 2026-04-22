@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O Penpot é realmente gratuito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, o Penpot é uma ferramenta gratuita e de código aberto (open-source). Você pode usar a versão na nuvem gratuitamente com times de até 10 pessoas ou instalar em seu próprio servidor sem limitações ou custos de licença."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Penpot funciona no Windows, MacOS e Linux?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por ser baseado em navegador, ele funciona em qualquer sistema operacional. Além disso, existe um cliente desktop mantido pela comunidade para todas as plataformas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que vantagens existem em aprender o Penpot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Além de adquirir versatilidade ao aprender uma nova ferramenta, aprender sobre o Penpot significa aprender sobre a principal plataforma de prototipação gratuita e de código aberto da atualidade. É a ferramenta gratuita mais poderosa que você vai encontrar como concorrente de plataformas como Figma ou Adobe XD."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso trabalhar offline com o Penpot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A versão oficial na nuvem exige conexão constante, mas ao optar pelo self-hosting via Docker ou tecnologias similares, você pode rodar o Penpot em uma rede local ou ambiente controlado offline sem problemas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Penpot serve para criar protótipos de alta fidelidade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Com certeza. Ele permite criar interações complexas, transições e fluxos de usuário prontos para testes de usabilidade e apresentações para clientes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Penpot suporta bibliotecas de componentes e design systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, você pode criar sistemas de design completos, com componentes reutilizáveis, variantes, tokens e bibliotecas compartilhadas entre diferentes arquivos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Penpot é seguro para projetos corporativos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Extremamente. Por permitir o controle total da infraestrutura (self-hosting), muitas empresas já o escolheram para garantir que dados sensíveis não saiam de seus servidores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O Penpot abre arquivos de outros softwares?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não diretamente, mas há formas de converter formatos. No caso do Figma, por exemplo, existe um plugin de conversão que permite trazer seus arquivos de forma rápida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como consigo o certificado do curso?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Basta assistir todas as aulas pela plataforma após a compra. Assim que concluir, você poderá baixar seu certificado de conclusão para adicionar ao seu Linkedin ou compartilhar nas redes."
+      }
+    }
+  ]
+}
