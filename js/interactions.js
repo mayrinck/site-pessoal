@@ -30,27 +30,38 @@ const { scrollY } = window;  // Usando desestruturação
 // Escuta o evento de scroll da janela com debounce para otimizar a performance
 window.addEventListener('scroll', debounce(checkScroll));
 
-ContactTrigger.addEventListener("click", () => {
-    ContactDialog.classList.add("slide-in-elliptic-top-fwd");
-    ContactDialog.showModal();
-});
+if (ContactTrigger) {
+    ContactTrigger.addEventListener("click", () => {
+        ContactDialog.classList.add("slide-in-elliptic-top-fwd");
+        ContactDialog.showModal();
+    });
+}
 
-ContactTrigger2.addEventListener("click", () => {
-    NavDialog.close();
-    ContactDialog.showModal();
-});
+if (ContactTrigger2) {
+    ContactTrigger2.addEventListener("click", () => {
+        NavDialog.close();
+        ContactDialog.showModal();
+    });
+}
 
-NavTrigger.addEventListener("click", () => {
-    NavDialog.showModal();
-});
+if (NavTrigger) {
+    NavTrigger.addEventListener("click", () => {
+        NavDialog.showModal();
+    });
+}
 
-CloseTrigger.addEventListener("click", () => {
-    ContactDialog.close();
-});
 
-NavClose.addEventListener("click", () => {
-    NavDialog.close();
-});
+if (CloseTrigger) {
+    CloseTrigger.addEventListener("click", () => {
+        ContactDialog.close();
+    });
+}
+
+if (NavClose) {
+    NavClose.addEventListener("click", () => {
+        NavDialog.close();
+    });
+}
 
 //Nas páginas de artigo, verifica se o usuário clicou no botão de compartilhar e então abre o diálogo nativo de compartilhamento da plataforma (se houver)
 const url = window.location.href;

@@ -12,7 +12,7 @@
 
         // Duplicamos os itens para criar um loop contínuo sem "salto"
         const doubledItems = [...items, ...items];
-        const itemHeight = 32; // Deve coincidir com a altura definida no CSS
+        const itemHeight = 24; // Deve coincidir com a altura definida no CSS
 
         // Monta a estrutura interna
         const itemsWrapper = document.createElement('div');
@@ -120,21 +120,21 @@
       `;
       
       const icon2 = `
-        <img width="24" height="24" class="icon" src="../media/icons/figma.webp">
+        <img width="24" height="24" class="icon" src="../media/icons/sketch.webp">
       `;
       
       const icon3 = `
-        <img width="24" height="24" class="icon" src="../media/icons/figma.webp">
+        <img width="24" height="24" class="icon" src="../media/icons/adobexd.webp">
       `;
 
       const icon4 = `
-        <img width="24" height="24" class="icon" src="../media/icons/figma.webp">
+        <img width="24" height="24" class="icon" src="../media/icons/lunacy.webp">
       `;
 
       const slotItems = [
         { icon: icon1, label: 'Figma' },
-        { icon: icon2, label: 'Adobe XD' },
-        { icon: icon3, label: 'Sketch' },
+        { icon: icon2, label: 'Sketch' },
+        { icon: icon3, label: 'Adobe XD' },
         { icon: icon4, label: 'Lunacy' }
       ];
 
