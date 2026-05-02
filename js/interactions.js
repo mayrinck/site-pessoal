@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 entry.target.style.animationDelay = `${delay}s`;
 
                 // Adiciona a animação
-                entry.target.classList.add("slit-in-horizontal");
+                entry.target.classList.add("slide-in-blurred-bottom");
 
                 // Evita reanimar ao voltar ao viewport
                 observer.unobserve(entry.target);
