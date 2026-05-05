@@ -57,6 +57,17 @@ input {
     color: var(--bgl);
 }
 
+pre {
+    padding: 0px var(--gap);
+    border-left: 2px solid var(--green);
+}
+
+code {
+    color: var(--green);
+    font-family: "Courier", monospace;
+    padding: 0px;
+}
+
 dialog {
     position: fixed;
     left: 0;
@@ -1103,7 +1114,7 @@ article > h6 {
 
 article iframe {
     width: 100%;
-    height: 360px;
+    height: 480px;
 }
 
 aside {
@@ -1542,6 +1553,64 @@ dialog#mobnav {
     white-space: nowrap;
 }
 
+/* Wrapper da tabela para possível scroll horizontal em telas muito pequenas */
+.rm-table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos base da tabela */
+.rm-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: none;
+}
+
+/* Cabeçalho */
+.rm-comparison-table thead {
+  background-color: #141414;
+}
+
+.rm-comparison-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  border-bottom: 2px solid #323232;
+}
+
+/* Células do corpo */
+.rm-comparison-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #323232;
+  vertical-align: top;
+}
+
+/* Zebrado sutil */
+.rm-comparison-table tbody tr {
+  background-color: var(--input);
+}
+
+/* Coluna de destaque (última coluna) com fonte mais forte */
+.rm-comparison-table td:last-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Cores para os vencedores (opcional, para dar ênfase) */
+.rm-comparison-table td:last-child:has(span[data-winner]) {
+  color: var(--green);
+}
+
 /* ///////////////////////////// */
 /* RELACIONADOS A RESPONSIVIDADE */
 /* ///////////////////////////// */
@@ -1676,7 +1745,68 @@ dialog#mobnav {
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
+  /* Força a tabela a se comportar como blocos */
+  .rm-comparison-table,
+  .rm-comparison-table thead,
+  .rm-comparison-table tbody,
+  .rm-comparison-table th,
+  .rm-comparison-table td,
+  .rm-comparison-table tr {
+    display: block;
+  }
+
+  /* Esconde o cabeçalho original */
+  .rm-comparison-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  /* Cada linha vira um card */
+  .rm-comparison-table tbody tr {
+    margin-bottom: 1.5rem;
+    border: 1px solid #323232;
+    border-radius: 10px;
+    padding: 12px;
+    background: var(--input);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  /* Células ganham rótulo via pseudo-elemento usando o atributo data-label */
+  .rm-comparison-table td {
+    display: flex;
+    align-items: flex-start;
+    padding: 8px 10px;
+    border-bottom: 1px solid #323232;
+    font-size: 0.9rem;
+  }
+
+  .rm-comparison-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Label antes do conteúdo */
+  .rm-comparison-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--text);
+    min-width: 80px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* A coluna "Destaque" pode manter destaque visual */
+  .rm-comparison-table td[data-label="Destaque"] {
+    font-weight: 700;
+    color: var(--green);
+    background-color: var(--bgd);
+    border-radius: 0 0 10px 10px;
+  }
+
     .hero {
         background-image: url(../media/images/neobanner-vert.webp);
     }
@@ -1736,6 +1866,7 @@ dialog#mobnav {
         border-radius: 0px;
         justify-content: flex-end;
         gap: var(--gap);
+        background-position: right top;
     }
 
     .article-hero > h1 {

@@ -5,6 +5,7 @@ const elementos = [
     '<a class="entry" title="Clique para ler o artigo completo" href="../artigos/ocio-criativo"><div class="card"><img src="../media/images/blog/ocio.webp" alt="Ócio, para criativos"><span class="title">Ócio Criativo: Você está realmente descansando?</span><p class="date">escrito em 08/04/2025</p><p class="snippet">Ler artigo</p></div></a>',
     '<a class="entry" title="Clique para ler o artigo completo" href="../artigos/design-no-linux"><div class="card"><img src="../media/images/blog/design-linux.webp" alt="Design no Linux"><span class="title">Dá para ser designer usando Linux?</span><p class="date">escrito em 16/09/2025</p><p class="snippet">Ler artigo</p></div></a>',
     '<a class="entry" title="Clique para ler o artigo completo" href="../artigos/figma-vs-penpot"><div class="card"><img src="../media/images/blog/figma-vs-penpot.webp" alt="Figma vs Penpot"><span class="title">Figma vs Penpot: Uma comparação honesta</span><p class="date">escrito em 15/11/2025</p><p class="snippet">Ler artigo</p></div></a>',
+    '<a class="entry" title="Clique para ler o artigo completo" href="../artigos/o-que-e-progressive-web-app"><div class="card"><img src="../media/images/blog/pwa-thumb.webp" alt="PWA Progressive Web App"><span class="title">Progressive Web Apps (PWA): Guia Completo sobre o que são, as vantagens e como construir</span><p class="date">escrito em 05/05/2026</p><p class="snippet">Ler artigo</p></div></a>',
 ];
 
 // Embaralha os elementos (algoritmo Fisher-Yates)
