@@ -1325,6 +1325,73 @@ h1.catch {
     height: 600px;
 }
 
+.cta-banner {
+    position: relative;
+    float: left;
+    width: calc(80% - 64px);
+    height: auto;
+    margin: 0 10%;
+    padding-left: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    background: #170000;
+    border-radius: var(--radius);
+    margin-block: 48px;
+    min-height: 400px;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.cta-banner .cta-content {
+    width: 50%;
+    max-width: 640px;
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.cta-banner .cta-content h2 {
+    font-size: 2.5rem;
+    color: #ff2525;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    line-height: 1.2;
+}
+
+.cta-banner .cta-content p {
+    font-size: 1rem;
+    color: #ffffff;
+    opacity: 0.9;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+.cta-banner .cta-video {
+    width: 46%;
+    max-width: 773px;
+    align-self: stretch;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    flex-shrink: 0;
+}
+
+.cta-banner .cta-video video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+}
+
 .cta-title {
     color: var(--hover);
 }
@@ -1743,6 +1810,34 @@ dialog#mobnav {
         flex-direction: column;
         gap: var(--gap);
     }
+
+        .cta-banner {
+        flex-direction: column-reverse;
+        padding: 0;
+        gap: 0;
+        margin-block: 32px;
+        min-height: auto;
+        width: 90%;
+        padding: 0 5%;
+    }
+
+    .cta-banner .cta-video {
+        width: 100%;
+        max-width: 100%;
+        min-height: 240px;
+        margin-top: 5%;
+        border-radius: 14px;
+    }
+
+    .cta-banner .cta-content {
+        padding: 32px 0px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cta-banner .cta-content h2 {
+        font-size: 1.8rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1848,6 +1943,7 @@ dialog#mobnav {
     .final-cta, 
     .final-cta.home,
     .mywork,
+    .cta-banner,
     .contents, .my-cases, .about-me,
     footer {
         width: 95%;
