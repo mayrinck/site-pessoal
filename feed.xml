@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Renan Mayrinck</title>
+    <link>https://renanmayrinck.com</link>
+    <description>Artigos de Renan Mayrinck sobre Design, Open-Source e Tecnologia. Com um background profissional de mais de 10 anos atuando com design, trago conteúdos e conhecimentos acumulados em todo esse tempo de experiência.</description>
+    
+    <item>
+      <title>Progressive Web Apps (PWA): Guia Completo sobre o que são, as vantagens e como construir</title>
+      <link>https://renanmayrinck.com/artigos/o-que-e-progressive-web-app</link>
+      <description>Entenda o que é um Progressive Web App, veja comparativo PWA vs app nativo, confira cases reais e aprenda como construir o seu com HTML, CSS e JavaScript.</description>
+      <pubDate>Tue, 05 May 2026 10:00:00 -0300</pubDate>
+    </item>
+
+    <item>
+      <title>Figma vs Penpot: Uma comparação honesta de quem usa ambos</title>
+      <link>https://renanmayrinck.com/artigos/figma-vs-penpot</link>
+      <description>Figma ou Penpot? Veja uma comparação honesta de quem usa ambos no dia a dia. Descubra prós, contras e qual ferramenta se encaixa melhor no seu projeto. Confira!</description>
+      <pubDate>Sat, 15 Nov 2025 20:00:00 -0300</pubDate>
+    </item>
+
+    <item>
+      <title>Dá para ser designer profissional usando Linux e Softwares Livres?</title>
+      <link>https://renanmayrinck.com/artigos/design-no-linux</link>
+      <description>Esqueça a Adobe: veja como ser designer no Linux com softwares livres. Análise de ferramentas, performance e um passo a passo para migrar sem dor de cabeça.</description>
+      <pubDate>Tue, 16 Sep 2025 19:00:00 -0300</pubDate>
+    </item>
+
+    <item>
+      <title>Quais são as alternativas as ferramentas da Adobe?</title>
+      <link>https://renanmayrinck.com/artigos/alternativas-gratuitas-pacote-adobe</link>
+      <description>Guia prático para substituir o pacote Adobe com ferramentas gratuitas, softwares livres ou de licença única vitalícia. Opções para design, vídeo, áudio e 3D, com dicas de compatibilidade de arquivos e atalhos para times migrarem com segurança.</description>
+      <pubDate>Fri, 01 Aug 2025 16:00:00 -0300</pubDate>
+    </item>
+
+    <item>
+      <title>Whiteboarding no Penpot: Substitua Miro e FigJam de Graça</title>
+      <link>https://renanmayrinck.com/artigos/whiteboarding-no-penpot</link>
+      <description>Da ideação ao Business Model Canvas sem sair da ferramenta. Descubra os templates gratuitos que transformam o Penpot em um quadro colaborativo completo.</description>
+      <pubDate>Sat, 15 Jun 2024 16:32:00 -0300</pubDate>
+    </item>
+
+    <item>
+      <title>O Ócio Criativo: o segredo dos Designers mais produtivos</title>
+      <link>https://renanmayrinck.com/artigos/ocio-criativo</link>
+      <description>Esgotado e sem ideias? Veja como o ócio criativo — longe de ser preguiça — é a chave para desbloquear sua mente e voltar a criar como designer.</description>
+      <pubDate>Tue, 08 Apr 2025 08:00:00 -0300</pubDate>
+    </item>
+  </channel>
+</rss>
