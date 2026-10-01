@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Landscape — Componente</title>
+
+    <style>
+        @font-face {
+            font-family: "Babel Sans";
+            src: url(media/fonts/BabelSans.woff);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Babel Sans", serif;
+            background: #000;
+            color: #fff;
+        }
+
+        /* ── Grid Principal ── */
+
+        .project-landscape {
+            display: grid;
+            grid-template-columns: 390px 1fr 480px;
+            grid-template-rows: 1fr 280px;
+            gap: 24px;
+            padding: 64px 128px;
+            background: #000;
+        }
+
+        /* ── Células ── */
+
+        .pl-content {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .pl-content .year {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1;
+            color: #fff;
+            width: 100%;
+        }
+
+        .pl-content .title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            color: #fff;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .pl-content .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: #fff;
+            font-family: "Babel Sans", serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1;
+            cursor: pointer;
+            transition: all 165ms ease;
+        }
+
+        .pl-content .btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .pl-image-main {
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            /* background-image: url(../media/images/projects/project-main.jpg); */
+        }
+
+        .pl-image-big {
+            grid-row: 1 / 3;
+            grid-column: 3 / 4;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #2d1b69 0%, #1a1a4e 50%, #0d0d2b 100%);
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            /* background-image: url(../media/images/projects/project-big.jpg); */
+        }
+
+        .pl-thumbs {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .pl-thumbs .thumb {
+            flex: 1;
+            height: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .pl-thumbs .thumb-a {
+            background: linear-gradient(135deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+            background-size: cover;
+            background-position: center;
+            /* background-image: url(../media/images/projects/thumb-a.jpg); */
+        }
+
+        .pl-thumbs .thumb-b {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            background-size: cover;
+            background-position: center;
+            /* background-image: url(../media/images/projects/thumb-b.jpg); */
+        }
+
+        /* ── Responsivo ── */
+
+        @media screen and (max-width: 1200px) {
+            .project-landscape {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto 280px auto;
+                padding: 48px 64px;
+            }
+
+            .pl-content {
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+            }
+
+            .pl-image-main {
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+                min-height: 240px;
+            }
+
+            .pl-image-big {
+                grid-row: 3 / 4;
+                grid-column: 1 / 3;
+                min-height: 320px;
+            }
+
+            .pl-thumbs {
+                grid-row: 2 / 3;
+                grid-column: 1 / 3;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .project-landscape {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                padding: 32px 24px;
+            }
+
+            .pl-content .title {
+                font-size: 32px;
+            }
+
+            .pl-content .year {
+                font-size: 16px;
+            }
+
+            .pl-image-main {
+                min-height: 200px;
+            }
+
+            .pl-image-big {
+                min-height: 280px;
+            }
+
+            .pl-thumbs {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .pl-thumbs .thumb {
+                width: 100%;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="project-landscape">
+
+        <div class="pl-content">
+            <span class="year">2025</span>
+            <h2 class="title">PicDoc: Plataforma de Telemedicina</h2>
+            <button class="btn">Ver projeto completo</button>
+        </div>
+
+        <div class="pl-image-main"></div>
+
+        <div class="pl-image-big"></div>
+
+        <div class="pl-thumbs">
+            <div class="thumb thumb-a"></div>
+            <div class="thumb thumb-b"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
