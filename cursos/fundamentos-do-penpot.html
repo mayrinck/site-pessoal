@@ -1,254 +1,270 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundamentos do Penpot - Segunda Edição | UI e UX Design com Software Livre</title>
-    <meta name="description" content="Com o curso de fundamentos do Penpot, você terá a oportunidade de explorar todas as capacidades da ferramenta e dominar suas funcionalidades. Você aprenderá como utilizar suas ferramentas básicas e avançadas para criar experiências excepcionais em seus projetos, de forma intuitiva e eficiente.">
-    <meta name="keywords" content="curso de penpot, fundamentos do penpot, design com software livre, prototipação open source, melhores cursos de design no linux, como usar Penpot para UI Design, ferramenta para ux design, Adobe XD, Sketch, Lunacy, Figma, alternativa gratuita ao figma, figma grátis">
-    <meta name="robots" content="noindex">
-    
-    <!-- OpenGraph Meta Tags -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Fundamentos do Penpot - Segunda Edição | UI e UX Design com Software Livre">
-    <meta name="og:description" content="Com o curso de fundamentos do Penpot, você terá a oportunidade de explorar todas as capacidades da ferramenta e dominar suas funcionalidades. Você aprenderá como utilizar suas ferramentas básicas e avançadas para criar experiências excepcionais em seus projetos, de forma intuitiva e eficiente.">
-    <meta property="og:image" content="../media/images/fundamentos-do-penpot.jpg">
-    <meta name="og:url" content="https://renanmayrinck.com/cursos/fundamentos-do-penpot">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Fundamentos do Penpot - Segunda Edição | UI e UX Design com Software Livre">
-    <meta name="twitter:description" content="Com o curso de fundamentos do Penpot, você terá a oportunidade de explorar todas as capacidades da ferramenta e dominar suas funcionalidades. Você aprenderá como utilizar suas ferramentas básicas e avançadas para criar experiências excepcionais em seus projetos, de forma intuitiva e eficiente.">
-    <meta property="og:image" content="../media/images/fundamentos-do-penpot.jpg">
-    <meta name="twitter:url" content="https://renanmayrinck.com/cursos/fundamentos-do-penpot">
-    
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="shortcut icon" href="../media/images/pp3.jpg" type="image/x-icon">
-
-    <script type="application/ld+json" src="../js/penpot-faq.json"></script>
-    <link rel="alternate" type="application/rss+xml" title="Meus artigos sobre design, open-source e tecnologia" href="https://renanmayrinck.com/feed.xml">
-
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "szmm2hnyyx");
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Penpot: UI Design com Ferramenta 100% Gratuita e Software Livre | Fundamentos do Penpot</title>
+<meta name="description" content="Fundamentos do Penpot: o primeiro curso do Brasil referendado pela equipe do Penpot. Aprenda UI Design profissional com ferramenta gratuita, open-source e self-host. Acesso vitalício + comunidade ativa.">
+<link rel="canonical" href="https://renanmayrinck.com/cursos/fundamentos-do-penpot">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fundamentos do Penpot — UI Design com ferramenta 100% gratuita">
+<meta property="og:description" content="Primeiro curso do Brasil referendado pelo Penpot. Aprenda prototipação profissional sem mensalidade, com software livre e self-host.">
+<meta property="og:image" content="https://renanmayrinck.com/media/images/fundamentos-do-penpot.jpg">
+<meta property="og:url" content="https://renanmayrinck.com/cursos/fundamentos-do-penpot">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../media/images/courses/fundamentos-do-penpot/penpot.png">
+<link rel="stylesheet" href="../css/penpot-landing.css">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Course",
+ "name":"Fundamentos do Penpot — Segunda Edição",
+ "description":"Curso de UI Design com Penpot: ferramenta gratuita, open-source e com self-host. Do wireframe ao protótipo de alta fidelidade.",
+ "provider":{"@type":"Person","name":"Renan Mayrinck","url":"https://renanmayrinck.com","jobTitle":"Product Designer e Embaixador Pen\pot no Brasil"},
+ "hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"PT2H52M","instructor":{"@type":"Person","name":"Renan Mayrinck"}},
+ "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","ratingCount":"3"},
+ "offers":{"@type":"Offer","price":"79.90","priceCurrency":"BRL","url":"https://www.udemy.com/course/fundamentos-do-penpot/?referralCode=6B1709315FB44A5375F7","availability":"https://schema.org/InStock"}
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"O Penpot é realmente gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim. A nuvem oficial é gratuita com limites generosos e você pode hospedar no seu servidor via Docker sem pagar licença. O único custo possível é o do servidor, se optar por um."}},
+{"@type":"Question","name":"O Penpot funciona no Windows, Mac e Linux?","acceptedAnswer":{"@type":"Answer","text":"Sim, porque roda no navegador. Há ainda um cliente desktop da comunidade para as três plataformas."}},
+{"@type":"Question","name":"Já uso Figma. Vou conseguir acompanhar o conteúdo?","acceptedAnswer":{"@type":"Answer","text":"Sim. A interface é parecida e usa os mesmos nomes — componentes, variantes, bibliotecas. Onde muda (Flex/Grid e tokens), o curso mostra o paralelo com o Figma."}},
+{"@type":"Question","name":"O Penpot substitui o Figma no trabalho?","acceptedAnswer":{"@type":"Answer","text":"No UI do dia a dia (componentes, tokens, protótipo, handoff), sim. O Figma ainda leva vantagem em plugins, smart animate e arquivos gigantes. O curso mostra quando usar cada um."}},
+{"@type":"Question","name":"Se a empresa onde eu trabalho exige Figma, vale a pena aprender Penpot?","acceptedAnswer":{"@type":"Answer","text":"Vale: hierarquia, layout, variantes e tokens valem para as duas. Muita gente usa Penpot no freela e aplica o método no Figma do trabalho."}},
+{"@type":"Question","name":"Tem pouca vaga pedindo Penpot?","acceptedAnswer":{"@type":"Answer","text":"Sim, a ferramenta é nova. Para freelas, projetos pessoais, startups, setor público e times que valorizam privacidade, o Penpot já é realidade."}},
+{"@type":"Question","name":"Dá para trabalhar offline com o Penpot?","acceptedAnswer":{"@type":"Answer","text":"Na nuvem, precisa de internet. Com self-host via Docker, você roda em rede local controlada."}},
+{"@type":"Question","name":"Dá para fazer alta fidelidade e Design Systems no Penpot?","acceptedAnswer":{"@type":"Answer","text":"Sim: interações, transições, componentes, variantes, tokens e bibliotecas compartilhadas entre arquivos."}},
+{"@type":"Question","name":"O Penpot é seguro para projetos empresariais?","acceptedAnswer":{"@type":"Answer","text":"Sim: os dados ficam no seu servidor, sob controle total — por isso empresas o adotam para fugir de reajustes e instabilidade de terceiros."}},
+{"@type":"Question","name":"Consigo importar arquivos do Figma para o Penpot?","acceptedAnswer":{"@type":"Answer","text":"Não diretamente, mas há plugins e serviços da comunidade que convertem Figma para Penpot."}},
+{"@type":"Question","name":"Qual a diferença do Flex/Grid do Penpot para o Auto Layout do Figma?","acceptedAnswer":{"@type":"Answer","text":"O Penpot usa CSS nativo em vez de implementação proprietária, incluindo margens somadas ao padding. O resultado já sai pronto para o dev inspecionar."}},
+{"@type":"Question","name":"Preciso saber Linux, Docker ou programar?","acceptedAnswer":{"@type":"Answer","text":"Não. Basta saber usar o computador e ter noção de UI. O módulo de IA/MCP vem com arquivo pronto e passo a passo."}},
+{"@type":"Question","name":"Como funcionam as atualizações e o certificado?","acceptedAnswer":{"@type":"Answer","text":"Compra única, acesso vitalício: recurso novo vira aula nova, sem custo. Ao concluir, a Udemy emite o certificado para o LinkedIn."}}
+]}
+</script>
 </head>
-
 <body>
-    <header class="slide-in-blurred-bottom">
-        <a tabindex="3" href="../cursos/fundamentos-do-penpot" title="Fundamentos do Penpot">
-            <img id="fdm-penpot" src="" alt="Logo Fundamentos do Penpot">
-        </a>
-        
-        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-            <a itemprop="url" tabindex="2" href="../index">Conheça o professor</a>
-            <a itemprop="url" tabindex="1" href="https://www.udemy.com/course/fundamentos-do-penpot/?referralCode=6B1709315FB44A5375F7"><button class="button-primary udemy pop">Começar a estudar • Só R$79,90</button></a>
-        </nav>
+<div class="progress"><i></i></div>
 
-        <button id="menu-trigger">
-            <img class="menu" src="../media/icons/menu.svg" alt="menu">
-        </button>
-    </header>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../cursos/fundamentos-do-penpot"><img class="brand-logo" src="../media/images/courses/fundamentos-do-penpot/penpot.png" alt="Logo do curso Fundamentos do Penpot" width="32" height="32"> FUNDAMENTOS DO PENPOT</a>
+    <nav class="nav">
+      <a class="link" href="#programa">Programa</a>
+      <a class="link" href="#diferenciais">Diferenciais</a>
+      <a class="link" href="#professor">Professor</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="btn btn-primary btn-sm" href="https://www.udemy.com/course/fundamentos-do-penpot/?referralCode=6B1709315FB44A5375F7">Começar • R$79,90</a>
+    </nav>
+  </div>
+</header>
 
-    <section class="hero">
-        <div class="decoration">
-            <p>Fundamentos do Penpot</p>
-            <h1 id="course-title">Domine o Design UI/UX com Software Livre</h1>
-            
-            <a href="https://www.udemy.com/course/fundamentos-do-penpot/?referralCode=6B1709315FB44A5375F7"><button tabindex="5" class="button-primary udemy pop">Começar a estudar!</button></a>
-        </div>
-    </section>
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <div class="badge-live reveal"><span class="dot"></span> 1º curso do Brasil referendado pela equipe do Penpot • Atualizado 07/2026</div>
+      <h1 class="reveal" style="--d:.05s">Você já usa Figma. <span class="neon">E se desse pra fazer o mesmo sem mensalidade?</span></h1>
+      <p class="lead reveal" style="--d:.12s;margin-top:18px">Quando bate aquela dúvida — “será que eu preciso mesmo pagar todo mês pra prototipar?” — é aí que o Penpot entra. O curso Fundamentos do Penpot te mostra como sair do wireframe e chegar na alta fidelidade com uma ferramenta gratuita e open-source, com self-host se você quiser. Oi, eu sou o Renan, embaixador do Penpot no Brasil, e vou te acompanhar nisso. Acesso vitalício e uma comunidade com mais de 150 pessoas pra trocar ideia.</p>
+      <div class="hero-ctas reveal" style="--d:.18s">
+        <a class="btn btn-primary" href="https://www.udemy.com/course/fundamentos-do-penpot/?referralCode=6B1709315FB44A5375F7">Quero aprender Penpot agora</a>
+        <a class="btn btn-ghost" href="#programa">Ver o que vou aprender ↓</a>
+      </div>
+      <div class="hero-meta reveal" style="--d:.24s">
+        <span>★ <strong><span data-count="5" data-dec="1">5,0</span></strong> na Udemy</span>
+        <span><strong><span data-count="19">19</span> aulas</strong> • 2h52</span>
+        <span><strong><span data-count="150">150</span>+</strong> na comunidade</span>
+        <span>Certificado incluso</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal" style="--d:.15s">
+      <div class="bar"><i style="background:#ff3d2e"></i><i style="background:#ffd60a"></i><i style="background:#32efb9"></i></div>
+      <div class="mock"><img src="../media/images/projects/penpot-desktop/penpot-desktop.png" alt="Interface do Penpot rodando em desktop Linux — curso de UI Design com software livre"></div>
+      <div class="shapes"><div class="c"></div><div class="q"></div><div class="t"></div></div>
+      <p style="font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-top:12px">SVG NATIVO • FLEX + GRID REAIS • HANDOFF SEM RETRABALHO</p>
+    </div>
+  </div>
+</section>
 
-    <section class="contents">
-        <h2>O que é o Penpot?</h2>
-        <p>É a primeira plataforma de design e prototipação open-source que fala a língua nativa da web. Enquanto ferramentas proprietárias criam "muros" entre o design e o código, o Penpot utiliza padrões abertos como SVG, e recursos nativos do CSS como Flexbox e CSS Grid, permitindo desenhos eficientes, adaptáveis e realistas. O Penpot também é uma plataforma para colaboração sem atritos entre designers e desenvolvedores. Ao escolher o Penpot, você ganha a liberdade de uma ferramenta gratuita e profissional que quase elimina o handoff e evita retrabalhos e as perdas de tradução, garantindo que o que você projeta seja exatamente o que será implementado, tudo isso sem ficar refém de formatos de arquivos fechados ou assinaturas caríssimas.</p>
-        <img src="../media/images/projects/penpot-desktop/penpot-desktop.png" alt="O cliente do Penpot em um belo desktop Linux">
-    </section>
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+<span>Software livre <b>•</b></span><span>Sem paywall <b>•</b></span><span>Self-host com Docker <b>•</b></span><span>Componentes + Tokens <b>•</b></span><span>IA + MCP <b>•</b></span><span>Funciona Win / Mac / Linux <b>•</b></span>
+<span>Software livre <b>•</b></span><span>Sem paywall <b>•</b></span><span>Self-host com Docker <b>•</b></span><span>Componentes + Tokens <b>•</b></span><span>IA + MCP <b>•</b></span><span>Funciona Win / Mac / Linux <b>•</b></span>
+</div></div>
 
-    <section class="reasoning">
-        <p>...mas e se você já conhece de <span id="SlotTools" class="cycle"></span></p>
-        <h2>Por que aprender o Penpot?</h2>
+<section class="block" id="dor"><div class="wrap">
+  <div class="kicker reveal" data-n="01">O problema</div>
+  <h2 class="reveal">Conhece esse roteiro?</h2>
+  <p class="lead reveal">Você domina o Figma, monta componente, sofre com Auto Layout… e aí vem o plano que limita arquivo, o recurso novo que só libera pagando, a fatura em dólar. E não, não é exagero: uma hora a conta pesa. O Penpot não promete mágica — ele só tira esse aluguel da jogada.</p>
+  <div class="grid-3">
+    <div class="card r reveal"><div class="icon">💸</div><h3>A mensalidade que come sua margem de lucro</h3><p>Se você é freela ou estudante, sabe como é: pagar R$80–100 por mês só pra poder abrir o arquivo do cliente com todas as funções é complicado. No Penpot, componentes, tokens e até IA via MCP já vêm liberados. Seu dinheiro fica pra máquina, curso, café — você escolhe.</p></div>
+    <div class="card b reveal" style="--d:.08s"><div class="icon">🔒</div><h3>O arquivo que não é realmente seu</h3><p>Formato fechado, páginas limitadas, projetos e times limitados. O Penpot traz o controle pro seu lado, permitindo que você tenha até o código fonte da ferramenta com você. Seu aplicativo, seus arquivos, suas regras.</p></div>
+    <div class="card y reveal" style="--d:.16s"><div class="icon">🤝</div><h3>O handoff que vira telefone sem fio</h3><p>Dev que abre o inspect e pergunta “mas qual é o padding mesmo?”. Como o Penpot usa CSS real, o que você desenha é o que o dev lê. Menos retrabalho, menos conteúdo “perdido na tradução”.</p></div>
+  </div>
+</div></section>
 
-        <div class="flex-section">
-            <div class="spec pt">
-                <img class="big" src="../media/icons/fundamentos-penpot/soberania.svg" alt="Soberania digital">
-                <p>Soberania Digital e Propriedade de Dados</p>
-                <span>Mantenha seus ativos digitais longe de decisões corporativas de terceiros. Ao aprender e adotar o Penpot, você conquista independência, garantindo acesso perpétuo aos seus projetos graças a flexibilidade do código aberto e do self-hosting.</span>
-            </div>
+<section class="block" id="penpot"><div class="wrap">
+  <div class="kicker reveal" data-n="02">O que é o Penpot</div>
+  <h2 class="reveal">A ferramenta que fala a língua da web</h2>
+  <p class="lead reveal">Deixa eu te situar: o Penpot é uma plataforma de design e prototipação de código aberto. Na prática, a interface até lembra o Figma: painéis laterais, barra de ferramentas, canvas... então quem já usa Figma se acha rápido. A diferença está por baixo: tudo é aberto. SVG, Flexbox e Grid do CSS, e você pode usar na nuvem gratuita ou baixar e rodar no seu PC ou servidor, até offline.</p>
+  <div class="compare reveal">
+    <table>
+      <tr><th>Recurso</th><th>Figma / XD / Sketch</th><th>Penpot</th></tr>
+      <tr><td>Preço</td><td>Plano grátis limitado via paywalls</td><td>100% gratuito, sem paywalls</td></tr>
+      <tr><td>Código</td><td>Proprietário, formato fechado</td><td>Open-source (MPL-2.0)</td></tr>
+      <tr><td>Hospedagem</td><td>Só nuvem do fornecedor (Always ON)</td><td>Nuvem & self-host Docker/offline local</td></tr>
+      <tr><td>Sistemas suportados</td><td>Web, Windows & MacOs (Linux limitado)</td><td>Web, Windows, MacOs e Linux</td></tr>
+      <tr><td>Handoff</td><td>Inspect proprietário e pago</td><td>Inspect gratuito baseado em linguagens da web</td></tr>
+    </table>
+  </div>
+  <p class="note reveal">Pra ser honesto, como eu escrevi no comparativo: o ecossistema de plugins do Penpot ainda é menor que o do Figma, e em arquivo muito pesado o Figma leva vantagem. Dito isso, pro dia a dia de UI — telas, componentes, tokens, protótipo navegável — dá conta tranquilamente. Se quiser o detalhe vetor por vetor, dá uma olhada no meu artigo <a href="../artigos/figma-vs-penpot">Figma vs Penpot</a>.</p>
+</div></section>
 
-            <div class="spec pt">
-                <img class="big" src="../media/icons/fundamentos-penpot/seupc.svg" alt="Combate ao SaaS">
-                <p>Contra-ataque a "Saasificação" Abusiva</p>
-                <span>Elimine o fardo financeiro das assinaturas recorrentes. O Penpot oferece recursos de design de ponta, como componentes, tokens e integração com IA via MCP Server, <strong>tudo gratuitamente</strong>, permitindo que você invista seu capital em seu crescimento profissional e equipamentos.</span>
-            </div>
+<section class="block" id="para-quem"><div class="wrap">
+  <div class="kicker reveal" data-n="03">Para quem é</div>
+  <h2 class="reveal">Se você já mexe no Figma, esse curso é pra você</h2>
+  <p class="lead reveal">Olha, eu não vou te prometer que você vai esquecer o Figma amanhã se aprender o Penpot hoje. Mas se você já prototipa, já sofreu com limite de arquivo free e quer uma alternativa competente e barata (leia-se: gratuita) e com uma comunidade crescente e ativa, aqui você vai se sentir em casa.</p>
+  <div class="split">
+    <div class="panel yes reveal"><strong>✓ Faz sentido se…</strong><ul><li>Você já usa Figma, XD ou Sketch e quer parar de pagar pra trabalhar</li><li>É freela e entrega protótipo navegável — o cliente quer o resultado final, não a execução em ferramenta específica</li><li>Usa Linux e cansou de gambiarra pra abrir ferramenta de design</li><li>Precisa de privacidade ou self-host (empresa, setor público, projeto sensível)</li><li>Quer ficar versátil por saber mais de uma ferramenta</li></ul></div>
+    <div class="panel no reveal" style="--d:.08s"><strong>✕ Melhor pular se…</strong><ul><li>Você quer só colecionar certificado sem botar a mão na massa</li><li>Procura motion avançado estilo After Effects</li><li>Quer substituir o Figma com um clique (o processo é maior que isso)</li><li>Está preso por contrato a entregar tudo no Figma e não pode escolher (aí faz o curso e migra depois, sem pressa)</li></ul></div>
+  </div>
+</div></section>
 
-            <div class="spec pt">
-                <img class="big" src="../media/icons/fundamentos-penpot/console.svg" alt="Alinhamento aos devs">
-                <p>Alinhamento Nativo com o Desenvolvimento</p>
-                <span>O Penpot utiliza a lógica e também exporta as propriedades e o código real dos seus protótipos, facilitando as conversas e a integração com desenvolvedores e acelerando significativamente o ciclo de handoff e as entregas.</span>
-            </div>
-        </div>
-    </section>
+<section class="block" id="programa"><div class="wrap">
+  <div class="kicker reveal" data-n="04">Programa • 19 aulas • 2h52</div>
+  <h2 class="reveal">Do tour ao primeiro projeto completo</h2>
+  <p class="lead reveal">Esta é a segunda edição do curso, atualizada em 07/2026. A gente vai do básico (tour, times, objetos) até o que interessa pra quem já desenha tela: Flex/Grid layout como no CSS, componentes, variantes, tokens, prototipação — e um módulo novo com outras habilidades úteis como whiteboarding, uso de IA e MCP.</p>
+  <div class="modules">
+    <details class="mod reveal" open><summary class="mod-head"><span class="mod-num">Parte #1</span><h3>Introdução — pra ambientar</h3><span class="time">4 aulas • 8min</span></summary><div class="mod-body"><p>A introdução ao curso e ao que é software livre, com e um nivelamento rápido de UX. Se você não é da área, é o básico para começar.</p><ul><li>Boas-vindas + comunidade no Telegram</li><li>O que é software livre (sem juridiquês)</li><li>Básicos do UX Design em 3 minutos + Materiais de apoio</li></ul></div></details>
+    <details class="mod reveal"><summary class="mod-head"><span class="mod-num">Parte #2</span><h3>O coração da ferramenta</h3><span class="time">8 aulas • 1h47</span></summary><div class="mod-body"><p>Aqui vamos conhecer a ferramenta de fato: onde fica cada coisa, como montar time, trabalho colaborativo e principalmente Flex e Grid Layout — que no Penpot são CSS de verdade, com margem e controle fino (coisa que no Figma dá mais trabalho).</p><ul><li>Tour + times e colaboração</li><li>Objetos, máscaras, booleanas, telas e grids</li><li>Nesting + Flex / Grid Layout</li><li>Componentes, tokens e bibliotecas</li><li>Interações + View Mode pra testar</li></ul></div></details>
+    <details class="mod reveal"><summary class="mod-head"><span class="mod-num">Parte #3</span><h3>Aprofundando o conhecimento</h3><span class="time">4 aulas • 55min</span></summary><div class="mod-body"><p>Plugins, templates, whiteboarding no lugar do Miro/FigJam e as aulas novas de IA integrada e Penpot MCP — dá pra levar o protótipo direto pro código funcional com IA (se você quiser).</p><ul><li>Plugins, templates e truques escondidos</li><li>Whiteboarding com o Penpot</li><li>Penpot MCP + Opencode: para dar vida ao protótipo</li></ul></div></details>
+    <details class="mod reveal"><summary class="mod-head"><span class="mod-num">Parte #4</span><h3>Mão na massa</h3><span class="time">3 aulas + teste</span></summary><div class="mod-body"><p>Nada de só assistir: sugestões de projeto, espaço pra compartilhar projetos e quiz pra fixar. Quando terminar, você tem algo pra mostrar — não só um certificado.</p><ul><li>Workshop (projeto ponta-a-ponta) [em breve!]</li><li>Ideias de projeto para praticar + galeria da turma</li><li>Quiz final (teste seu conhecimento)</li></ul></div></details>
+  </div>
+</div></section>
 
-    <section class="mywork">
-        <h3>Uma experiência profissional de educação</h3>
+<section class="block" id="diferenciais"><div class="wrap">
+  <div class="kicker reveal" data-n="05">Ta bom, mas...</div>
+  <h2 class="reveal">Por que aprender no curso e não em tutoriais soltos?</h2>
+  <p class="lead reveal">Olha, tutorial de 10 minutos tem aos montes. A diferença aqui é método, contexto e continuidade. Eu uso Penpot nos meus projetos de verdade (<a href="../portfolio" target="_blank">pode ver no meu portfolio</a>), e te mostro como usar a ferramenta como um profissional.</p>
+  <div class="diff">
+    <article class="reveal spotlight"><div class="top"><span class="n">01</span>Conhecimento de nível profissional</div><div class="body"><p>Eu trabalho com design e UX desde 2013 — e uso Penpot nos meus projetos de verdade. Aqui não tem tutorialzinho esticado e sem valor, tem método, visão e decisão de quem entrega valor pro cliente não somente com o projeto.</p></div></article>
+    <article class="reveal spotlight" style="--d:.06s"><div class="top"><span class="n">02</span>Ferramenta gratuita, atualizada pelos criadores</div><div class="body"><p>O Penpot é open-source e 100% gratuito, sem paywalls ou atualizações pagas. O Penpot é feito pela Kaleidos,uma equipe dedicada a tornar a ferramenta cada vez mais competente e funcional para os profissionais.</p></div></article>
+    <article class="reveal spotlight" style="--d:.12s"><div class="top"><span class="n">03</span>Conteúdo atualizado e acesso vitalício</div><div class="body"><p>Na Udemy você paga uma vez e assiste pra sempre. Recurso novo vira aula nova — foi assim com a IA integrada e o MCP na Segunda Edição (07/2026). Sem taxa extrapra ninguém!</p></div></article>
+    <article class="reveal spotlight" style="--d:.18s"><div class="top"><span class="n">04</span>Comunidade engajada que responde de verdade</div><div class="body"><p>Mais de 150 pessoas no Telegram trocando conhecimentos sobre design com softwares livres, incluindo o Penpot. Dá pra pedir opinião sobre sua tela e não ficar falando sozinho. E sim, eu tô lá também!</p></div></article>
+    <article class="reveal spotlight" style="--d:.24s"><div class="top"><span class="n">05</span>Pioneiro no Brasil, com aval de quem faz a ferramenta</div><div class="body"><p>Fui o primeiro a estruturar um curso de Penpot aqui referendado pelo pessoal que cria a ferramenta — e hoje sou embaixador oficial do Penpot no Brasil. Nada de “jeitinho”: é o fluxo que o próprio time preconiza.</p></div></article>
+    <article class="reveal spotlight" style="--d:.3s"><div class="top"><span class="n">06</span>Base para a certificação internacional do Penpot</div><div class="body"><p>O penpot <a href="" target="_blank">oferece uma certificação internacional</a>. conteúdo te dá a base para buscar a certificação internacional em Penpot, oferecida em parceria com a OriginCG. Você estuda os fundamentos que a prova cobra — componentes, tokens, layout e prototipação — já no fluxo profissional.</p></div></article>
+  </div>
+  <div class="stats">
+    <div class="stat reveal"><strong>2h52</strong><span>de conteúdo original</span></div>
+    <div class="stat reveal" style="--d:.06s"><strong><span data-count="150">150</span>+</strong><span>na comunidade ativa</span></div>
+    <div class="stat reveal" style="--d:.12s"><strong><span data-count="19">19</span></strong><span>aulas práticas</span></div>
+    <div class="stat reveal" style="--d:.18s"><strong>★ <span data-count="5" data-dec="1">5,0</span></strong><span>nota média na Udemy</span></div>
+  </div>
+</div></section>
 
-        <p>Meu trabalho é focado em construir um ecossistema educacional em softwares livres que alimente uma nova geração de profissionais que são mais versáteis e conscientes sobre suas escolhas profissionais. Para isso, este curso entrega a melhor experiência educacional possível, com os seguintes recursos:</p>
+<section class="block" id="professor"><div class="wrap">
+  <div class="kicker reveal" data-n="06">Professor</div>
+  <h2 class="reveal">Oi, eu sou o Renan</h2>
+  <div class="split">
+    <div class="panel reveal"><strong>Product Designer (UX/UI), do Rio de Janeiro</strong><p style="color:var(--muted);margin-top:10px">Trabalho com design desde 2013, já usando alguns softwares livres e Linux. Migrei meu fluxo para 100% software livre lá por 2017 por necessidade (meu PC era um all-in-one sofrido, pra ser gentil) e fiquei por convicção. Hoje sou o 1° embaixador do Penpot no Brasil, criei uma série de tutoriais, recursos e plugins para a ferramenta e mantenho a comunidade Designers Livres, focada em profissionais que seguem a filosofia do software livre. Escrevi o comparativo <a href="../artigos/figma-vs-penpot">Figma vs Penpot</a> e o guia de <a href="../artigos/whiteboarding-no-penpot">whiteboarding</a> porque eu realmente uso a ferramenta no dia a dia.</p><div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-ghost btn-sm" href="../portfolio" target="_blank">Meu portfolio</a><a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/renan-mayrinck" target="_blank">Meu LinkedIn</a></div></div>
+    <div class="panel reveal" style="--d:.08s"><strong>O que está incluído na matrícula</strong><ul class="check"><li>Acesso vitalício, incluindo atualizações futuras</li><li>Demonstração de recursos para UI Design e Design Systems na prática</li><li>Comunidade ativa no Telegram</li><li>Certificado de conclusão do curso</li><li>Exercícios práticos para te ajudar a evoluir</li><li>Legendas em inglês e espanhol em expansão</li></ul></div>
+  </div>
+</div></section>
 
-        <div class="flex-section">
-            <div class="spec dg">
-                <img src="../media/icons/research.svg" alt="Research">
-                <p>Acesso e atualizações vitalícias</p>
-                <span>Você vai poder acessar para sempre o conteúdo do curso e aproveitar todas as atualizações, pagando uma única vez.</span>
-            </div>
+<section class="block" id="oferta"><div class="wrap">
+  <div class="kicker reveal" data-n="07">Oferta</div>
+  <h2 class="reveal">Quanto custa sair do aluguel?</h2>
+  <div class="offer">
+    <div class="reveal"><p class="lead">Menos que dois meses de Figma Pro — e a ferramenta em si continua gratuita, então a conta fecha. A matrícula é processada com segurança pela Udemy, com acesso imediato após a confirmação do pagamento, para assistir quando quiser no Windows, Mac ou Linux.</p><ul class="check"><li>2h52 de conteúdo direto ao ponto, pensado pra quem já desenha tela</li><li>Projeto praticável + quiz + certificado de conclusão</li><li>Garantia e reembolso conforme a política da Udemy</li><li>Bônus: arquivo opencode.json do MCP + materiais de apoio</li></ul><p class="note">Transparência de sempre: o preço na Udemy oscila por cupom e região. O botão aplica meu cupom de indicação quando disponível.</p></div>
+    <div class="price-card reveal" style="--d:.08s"><span style="font-family:var(--mono);font-size:.78rem;letter-spacing:.14em">SEGUNDA EDIÇÃO • UDEMY</span><div class="price">R$79,90 <small>pagamento único</small></div><ul class="check"><li>Acesso vitalício</li><li>Todas as atualizações futuras</li><li>Comunidade 150+</li><li>Certificado</li></ul><a class="btn btn-primary" style="width:100%;justify-content:center;background:#111;color:#fff" href="https://www.udemy.com/course/fundamentos-do-penpot/?referralCode=6B1709315FB44A5375F7">Começar a estudar agora</a><p style="font-size:.82rem;margin-top:10px;color:#555">Compra segura via Udemy • Certificado de conclusão • Nota 5.0 ★</p></div>
+  </div>
+</div></section>
 
-            <div class="spec dg">
-                <img src="../media/icons/design.svg" alt="Design">
-                <p>UI Design & Design Systems</p>
-                <span>Crio interfaces modernas, consistentes e acessíveis, prontas para escalar e melhorar a experiência do usuário.</span>
-            </div>
+<section class="block" id="faq"><div class="wrap">
+  <div class="kicker reveal" data-n="08">Tá com dúvida? (FAQ)</div>
+  <h2 class="reveal">Se bater aquela dúvida... Só perguntar!</h2>
+  <p class="lead reveal">Coloque o assunto da sua dúvida aqui na pesquisa e veja se já tem uma resposta. :)</p>
+  <div class="faq-search reveal" role="search">
+    <span aria-hidden="true">⌕</span>
+    <input id="faq-filter" type="search" placeholder="Buscar na FAQ… ex: Figma, offline, certificado" autocomplete="off" aria-label="Buscar nas perguntas frequentes">
+    <span class="faq-count" id="faq-count"></span>
+  </div>
+  <div style="margin-top:6px" id="faq-list">
+    <details class="faq reveal" open><summary>O Penpot é realmente gratuito?</summary><div class="a">Sim, sem asterisco. A nuvem oficial é gratuita com limites generosos, e você pode hospedar no seu servidor via Docker sem pagar licença. O único custo possível é o do servidor, se optar por um.</div></details>
+    <details class="faq reveal"><summary>O Penpot funciona no Windows, Mac e Linux?</summary><div class="a">Sim, porque roda no navegador. E tem o cliente desktop da comunidade para as três plataformas — projeto que eu mesmo ajudei a criar.</div></details>
+    <details class="faq reveal"><summary>Já uso Figma. Vou conseguir acompanhar o conteúdo?</summary><div class="a">Vai se sentir em casa: interface parecida, mesmos nomes — componentes, variantes, bibliotecas. Onde muda (Flex/Grid e tokens), mostro o paralelo com o Figma.</div></details>
+    <details class="faq reveal"><summary>O Penpot substitui o Figma no trabalho?</summary><div class="a">Depende do trabalho — prefiro te contar agora. No UI do dia a dia (componentes, tokens, protótipo, handoff), dá conta. O Figma ainda leva vantagem em plugins, smart animate e arquivos gigantes. No curso, mostro quando usar cada um.</div></details>
+    <details class="faq reveal"><summary>Se a empresa onde eu trabalho exige Figma, vale a pena aprender Penpot?</summary><div class="a">Vale: hierarquia, layout, variantes e tokens valem para as duas, cada uma à sua maneira. Muita gente usa Penpot no freela e aplica o método no Figma do trabalho — versatilidade conta ponto com recrutador.</div></details>
+    <details class="faq reveal"><summary>Mas tem pouca vaga pedindo Penpot, não?</summary><div class="a">Tem, é fato — a ferramenta é nova. E justamente por isso é um bom momento para aprender, sem pressão. Para freelas, projetos pessoais, startups, setor público e times que ligam para privacidade, o Penpot já é realidade.</div></details>
+    <details class="faq reveal"><summary>Dá pra trabalhar offline?</summary><div class="a">Na nuvem, precisa de internet. Com self-host via Docker, você roda em rede local controlada — o caminho das empresas. Explico o conceito no curso, sem exigir DevOps.</div></details>
+    <details class="faq reveal"><summary>Dá pra fazer alta fidelidade, interações e Design Systems?</summary><div class="a">Sim: interações, transições, componentes, variantes, tokens e bibliotecas compartilhadas. Sem smart animate (por enquanto), mas com sobra para testes e apresentações.</div></details>
+    <details class="faq reveal"><summary>É seguro para projetos em ecossistema empresarial?</summary><div class="a">É um dos pontos fortes: seus dados ficam no seu servidor, sob controle total. Por isso há empresas adotando para fugir de reajustes e instabilidade de terceiros — inclusive <a href="https://renanmayrinck.com/portfolio/picdoc" target="_blank">participei de um case assim</a>.</div></details>
+    <details class="faq reveal"><summary>Consigo importar meus arquivos do Figma?</summary><div class="a">Não direto, mas você não fica desassistido: há plugins e serviços da comunidade que convertem Figma para Penpot. Mostro o fluxo no curso.</div></details>
+    <details class="faq reveal"><summary>Qual a diferença do Flex/Grid para o Auto Layout do Figma?</summary><div class="a">O Penpot usa CSS nativo em vez de implementação proprietária — incluindo margens somadas ao padding. O resultado já sai pronto para o dev inspecionar.</div></details>
+    <details class="faq reveal"><summary>Preciso saber Linux, Docker ou programar?</summary><div class="a">Não. Basta saber usar o computador e ter noção de UI. O módulo de IA/MCP vem com arquivo pronto e passo a passo.</div></details>
+    <details class="faq reveal"><summary>Como funcionam as atualizações e o certificado?</summary><div class="a">Compra única, acesso vitalício: recurso novo vira aula nova, sem custo — foi assim da primeira para a segunda edição. Ao concluir, a Udemy emite o certificado para o LinkedIn.</div></details>
+  </div>
+  <div class="faq-empty" id="faq-empty">Hmm, não achei nada com esse termo... Se não tiver respondido por aqui, me chama na <a href="https://t.me/DesignersLivres" target="_blank">comunidade do curso</a> que eu te respondo.</div>
+</div></section>
 
-            <div class="spec dg">
-                <img src="../media/icons/code.svg" alt="Code">
-                <p>Comunidade ativa no Telegram</p>
-                <span>Acesso a comunidade de designers livres do Brasil, para novidades, suporte, networking, eventos e compartilhamento de projetos.</span>
-            </div>
+<section class="block final-cta" id="comecar">
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+  <div class="blob b3" aria-hidden="true"></div>
+  <div class="geo g-c" aria-hidden="true"></div>
+  <div class="geo g-q" aria-hidden="true"></div>
+  <div class="geo g-t" aria-hidden="true"></div>
+  <div class="final-inner">
+    <h2 class="reveal">Então… bora sair do aluguel?</h2>
+    <p class="lead reveal" style="--d:.08s">Se você já desenha tela no Figma, a curva é curta, e o bolso agradece. Se você deseja liberdade, ela ta a um clique. Te vejo nas aulas, e qualquer coisa me chama na comunidade.</p>
+    <div class="final-ctas reveal" style="--d:.14s">
+      <a class="btn btn-primary btn-xl" href="https://www.udemy.com/course/fundamentos-do-penpot/?referralCode=6B1709315FB44A5375F7">Garantir minha vaga — R$79,90</a>
+    </div>
+    <p class="final-note reveal" style="--d:.2s">Pagamento único • Acesso vitalício • Certificado de conclusão • <a href="https://t.me/DesignersLivres" target="_blank">Comunidade com 150+ profissionais</a></p>
+  </div>
+  <!-- SUBSTITUA os textos abaixo pelos depoimentos reais (Udemy / Gumroad / YouTube). Estrutura: nome, texto, plataforma. -->
+  <div class="t-carousel reveal" style="--d:.2s" aria-label="Depoimentos de alunos">
+    <div class="t-track" id="t-track">
+      <article class="t-card">
+        <div class="t-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="t-text">“Um ótimo curso, adorei saber mais sobre o Penpot. Uso ele para construir slides de aulas e aprender as funcionalidades dele me ajudou bastante 😊😊”</p>
+        <div class="t-foot"><span class="t-avatar" style="background:var(--yellow)">M</span><div><div class="t-name">Maria V.</div><div class="t-role">Professora de História</div></div><span class="plat plat-udemy"><i>U</i>Udemy</span></div>
+      </article>
+      <article class="t-card">
+        <div class="t-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="t-text">“Melhor curso de penpot que já vi.”</p>
+        <div class="t-foot"><span class="t-avatar" style="background:var(--cyan)">F</span><div><div class="t-name">Francisco José Ferreira</div><div class="t-role">Aluno do Curso</div></div><span class="plat plat-udemy"><i>U</i>Udemy</span></div>
+      </article>
+      <article class="t-card">
+        <div class="t-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <!-- TROCAR pelo depoimento real do Albinoan -->
+        <p class="t-text">“Gostei muito do curso, didática impecável, abriu minha mente para essa ferramenta que cada vez mais tem crescido!”</p>
+        <div class="t-foot"><span class="t-avatar photo"><img src="../media/images/courses/fundamentos-do-penpot/alunos/albinoan-brandao.png" alt="Foto do aluno Albinoan Brandão" loading="lazy"></span><div><div class="t-name">Albinoan Brandão</div><div class="t-role">Aluno do curso</div></div><span class="plat plat-gumroad"><i>G</i>Gumroad</span></div>
+      </article>
+      <article class="t-card">
+        <div class="t-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="t-text">“Um bom curso... Eu recomendo!!!”</p>
+        <div class="t-foot"><span class="t-avatar" style="background:var(--blue);color:#fff">R</span><div><div class="t-name">ronaldoal</div><div class="t-role"></div></div><span class="plat plat-gumroad"><i>G</i>Gumroad</span></div>
+      </article>
+      <article class="t-card">
+        <div class="t-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <!-- SUBSTITUIR pelo comentário real do YouTube -->
+        <p class="t-text">“Tenho um medo ENORME de canais maravilhosos como este PARAREM NO YOUTUBE. Que fantástico mano, como tem tanta pouca visualização um curso fantaśtico como esse??”</p>
+        <div class="t-foot"><span class="t-avatar photo"><img src="../media/images/courses/fundamentos-do-penpot/alunos/kamusumbe.jpg" alt="Foto do aluno Kamusumbe" loading="lazy"></span><div><div class="t-name">Kamusumbe</div><div class="t-role">Designer & Aluno do Curso</div></div><span class="plat plat-youtube"><i>▶</i>YouTube</span></div>
+      </article>
+      <article class="t-card">
+        <div class="t-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="t-text">“Mermão, eu to na metade do curso e esse deve ser o melhor curso/tutorial do penpot na internet até onde eu consegui encontrar. PT ou gringo.”</p>
+        <div class="t-foot"><span class="t-avatar" style="background:#fff">C</span><div><div class="t-name">CyberFalcon</div><div class="t-role">Aluno do Curso</div></div><span class="plat plat-youtube"><i>▶</i>YouTube</span></div>
+      </article>
+    </div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:2;text-align:center;margin-top:44px">
+    <p style="font-family:var(--mono);font-size:.8rem;color:var(--muted)">© Renan Mayrinck • 2013 • <a href="../artigos">Artigos</a> • <a href="../portfolio">Portfolio</a></p>
+  </div>
+</section>
 
-            <div class="spec dg">
-                <img src="../media/icons/research.svg" alt="Research">
-                <p>Acesso e atualizações vitalícias</p>
-                <span>Você vai poder acessar para sempre o conteúdo do curso e aproveitar todas as atualizações, pagando uma única vez.</span>
-            </div>
-
-            <div class="spec dg">
-                <img src="../media/icons/design.svg" alt="Design">
-                <p>UI Design & Design Systems</p>
-                <span>Crio interfaces modernas, consistentes e acessíveis, prontas para escalar e melhorar a experiência do usuário.</span>
-            </div>
-
-            <div class="spec dg">
-                <img src="../media/icons/telegram.svg" alt="Telegram">
-                <p>Comunidade ativa no Telegram</p>
-                <span>Acesso a comunidade de designers livres do Brasil, para novidades, suporte, networking, eventos e compartilhamento de projetos.</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="faq">
-        <h5>Tem alguma dúvida?</h5>
-
-        <details>
-            <summary>O Penpot é realmente gratuito?</summary>
-            <p>
-                Sim, o Penpot é uma ferramenta gratuita e de código aberto (open-source). Você pode usar a versão na nuvem gratuitamente com times de até 10 pessoas ou instalar em seu próprio servidor sem limitações ou custos de licença.
-            </p>
-        </details>
-
-        <details>
-            <summary>O Penpot funciona no Windows, MacOS e Linux?</summary>
-            <p>
-                Por ser baseado em navegador, ele funciona em qualquer sistema operacional. Além disso, existe um <a href="" target="_blank">cliente desktop</a> mantido pela comunidade para todas as plataformas.
-            </p>
-        </details>
-
-        <details>
-            <summary>Que vantagens existem em aprender o Penpot?</summary>
-            <p>
-                Além de adquirir versatilidade ao aprender uma nova ferramenta, aprender sobre o Penpot significa aprender sobre a principal plataforma de prototipação gratuita (de verdade) e de código aberto da atualidade. É a ferramenta gratuita mais poderosa que você vai encontrar como concorrente do Figma, Adobe XD, Sketch, Lunacy ou qualquer outra plataforma de prototipação. Se você quiser saber uma comparação por extenso entre o Penpot e o Figma, por exemplo, <a href="../artigos/figma-vs-penpot">tenho um artigo completo</a> apontando cada detalhe.
-            </p>
-        </details>
-
-        <details>
-            <summary>Posso trabalhar offline com o Penpot?</summary>
-            <p>
-                A versão oficial na núvem exige conexão constante, mas ao optar pelo self-hosting via Docker ou tecnologias similares, você pode rodar o Penpot em uma rede local ou ambiente controlado offline sem problemas.
-            </p>
-        </details>
-
-        <details>
-            <summary>O Penpot serve para criar protótipos de alta fidelidade?</summary>
-            <p>
-                Com certeza. Ele permite criar interações complexas, transições e fluxos de usuário prontos para testes de usabilidade e apresentações para clientes.
-            </p>
-        </details>
-
-        <details>
-            <summary>O Penpot suporta bibliotecas de componentes e design systems?</summary>
-            <p>
-                Sim, você pode criar sistemas de design completos, com componentes reutilizáveis, variantes, tokens e bibliotecas compartilhadas entre diferentes arquivos.
-            </p>
-        </details>
-
-        <details>
-            <summary>O Penpot é seguro para projetos corporativos?</summary>
-            <p>
-                Extremamente. Por permitir o controle total da infraestrutura (self-hosting), muitas empresas já o escolheram para garantir que dados sensíveis não saiam de seus servidores. Você também pode contratar suporte direto da Kaleidos, a criadora do Penpot, se quiser ajuda profissional para criar uma infraestrutura para usar o Penpot em uma corporação.
-            </p>
-        </details>
-
-        <details>
-            <summary>O Penpot abre arquivos de outros softwares?</summary>
-            <p>
-                Não diretamente, mas há formas de converter formatos dos outros programas para o Penpot. No caso so Figma, por exemplo, existe um plugin de conversão que permite trazer seus arquivos do Figma de forma rápida, facilitando a transição de plataforma.
-            </p>
-        </details>
-
-        <details>
-            <summary>Como consigo o certificado do curso?</summary>
-            <p>
-                Basta assistir todas as aulas pela plataforma após a compra. Assim que concluir, você poderá baixar seu certificado de conclusão para adicionar ao seu Linkedin ou compartilhar nas redes.
-            </p>
-        </details>
-    </section>
-
-    <footer>
-        <p class="credits">
-            @RenanMayrinckDesign • Desde 2013
-        </p>
-
-        <div class="socials">
-            <a target="_blank" title="Meu email - renanmayrinck@duck.com" href="mailto:renanmayrinck@duck.com">
-                <svg fill="#0c0c0c" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="path1" transform="matrix(0.047619,0,0,0.047619,0,-0.00946781)"><path d="M126.4,0.199C56.8,0.199 0,57 0,126.6L0,378.199C0,447.399 56.8,504.199 126.4,504.199L378,504.199C447.6,504.199 504.4,447.401 504.4,377.801L504.4,126.6C504,57 447.2,0.199 377.6,0.199L126.4,0.199ZM137.1,115.785L367.301,115.785C395.613,115.781 419.607,137.475 422.447,165.645L252.199,254.826L81.953,165.645C84.672,138.647 106.838,117.419 133.928,115.869L137.1,115.785ZM81.68,194.359L246.266,280.574C249.979,282.52 254.421,282.52 258.135,280.574L422.719,194.359L422.719,333.197C422.721,362.418 399.612,386.877 370.438,388.531L367.301,388.615L137.1,388.615C107.879,388.617 83.42,365.508 81.766,336.334L81.68,333.197L81.68,194.359Z" style="fill-rule:nonzero;"/></g></svg>
-            </a>
-
-            <a target="_blank" title="Meu perfil no Behance" href="https://www.behance.net/renanmayrinck">
-                <svg fill="#0c0c0c" version="1.1" id="Layer_1" viewBox="0 0 504.4 504.4" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs8" /> <g id="g2"> <g id="g1"> <path d="M 195.2,184.2 H 188 140 v 44 h 51.6 c 9.2,0 17.2,-2.4 17.2,-23.6 0,-21.2 -13.6,-20.4 -13.6,-20.4 z" id="path1" /> </g> </g> <g id="g4"> <g id="g3"> <path d="M 195.2,260.2 H 140 v 56 h 48.4 c 0.8,0 2,0 3.6,0 8,0 23.2,-3.2 23.2,-27.2 0.4,-28.4 -20,-28.8 -20,-28.8 z" id="path2" /> </g> </g> <g id="g6"> <g id="g5"> <path d="M 377.6,0.2 H 126.4 C 56.8,0.2 0,57 0,126.6 v 251.6 c 0,69.2 56.8,126 126.4,126 H 378 c 69.6,0 126.4,-56.8 126.4,-126.4 V 126.6 C 504,57 447.2,0.2 377.6,0.2 Z m -81.6,160 h 84 v 20 h -84 z m -39.2,131.6 c 0,62.4 -61.6,64.4 -61.6,64.4 H 138.4 136.8 96 v -208 h 40.4 1.6 56.8 c 30.8,0 55.2,17.6 55.2,54.4 0,36.8 -29.6,38.8 -29.6,38.8 39.2,-0.4 36.4,50.4 36.4,50.4 z m 150.8,-3.6 H 306.4 c 0,40 34.4,36.8 34.4,36.8 32.4,0 31.2,-20.8 31.2,-20.8 h 34.4 c 0,56 -66.8,53.6 -66.8,53.6 -80,0 -74.8,-78.8 -74.8,-78.8 0,0 0,-79.2 74.8,-79.2 78.8,-0.4 68,88.4 68,88.4 z" id="path4" /> </g> </g> <g id="g8"> <g id="g7"> <path d="m 340.4,228.6 c -30,0 -34.4,31.6 -34.4,31.6 h 64 c 0,0 0.4,-31.6 -29.6,-31.6 z" id="path6" /> </g> </g> </svg>
-            </a>
-
-            <a target="_blank" title="Meu perfil no Instagram" href="https://www.instagram.com/renanmayrinck">
-                <svg fill="#0c0c0c" width="100%" height="100%" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><rect x="0" y="0" width="800" height="800" style="fill:none;fill-rule:nonzero;"/><path d="M400,0c108.68,0 122.24,0.4 164.88,2.4c42.6,2 71.6,8.68 97.12,18.6c26.4,10.16 48.64,23.92 70.88,46.12c20.339,19.995 36.078,44.184 46.12,70.88c9.88,25.48 16.6,54.52 18.6,97.12c1.88,42.64 2.4,56.2 2.4,164.88c0,108.68 -0.4,122.24 -2.4,164.88c-2,42.6 -8.72,71.6 -18.6,97.12c-10.013,26.71 -25.756,50.905 -46.12,70.88c-20.001,20.332 -44.189,36.07 -70.88,46.12c-25.48,9.88 -54.52,16.6 -97.12,18.6c-42.64,1.88 -56.2,2.4 -164.88,2.4c-108.68,0 -122.24,-0.4 -164.88,-2.4c-42.6,-2 -71.6,-8.72 -97.12,-18.6c-26.706,-10.021 -50.9,-25.763 -70.88,-46.12c-20.343,-19.992 -36.083,-44.182 -46.12,-70.88c-9.92,-25.48 -16.6,-54.52 -18.6,-97.12c-1.88,-42.64 -2.4,-56.2 -2.4,-164.88c0,-108.68 0.4,-122.24 2.4,-164.88c2,-42.64 8.68,-71.6 18.6,-97.12c10.009,-26.712 25.753,-50.908 46.12,-70.88c19.986,-20.35 44.178,-36.091 70.88,-46.12c25.52,-9.92 54.48,-16.6 97.12,-18.6c42.64,-1.88 56.2,-2.4 164.88,-2.4Zm0,200c-109.717,0 -200,90.283 -200,200c0,109.717 90.283,200 200,200c109.717,0 200,-90.283 200,-200c0,-109.717 -90.283,-200 -200,-200Zm260,-10c0,-27.429 -22.571,-50 -50,-50c-27.429,0 -50,22.571 -50,50c0,27.429 22.571,50 50,50c27.429,0 50,-22.571 50,-50Zm-260,90c65.83,0 120,54.17 120,120c0,65.83 -54.17,120 -120,120c-65.83,0 -120,-54.17 -120,-120c0,-65.83 54.17,-120 120,-120Z" style="fill-rule:nonzero;"/></g></svg>
-            </a>
-
-            <a target="_blank" title="Meu perfil no LinkedIn" href="https://www.linkedin.com/in/renan-mayrinck">
-                <svg fill="#0c0c0c" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 504.4 504.4" xml:space="preserve"><g><g><path d="M377.6,0.2H126.4C56.8,0.2,0,57,0,126.6v251.6c0,69.2,56.8,126,126.4,126H378c69.6,0,126.4-56.8,126.4-126.4V126.6C504,57,447.2,0.2,377.6,0.2z M168,408.2H96v-208h72V408.2z M131.6,168.2c-20.4,0-36.8-16.4-36.8-36.8c0-20.4,16.4-36.8,36.8-36.8c20.4,0,36.8,16.4,36.8,36.8C168,151.8,151.6,168.2,131.6,168.2z M408.4,408.2H408h-60V307.4c0-24.4-3.2-55.6-36.4-55.6c-34,0-39.6,26.4-39.6,54v102.4h-60v-208h56v28h1.6c8.8-16,29.2-28.4,61.2-28.4c66,0,77.6,38,77.6,94.4V408.2z"/></g></g></svg>
-            </a>
-
-            <a target="_blank" title="Meu canal no YouTube" href="https://www.youtube.com/renanmayrinckdesign">
-                <svg fill="#0c0c0c" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 95.333 95.333" xml:space="preserve"><g><path d="M73.104,0H22.228C9.952,0,0,9.952,0,22.228v50.877c0,12.275,9.951,22.228,22.228,22.228h50.875c12.277,0,22.229-9.952,22.229-22.228V22.228C95.332,9.952,85.381,0,73.104,0z M65.209,52.786c-9.312,4.825-18.619,9.657-27.896,14.544c-2.105,1.109-4.021,1.062-5.922-0.32c-1.429-1.037-1.947-2.482-1.938-4.21c0.024-4.964,0.008-9.929,0.007-14.894c0-4.903-0.03-9.806,0.008-14.708c0.039-5.035,3.896-7.409,8.34-5.07c9.224,4.857,18.406,9.792,27.606,14.694c2.029,1.081,3.543,2.485,3.467,5.041C68.805,50.389,67.255,51.725,65.209,52.786z"/></g></svg>
-            </a>
-        </div>
-    </footer>
-
-    <dialog id="mobnav">
-        <button id="navclose">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
-        </button>
-
-        <nav>
-            <a href="../index">Início</a>
-            <a href="../portfolio"><strong>Portfolio</strong></a>
-            <a href="../produtos">Cursos e Mentorias</a>
-            <a href="../artigos">Artigos</a>
-            <button class="button-primary" id="othercontact">Entre em contato</button>
-        </nav>
-    </dialog>
-
-    <script src="../js/interactions.js"></script>
-    <script async src="../js/events.js"></script>
-    <script async src="../js/cycle.js"></script>
+<div class="sticky-cta"><a class="btn btn-primary" href="https://www.udemy.com/course/fundamentos-do-penpot/?referralCode=6B1709315FB44A5375F7">Começar agora • R$79,90</a></div>
+<script src="../js/penpot-landing.js" defer></script>
 </body>
 </html>
