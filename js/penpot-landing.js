@@ -61,14 +61,28 @@
     if(faqCount) faqCount.textContent = faqInput && faqInput.value ? `${vis}/${items.length}` : `${items.length} perguntas`;
   };
   if(faqInput && faqList){
+    const items=[...faqList.querySelectorAll('details.faq')];
+    const baseline=new Set(items.filter(d=>d.open)); // estado pré-busca (manual)
+    let filtering=false, syncing=false;
+    // Guarda abrir/fechar manuais — ignora o que a busca abre/fecha (capture: toggle não borbulha)
+    faqList.addEventListener('toggle',(e)=>{
+      if(syncing||filtering) return;
+      const d=e.target;
+      if(!(d instanceof HTMLDetailsElement)) return;
+      d.open?baseline.add(d):baseline.delete(d);
+    },true);
     faqInput.addEventListener('input', ()=>{
       const q=norm(faqInput.value.trim());
       let vis=0;
-      faqList.querySelectorAll('details.faq').forEach(d=>{
+      syncing=true;
+      items.forEach(d=>{
         const hit=!q || norm(d.textContent).includes(q);
         d.hidden=!hit;
         if(hit){vis++; if(q) d.open=true;}
       });
+      if(!q) items.forEach(d=>{ d.open=baseline.has(d); }); // limpa busca -> volta ao anterior
+      syncing=false;
+      filtering=!!q;
       if(faqEmpty) faqEmpty.style.display = vis===0 ? 'block':'none';
       updateCount();
     });
@@ -79,6 +93,8 @@
   const track = document.getElementById('t-track');
   if(track && !matchMedia('(prefers-reduced-motion: reduce)').matches){
     track.innerHTML += track.innerHTML;
+    const kids=[...track.children].slice(track.children.length/2);
+    kids.forEach(el=>el.setAttribute('aria-hidden','true'));
   }
 
   // Parallax leve no hero
